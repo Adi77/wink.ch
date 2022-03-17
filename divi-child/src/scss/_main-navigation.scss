@@ -1,0 +1,27 @@
+.et_header_style_fullscreen {
+  .et_slide_in_menu_container {
+    padding-top: 0;
+  }
+}
+#et-top-navigation {
+  .mobile_menu_bar {
+    display: inline-block;
+    transform: rotate(9deg);
+    &.et_pb_header_toggle {
+      width: 50px;
+    }
+    &::before {
+      font-size: 56px;
+      font-weight: bold;
+    }
+  }
+}
+
+#wink-mainnav {
+  .menu-row {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}

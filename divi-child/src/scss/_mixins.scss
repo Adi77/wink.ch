@@ -1,0 +1,100 @@
+// divi grid mediaQuery breakpoint mixin
+@mixin diviBreakpoint($breakpoint) {
+  @if $breakpoint==480 {
+    @media only screen and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==768 {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint==980 {
+    @media only screen and (max-width: 980px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1100 {
+    @media only screen and (max-width: 1100px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1405 {
+    @media only screen and (max-width: 1405px) {
+      @content;
+    }
+  }
+  @if $breakpoint==1580 {
+    @media only screen and (max-width: 1580px) {
+      @content;
+    }
+  }
+}
+
+@mixin greenButton() {
+  .et_pb_button,
+  .button {
+    font-size: 28px;
+    @include diviBreakpoint(1580) {
+      font-size: 20px;
+    }
+    background-color: #1b3a08;
+    border: 0 !important;
+    border-radius: 0;
+    padding: 10px 20px !important;
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    &:hover {
+      background-color: #807450;
+      //border: none;
+    }
+  }
+}
+
+@mixin brownButtonInvert() {
+  .et_pb_button,
+  .button {
+    font-size: 28px;
+    @include diviBreakpoint(1580) {
+      font-size: 20px;
+    }
+    border-radius: 0;
+    border-width: 1px;
+
+    font-weight: 600;
+    color: white;
+    border-color: white;
+    &:hover {
+      color: $abb-brown !important;
+      background-color: white !important;
+    }
+  }
+}
+
+@mixin brownButton($class: '') {
+  .et_pb_button,
+  .button {
+    font-size: 28px;
+    @include diviBreakpoint(1580) {
+      font-size: 20px;
+    }
+    border-radius: 0;
+    border-width: 1px;
+
+    font-weight: 600;
+    color: $abb-brown;
+
+    border-color: $abb-brown;
+    &:hover {
+      color: white;
+      //border: 1px solid $abb-brown !important;
+      background-color: $abb-brown;
+    }
+  }
+}
