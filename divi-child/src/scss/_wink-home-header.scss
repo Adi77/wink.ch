@@ -3,25 +3,49 @@
     .et_pb_row {
       width: 80%;
       max-width: 80%;
-      .et_pb_text_inner {
-        a {
-          font-size: 140px;
-          border-bottom: 0;
-          padding: 0px 30px 26px;
-          border: 3px solid transparent;
-          &:hover {
-            border: 3px solid black;
-            border-radius: 100px;
+      .et_pb_module {
+        .et_pb_text_inner {
+          a {
+            font-family: CabinetGroteskLight;
+            font-size: 140px;
+            border-bottom: 0;
+            padding: 0 30px 0;
+            margin-bottom: 60px;
+            border: 3px solid transparent;
+            display: inline-block;
+            line-height: 1.4;
+            &:hover {
+              border: 3px solid black;
+              border-radius: 100px;
+            }
+          }
+          strong {
+            font-family: CabinetGroteskExtrabold;
+          }
+          img {
+            width: auto;
+            height: 131px;
+
+            margin: 0 100px -28px;
           }
         }
-        strong {
-          font-family: CabinetGroteskExtrabold;
-        }
-        img {
-          width: auto;
-          height: 131px;
-
-          margin: 0 100px -28px;
+      }
+    }
+  }
+}
+.dark-mode {
+  #main-content {
+    .wink-home-header {
+      .et_pb_row {
+        .et_pb_module {
+          .et_pb_text_inner {
+            a {
+              color: $wink-beige !important;
+              &:hover {
+                border-color: $wink-beige !important;
+              }
+            }
+          }
         }
       }
     }

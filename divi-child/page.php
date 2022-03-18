@@ -71,7 +71,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
 	</div> <!-- .container -->
 
 	<?php endif; ?>
-
+	<span class="dark-mode-switch">
+		<a href="#" alt="dark mode switch">
+			<svg id="dark-mode-toggle" data-name="Dark mode toggle" xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 29.95 29.95">
+				<path
+					d="M300.58,436.87a15,15,0,1,1,14.9-15A15,15,0,0,1,300.58,436.87Zm0-2.13V409a12.85,12.85,0,1,0,0,25.7Z"
+					transform="translate(-285.52 -406.91)" />
+			</svg>
+		</a>
+	</span>
 </div> <!-- #main-content -->
 
 <?php

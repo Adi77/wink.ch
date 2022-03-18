@@ -148,3 +148,69 @@ table {
     }
   }
 }
+
+/* divi accordion */
+.et_pb_toggle {
+  border: 0;
+  padding-bottom: 35px;
+  padding-right: 0;
+  &.et_pb_toggle_open {
+    background-color: transparent;
+    .et_pb_toggle_title {
+      color: $wink-black;
+      &:after {
+        font-family: ETmodules;
+        font-weight: 400;
+        content: '\4b';
+        font-size: 40px;
+        right: 0;
+        position: absolute;
+      }
+    }
+  }
+  &.et_pb_toggle_close {
+    background-color: transparent;
+    .et_pb_toggle_title {
+      color: $wink-black;
+      &:before {
+        color: $wink-black;
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+/* dark mode switch */
+.dark-mode-switch {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 999;
+  a {
+    border: 0;
+  }
+}
+.dark-mode {
+  background-color: $wink-black !important;
+  a,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  #wink-mainmenu-toggle {
+    color: $wink-beige !important;
+  }
+  a {
+    &:hover {
+      color: $wink-yellow !important;
+    }
+  }
+  svg {
+    path {
+      fill: $wink-beige !important;
+    }
+  }
+}

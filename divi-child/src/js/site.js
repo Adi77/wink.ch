@@ -3,34 +3,18 @@ import './../scss/style.scss';
 import $ from 'jquery';
 
 $(document).ready(function ($) {
-  $('.mobile_menu_bar').click(function () {
-    //$('.mobile_menu_bar').css('transform', 'rotate(-90deg)');
-    /*
-
-    if ($(this).parent().hasClass('opened')) {
-      $('html, body').removeAttr('style');
-    } else {
-      $('html, body').css({ overflow: 'hidden' });
-    }
-
-    let curEl = $('.et_mobile_menu').find('.current-menu-item ');
-
-    if (curEl.parent().hasClass('sub-menu')) {
-      $(curEl).parent().css({
-        transition: 'all 0.5s ease',
-        height: 'auto',
-        'max-height': '600px',
-      });
-    }
-*/
-  });
-
   /* wink fullscreen hamburger menu toggle */
-  $('#menu-open').click(function () {
+  $('#wink-mainmenu-toggle').click(function () {
     $('.menu-row').toggleClass('active');
+    $('body').toggleClass('mainnav-active');
   });
   $('.menu-row a').click(function () {
     $('.menu-row').removeClass('active');
+    $('body').toggleClass('mainnav-active');
+  });
+
+  $('.dark-mode-switch a').click(function () {
+    $('body').toggleClass('dark-mode');
   });
 
   // Override the addClass to prevent fixed header class from being added
