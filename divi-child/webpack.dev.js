@@ -9,14 +9,24 @@ module.exports = {
       {
         test: /\.(c|sa|sc)ss$/,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
             },
           },
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
           {
             loader: 'sass-loader',
             options: {
