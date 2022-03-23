@@ -1,12 +1,13 @@
 #main-content {
   .wink-home-header {
+    padding-top: 100px;
     .et_pb_row {
-      width: 80%;
-      max-width: 80%;
+      width: 100%;
+      max-width: 100%;
       .et_pb_module {
         .et_pb_text_inner {
           a {
-            font-family: CabinetGroteskLight;
+            font-family: $wink-CabinetGroteskLight;
             font-size: 140px;
             border-bottom: 0;
             padding: 0 30px 0;
@@ -18,9 +19,33 @@
               border: 3px solid black;
               border-radius: 100px;
             }
+            &[href*='packaging'] {
+              &:hover {
+                background-color: $wink-moss-green;
+                border: 3px solid $wink-moss-green;
+              }
+            }
+            &[href*='branding'] {
+              &:hover {
+                background-color: $wink-yellow;
+                border: 3px solid $wink-yellow;
+              }
+            }
+            &[href*='digital'] {
+              &:hover {
+                background-color: $wink-violet;
+                border: 3px solid $wink-violet;
+              }
+            }
+            &[href*='marketing'] {
+              &:hover {
+                background-color: $wink-orange;
+                border: 3px solid $wink-orange;
+              }
+            }
           }
           strong {
-            font-family: CabinetGroteskExtrabold;
+            font-family: $wink-CabinetGroteskExtrabold;
           }
           img {
             width: auto;
@@ -33,6 +58,7 @@
     }
   }
 }
+
 .dark-mode {
   #main-content {
     .wink-home-header {
@@ -42,7 +68,27 @@
             a {
               color: $wink-beige !important;
               &:hover {
-                border-color: $wink-beige !important;
+                border-color: $wink-beige;
+              }
+              &[href*='packaging'] {
+                &:hover {
+                  border: 3px solid $wink-moss-green;
+                }
+              }
+              &[href*='branding'] {
+                &:hover {
+                  border: 3px solid $wink-yellow;
+                }
+              }
+              &[href*='digital'] {
+                &:hover {
+                  border: 3px solid $wink-violet;
+                }
+              }
+              &[href*='marketing'] {
+                &:hover {
+                  border: 3px solid $wink-orange;
+                }
               }
             }
           }

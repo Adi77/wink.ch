@@ -1,0 +1,8 @@
+.wink-teaser-title-text {
+  @include winkButton();
+  .small-txt {
+    p {
+      font-size: 20px;
+    }
+  }
+}

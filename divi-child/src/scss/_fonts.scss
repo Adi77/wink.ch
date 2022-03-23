@@ -33,3 +33,17 @@
   src: url('../fonts/Switzer-Bold.woff2') format('woff2'),
     url('../fonts/Switzer-Bold.woff') format('woff');
 }
+
+h1 {
+  font-family: $wink-CabinetGroteskLight;
+  strong {
+    font-family: $wink-CabinetGroteskExtrabold;
+  }
+}
+h2 {
+  font-family: $wink-SwitzerRegular;
+}
+
+p {
+  font-family: $wink-SwitzerRegular;
+}

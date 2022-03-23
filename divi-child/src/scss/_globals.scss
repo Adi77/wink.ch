@@ -2,17 +2,19 @@
 
 body {
   background-color: $wink-beige;
-  #main-header {
-    background-color: transparent;
-    box-shadow: none;
-    &.et-fixed-header {
-      box-shadow: none !important;
-    }
-  }
-
+  color: $wink-black;
+}
+.et_pb_section {
+  background-color: transparent;
+}
+#et-main-area {
   #main-content {
+    //argin: 0 10%;
     .et_pb_section {
-      background-color: transparent;
+      .et_pb_row {
+        width: 80%;
+        max-width: 80%;
+      }
     }
   }
 }
@@ -64,44 +66,29 @@ input[type='checkbox']:checked + label::after {
   transform: rotate(-45deg);
 }
 
-/* headings paddings */
-.et_pb_section h1,
-.et_pb_section h2 {
+/* text formatting */
+
+/* headings  */
+
+h1,
+h2,
+h3,
+h4 {
+  color: $wink-black;
   padding-bottom: 50px;
 }
-.et_pb_section h3 {
-  padding-bottom: 30px;
+
+h1 {
+  font-size: 100px;
+}
+h2 {
+  font-size: 65px;
 }
 
-/* headings font-sizes  */
-
-.et_pb_section h1 {
-  font-size: 45px;
-  @media only screen and (max-width: 1760px) {
-    font-size: 35px;
-  }
-  @include diviBreakpoint(768) {
-    font-size: 22px;
-  }
-  @include diviBreakpoint(980) {
-    font-size: 30px;
-  }
-}
-
-.et_pb_section h2 {
-  font-size: 38px;
-}
-.et_pb_section h3 {
-  font-size: 36px;
-}
-.et_pb_section h4 {
-  font-size: 28px;
-}
-
-/* paragraph font-sizes */
+/* paragraph */
 
 p {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: $wink-light;
   line-height: 1.4;
   @include diviBreakpoint(1405) {

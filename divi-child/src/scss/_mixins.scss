@@ -32,69 +32,57 @@
   }
 }
 
-@mixin greenButton() {
+@mixin winkButton() {
   .et_pb_button,
+  .et_pb_bg_layout_light.et_pb_button,
   .button {
-    font-size: 28px;
-    @include diviBreakpoint(1580) {
-      font-size: 20px;
-    }
-    background-color: #1b3a08;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: transparent;
     border: 0 !important;
     border-radius: 0;
-    padding: 10px 20px !important;
-    color: white;
-    font-size: 28px;
-    font-weight: 500;
+    padding: 10px 20px 10px 0 !important;
+    color: $wink-black;
+
     text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
+    transition: none;
     &:hover {
-      background-color: #807450;
-      //border: none;
+      transition: none;
+      background-color: transparent;
+    }
+    &::after {
+      font-family: ETmodules;
+      font-size: 30px;
+      content: '\24';
+      position: relative;
+      top: 7px;
+      margin-left: 10px;
+      opacity: 1;
     }
   }
 }
-
-@mixin brownButtonInvert() {
-  .et_pb_button,
-  .button {
-    font-size: 28px;
+@mixin winkTag() {
+  a {
+    font-family: $wink-CabinetGroteskExtrabold;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    border: 0;
+    border: 3px solid $wink-black;
+    border-radius: 100px;
+    padding: 6px 10px;
+    margin: 0 0 15px 30px;
     @include diviBreakpoint(1580) {
-      font-size: 20px;
+      margin-left: 5px;
     }
-    border-radius: 0;
-    border-width: 1px;
-
-    font-weight: 600;
-    color: white;
-    border-color: white;
+    display: inline-block;
     &:hover {
-      color: $abb-brown !important;
-      background-color: white !important;
+      border: 3px solid $wink-yellow;
+      background-color: $wink-yellow;
     }
-  }
-}
-
-@mixin brownButton($class: '') {
-  .et_pb_button,
-  .button {
-    font-size: 28px;
-    @include diviBreakpoint(1580) {
-      font-size: 20px;
-    }
-    border-radius: 0;
-    border-width: 1px;
-
-    font-weight: 600;
-    color: $abb-brown;
-
-    border-color: $abb-brown;
-    &:hover {
-      color: white;
-      //border: 1px solid $abb-brown !important;
-      background-color: $abb-brown;
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

@@ -1,0 +1,105 @@
+footer {
+  padding-top: 120px;
+  .et_builder_inner_content {
+    .et_pb_section {
+      padding-bottom: 20px;
+      .et_pb_row_0_tb_footer {
+        .et_pb_column {
+          .et_pb_module {
+            margin: 0;
+
+            .et_pb_text_inner {
+              p {
+                font-family: $wink-SwitzerLight;
+                font-size: 100px;
+                line-height: 1;
+                @include diviBreakpoint(1580) {
+                  font-size: 4.2vw;
+                }
+              }
+            }
+            @include winkButton();
+            .et_pb_button_module_wrapper {
+              a {
+                padding-top: 0;
+              }
+            }
+          }
+        }
+      }
+      /* logo */
+      .et_pb_row_1_tb_footer {
+        padding-top: 80px;
+        padding-bottom: 0;
+        width: 80%;
+        max-width: 80%;
+      }
+      /* addresses */
+      .et_pb_row_2_tb_footer {
+        width: 80%;
+        max-width: 80%;
+        .et_pb_column_4_tb_footer {
+          .et_pb_module {
+            float: left;
+            margin-right: 3vw;
+            .et_pb_text_inner {
+              p {
+                @include diviBreakpoint(1580) {
+                  font-size: 1.2vw;
+                }
+                strong {
+                  font-family: $wink-SwitzerBold;
+                }
+              }
+            }
+            /* phone and email */
+            &.et_pb_text_3_tb_footer {
+              margin-top: 24px;
+            }
+          }
+        }
+        /* wink categories tags */
+        .et_pb_column_5_tb_footer {
+          .et_pb_module {
+            .et_pb_text_inner {
+              @include winkTag();
+            }
+          }
+        }
+      }
+      /* copyright bottom footer */
+      .et_pb_row_3_tb_footer {
+        width: 80%;
+        max-width: 80%;
+        padding-bottom: 0;
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  footer {
+    padding-top: 0;
+    .et_builder_inner_content {
+      .et_pb_section {
+        /* wink categories tags */
+        .et_pb_row_2_tb_footer {
+          .et_pb_column {
+            .et_pb_module {
+              a {
+                border-color: $wink-beige !important;
+                &:hover {
+                  border-color: transparent !important;
+                  color: $wink-black !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

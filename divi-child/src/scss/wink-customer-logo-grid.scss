@@ -1,0 +1,33 @@
+.et_pb_section {
+  &.wink-customer-logo-grid {
+    margin-top: 120px;
+    padding-top: 160px;
+    padding-bottom: 140px;
+    background-color: $wink-black;
+    h2 {
+      color: $wink-beige;
+    }
+    a {
+      border: 0;
+      padding: 0 20px;
+    }
+    .et_pb_code {
+      svg {
+        path,
+        polygon {
+          fill: $wink-beige !important;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .et_pb_section {
+    &.wink-customer-logo-grid {
+      margin-top: 0;
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+}
