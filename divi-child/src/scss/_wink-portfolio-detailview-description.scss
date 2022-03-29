@@ -1,0 +1,69 @@
+.wink-portfolio-detailview-description {
+  background-color: $wink-beige;
+  padding-top: 0;
+  padding-bottom: 0;
+  .et_pb_row {
+    padding-top: 10px;
+    .et_pb_button_module_wrapper {
+      margin-bottom: 60px;
+      @include winkButton();
+      .et_pb_button {
+        &::after {
+          content: '\4c';
+          top: 5px;
+        }
+        &.open {
+          &::after {
+            content: '\4b';
+          }
+        }
+      }
+    }
+    .et_pb_text_inner {
+      h4 {
+        padding-bottom: 20px;
+      }
+      p {
+        font-size: 20px;
+      }
+      ul {
+        padding-left: 0;
+        font-family: $wink-SwitzerRegular;
+
+        li {
+          font-size: 18px;
+          border-bottom: 2px solid $wink-black;
+          padding-bottom: 5px;
+          margin-bottom: 5px;
+          &:before {
+            content: '';
+            position: inherit;
+            margin-left: inherit;
+          }
+        }
+      }
+    }
+    &.wink-project-fields-list-row {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .wink-portfolio-detailview-description {
+    background-color: $wink-black;
+    .et_pb_row {
+      .et_pb_text_inner {
+        ul {
+          li {
+            color: $wink-beige;
+            border-color: $wink-beige;
+          }
+        }
+      }
+    }
+  }
+}

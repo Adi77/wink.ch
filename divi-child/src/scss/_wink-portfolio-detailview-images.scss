@@ -1,0 +1,23 @@
+.wink-portfolio-detailview-images {
+  background-color: $wink-beige;
+  .et_pb_row.fullwidth {
+    width: 100% !important;
+    max-width: 100% !important;
+    img {
+      width: 100vw !important;
+    }
+  }
+  .et_pb_row {
+    width: 90% !important;
+    max-width: 90% !important;
+    img {
+      width: 100vw !important;
+    }
+  }
+}
+
+.dark-mode {
+  .wink-portfolio-detailview-images {
+    background-color: $wink-black;
+  }
+}

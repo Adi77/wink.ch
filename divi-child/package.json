@@ -31,6 +31,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^6.0.0",
     "postcss-loader": "^3.0.0",
+    "resolve-url-loader": "^5.0.0",
     "sass-loader": "^10.2.0",
     "style-loader": "^0.23.1",
     "stylelint": "^9.9.0",

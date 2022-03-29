@@ -1,0 +1,22 @@
+.wink-portfolio-detailview-lead {
+  background-color: $wink-beige;
+  padding-bottom: 0;
+  p {
+    font-family: $wink-CabinetGroteskLight;
+    font-size: 100px;
+    strong {
+      font-family: $wink-CabinetGroteskExtrabold;
+    }
+  }
+  img {
+    width: auto;
+    height: 131px;
+    margin: 0 100px -28px;
+  }
+}
+
+.dark-mode {
+  .wink-portfolio-detailview-lead {
+    background-color: $wink-black;
+  }
+}

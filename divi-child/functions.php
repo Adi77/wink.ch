@@ -18,9 +18,9 @@ function divi_child_theme_scripts()
         case 'local':
         case 'development':
             // load assets (dev)
-            // Prevent loading css in backend
+            // Prevent loading css for global templates editing in backend
             $current_url = home_url(add_query_arg(null, null));
-            if (!is_admin() && ($GLOBALS['pagenow'] !== 'wp-login.php') && ($GLOBALS['pagenow'] !== 'post.php') && strpos($current_url, '/wp-admin/') === false && strpos($current_url, '/et_header_layout/') === false) {
+            if (strpos($current_url, '/et_header_layout/') === false) {
                 wp_enqueue_script('divi_child_theme-scripts-dev', 'http://localhost:8080/site.js', array(), null, true);
                 //wp_enqueue_script('divi_child_theme-admin-scripts-dev', 'http://localhost:8080/admin.js');
             }

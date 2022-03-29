@@ -83,6 +83,9 @@ h1 {
 h2 {
   font-size: 65px;
 }
+.et_pb_column h4 {
+  font-size: 25px;
+}
 
 /* paragraph */
 
@@ -166,6 +169,19 @@ table {
   }
 }
 
+/* wink divider row */
+.wink-divider-row {
+  width: 100% !important;
+  max-width: 100% !important;
+  .et_pb_divider {
+    &::before {
+      border-top-color: $wink-black;
+      height: 2px;
+      border-top-width: 2px;
+    }
+  }
+}
+
 /* dark mode switch */
 .dark-mode-switch {
   position: fixed;
@@ -180,12 +196,14 @@ table {
 }
 .dark-mode {
   background-color: $wink-black !important;
-  a,
   p,
   h1,
   h2,
   h3,
-  h4,
+  h4 {
+    color: $wink-beige !important;
+  }
+  a,
   #wink-mainmenu-toggle {
     color: $wink-beige !important;
     &:hover {

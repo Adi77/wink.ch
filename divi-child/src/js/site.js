@@ -24,6 +24,8 @@ $(document).ready(function ($) {
     }
   });
 
+  /* set blendmode effect to normal if menu item is clicked */
+
   $('.menu-row a').click(function () {
     $('.menu-row').removeClass('active');
     $('body').toggleClass('mainnav-active');
@@ -87,6 +89,16 @@ $(document).ready(function ($) {
       $(this).find('.et_pb_portfolio').append(portfolioItemsId);
     });
   }
+
+  /* portfolio detail page project field details more toggle */
+
+  $('.wink-portfolio-detailview-description .et_pb_button').click(function (
+    event
+  ) {
+    event.preventDefault();
+    $(this).toggleClass('open');
+    $('.wink-project-fields-list-row').toggleClass('show');
+  });
 
   /* nice select box */
   //customSelect();

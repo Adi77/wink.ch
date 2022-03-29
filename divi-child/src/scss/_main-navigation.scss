@@ -47,6 +47,8 @@ header {
         text-align: right;
         .et_pb_toggle {
           border-bottom: 3px solid $wink-black;
+          margin-bottom: 0;
+          padding-bottom: 25px;
           .et_pb_toggle_title {
             font-family: $wink-CabinetGroteskExtrabold;
             font-size: 5vw;
