@@ -4,18 +4,26 @@ footer {
     .et_pb_section {
       padding-bottom: 20px;
       .et_pb_row_0_tb_footer {
+        width: 90%;
+        max-width: 90%;
         .et_pb_column {
+          &.et_pb_column_1_tb_footer {
+            width: 20%;
+          }
+          &.et_pb_column_2_tb_footer {
+            width: 46%;
+          }
           .et_pb_module {
             margin: 0;
-
+            .et_pb_image_wrap {
+              padding-right: 20px;
+            }
             .et_pb_text_inner {
               p {
                 font-family: $wink-SwitzerLight;
-                font-size: 100px;
+                //font-size: 100px;
+                font-size: 4.2vw;
                 line-height: 1;
-                @include diviBreakpoint(1580) {
-                  font-size: 4.2vw;
-                }
               }
             }
             @include winkButton();
@@ -44,8 +52,11 @@ footer {
             margin-right: 3vw;
             .et_pb_text_inner {
               p {
-                @include diviBreakpoint(1580) {
-                  font-size: 1.2vw;
+                font-size: 1.2vw;
+                a {
+                  &:hover {
+                    color: $wink-yellow;
+                  }
                 }
                 strong {
                   font-family: $wink-SwitzerBold;
@@ -67,6 +78,7 @@ footer {
           }
         }
       }
+
       /* copyright bottom footer */
       .et_pb_row_3_tb_footer {
         width: 80%;
@@ -75,6 +87,10 @@ footer {
         p {
           font-size: 16px;
         }
+      }
+      /* wink social icons */
+      .et_pb_column_7_tb_footer {
+        padding-left: 30px;
       }
     }
   }
@@ -93,7 +109,20 @@ footer {
                 border-color: $wink-beige !important;
                 &:hover {
                   border-color: transparent !important;
-                  color: $wink-black !important;
+                }
+              }
+              &.et_pb_text_3_tb_footer {
+                a {
+                  &:hover {
+                    color: $wink-yellow !important;
+                  }
+                }
+              }
+              &.et_pb_text_4_tb_footer {
+                a {
+                  &:hover {
+                    color: $wink-beige !important;
+                  }
                 }
               }
             }

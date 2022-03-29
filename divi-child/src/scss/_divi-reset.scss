@@ -42,17 +42,20 @@
 }
 
 .et-pb-controllers {
-  text-align: right;
-  padding-right: 50px;
+  margin: 0 auto;
+  position: relative;
+  top: -24px;
   a {
     text-indent: 9999px;
-    background-color: white;
-    border-radius: 16px;
-    width: 16px;
-    height: 16px;
+    background-color: $wink-black;
+    border: 1px solid $wink-beige;
+    transform: rotate(45deg);
+    border-radius: 0;
+    width: 8px;
+    height: 8px;
     opacity: 1;
     &.et-pb-active-control {
-      background-color: $wink-darkgreen;
+      background-color: $wink-beige;
     }
   }
 }

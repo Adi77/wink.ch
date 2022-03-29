@@ -2,6 +2,9 @@
   @include winkButton();
   .et_pb_row {
     padding: 0;
+    h2 {
+      padding-bottom: 30px;
+    }
     .et_pb_portfolio {
       margin-left: 5%;
       text-align: center;

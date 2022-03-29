@@ -49,10 +49,7 @@ header {
           border-bottom: 3px solid $wink-black;
           .et_pb_toggle_title {
             font-family: $wink-CabinetGroteskExtrabold;
-            font-size: 110px;
-            @include diviBreakpoint(1580) {
-              font-size: 5vw;
-            }
+            font-size: 5vw;
           }
           .et_pb_toggle_content {
             @include winkTag();
@@ -125,6 +122,7 @@ header {
     z-index: 999;
   }
 }
+
 .dark-mode {
   header {
     #wink-mainnav {

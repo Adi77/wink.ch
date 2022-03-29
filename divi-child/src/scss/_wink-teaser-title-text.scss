@@ -1,4 +1,14 @@
 .wink-teaser-title-text {
+  .et_pb_row_2 {
+    .et_pb_column_2 {
+      .et_pb_image {
+        .et_pb_image_wrap {
+          left: -80px;
+        }
+      }
+    }
+  }
+
   @include winkButton();
   .small-txt {
     p {

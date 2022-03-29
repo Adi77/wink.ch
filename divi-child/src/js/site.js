@@ -17,6 +17,7 @@ $(document).ready(function ($) {
       $('header').removeAttr('style');
     } else {
       $('header').css('z-index', '999');
+      $('header').css('mix-blend-mode', 'normal');
       setTimeout(function () {
         $('header').removeAttr('style');
       }, 1000);
@@ -26,6 +27,7 @@ $(document).ready(function ($) {
   $('.menu-row a').click(function () {
     $('.menu-row').removeClass('active');
     $('body').toggleClass('mainnav-active');
+    $('header').css('mix-blend-mode', 'normal');
   });
 
   /* Dark mode is set in local storage on page load */

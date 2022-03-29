@@ -1,0 +1,43 @@
+.wink-header-big-image {
+  height: 80vh;
+}
+
+/* light color header for team page */
+.single-project {
+  header {
+    mix-blend-mode: difference;
+    #wink-mainnav {
+      .et_pb_row {
+        .wink-mainmenu-toggle-container {
+          #wink-mainmenu-toggle {
+            color: $wink-beige;
+          }
+        }
+      }
+      svg {
+        path {
+          fill: $wink-beige;
+        }
+      }
+    }
+  }
+  &.mainnav-active {
+    header {
+      mix-blend-mode: normal;
+      #wink-mainnav {
+        .et_pb_row {
+          .wink-mainmenu-toggle-container {
+            #wink-mainmenu-toggle {
+              color: $wink-black;
+            }
+          }
+        }
+        svg {
+          path {
+            fill: $wink-black;
+          }
+        }
+      }
+    }
+  }
+}

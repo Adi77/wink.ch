@@ -4,18 +4,22 @@
     padding-top: 160px;
     padding-bottom: 140px;
     background-color: $wink-black;
-    h2 {
-      color: $wink-beige;
-    }
-    a {
-      border: 0;
-      padding: 0 20px;
-    }
-    .et_pb_code {
-      svg {
-        path,
-        polygon {
-          fill: $wink-beige !important;
+    .et_pb_row {
+      padding-top: 0;
+      padding-bottom: 0;
+      h2 {
+        color: $wink-beige;
+      }
+      a {
+        border: 0;
+        padding: 0 20px;
+      }
+      .et_pb_code {
+        svg {
+          path,
+          polygon {
+            fill: $wink-beige !important;
+          }
         }
       }
     }

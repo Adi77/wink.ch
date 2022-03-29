@@ -1,0 +1,52 @@
+.wink-video-header {
+  padding-top: 0;
+  .et_pb_row {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0;
+    .et_pb_video_overlay_hover {
+      a {
+        border: 0;
+      }
+    }
+  }
+}
+/* light color header for team page */
+.page-id-29 {
+  header {
+    mix-blend-mode: difference;
+    #wink-mainnav {
+      .et_pb_row {
+        .wink-mainmenu-toggle-container {
+          #wink-mainmenu-toggle {
+            color: $wink-beige;
+          }
+        }
+      }
+      svg {
+        path {
+          fill: $wink-beige;
+        }
+      }
+    }
+  }
+  &.mainnav-active {
+    header {
+      mix-blend-mode: normal;
+      #wink-mainnav {
+        .et_pb_row {
+          .wink-mainmenu-toggle-container {
+            #wink-mainmenu-toggle {
+              color: $wink-black;
+            }
+          }
+        }
+        svg {
+          path {
+            fill: $wink-black;
+          }
+        }
+      }
+    }
+  }
+}

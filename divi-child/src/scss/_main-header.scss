@@ -18,7 +18,7 @@ header {
   right: 0;
   top: 0;
   z-index: 100;
-  background-color: $wink-beige;
+  background-color: transparent;
 }
 
 .logged-in {
@@ -29,6 +29,6 @@ header {
 
 .dark-mode {
   header {
-    background-color: $wink-black;
+    // background-color: $wink-black;
   }
 }
