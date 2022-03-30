@@ -15,6 +15,10 @@ footer {
           }
           .et_pb_module {
             margin: 0;
+            svg {
+              height: 75px;
+              width: 246px;
+            }
             .et_pb_image_wrap {
               padding-right: 20px;
             }
@@ -98,7 +102,6 @@ footer {
 
 .dark-mode {
   footer {
-    padding-top: 0;
     .et_builder_inner_content {
       .et_pb_section {
         /* wink categories tags */
