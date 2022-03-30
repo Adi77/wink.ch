@@ -1,0 +1,103 @@
+.wink-blog-list {
+  .el-dbe-filterable-categories {
+    .el-dbe-post-categories {
+      text-align: left;
+      li {
+        margin-bottom: 0;
+        a {
+          background: transparent;
+
+          font-family: $wink-SwitzerRegular;
+          font-size: 80px;
+          border-radius: 100px;
+          border: 3px solid transparent;
+          padding: 6px 18px;
+          &:hover {
+            background-color: transparent;
+            border: 3px solid $wink-black;
+            color: $wink-black;
+          }
+          &.el-dbe-active-category {
+            color: inherit;
+            background-color: inherit;
+            border: 3px solid $wink-black;
+            &:hover {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .et_pb_post_extra {
+    &.el_dbe_block_extended {
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      .post-media-container {
+        height: inherit;
+        .post-media {
+          height: inherit;
+        }
+      }
+      .post-content {
+        background: transparent;
+        padding: 20px 0 0;
+        .entry-title {
+          margin-top: 0;
+          a {
+            border: 0;
+          }
+        }
+      }
+      .post-categories {
+        position: relative;
+        padding: 0;
+        @include winkTag();
+
+        a {
+          color: $wink-black;
+          margin-left: 0;
+          margin-right: 5px;
+          &.el_term_alle {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .wink-blog-list {
+    .el-dbe-filterable-categories {
+      .el-dbe-post-categories {
+        li {
+          a {
+            &.el-dbe-active-category,
+            &:hover {
+              color: $wink-beige !important;
+              border: 3px solid $wink-beige;
+            }
+          }
+        }
+      }
+    }
+
+    .et_pb_post_extra {
+      &.el_dbe_block_extended {
+        .post-categories {
+          a {
+            border: 3px solid $wink-beige;
+            &:hover {
+              border: 3px solid transparent;
+              color: $wink-black !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

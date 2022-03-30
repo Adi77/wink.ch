@@ -20,6 +20,7 @@ body {
 }
 
 /* a-tag href content */
+
 a {
   color: $wink-black;
   border-bottom: 1px solid $wink-darkgreen;
@@ -139,6 +140,7 @@ table {
 }
 
 /* divi accordion */
+
 .et_pb_toggle {
   border: 0;
   padding-bottom: 35px;
@@ -170,6 +172,7 @@ table {
 }
 
 /* wink divider row */
+
 .wink-divider-row {
   width: 100% !important;
   max-width: 100% !important;
@@ -182,7 +185,22 @@ table {
   }
 }
 
+/* social icons */
+
+html .et_pb_social_icon {
+  a.icon {
+    top: -8px;
+    position: relative;
+    background-color: transparent !important;
+    &:before {
+      color: $wink-black !important;
+      font-size: 26px !important;
+    }
+  }
+}
+
 /* dark mode switch */
+
 .dark-mode-switch {
   position: fixed;
   left: 20px;
@@ -214,6 +232,14 @@ table {
   svg {
     path {
       fill: $wink-beige !important;
+    }
+  }
+
+  .et_pb_social_icon {
+    a.icon {
+      &:before {
+        color: $wink-beige !important;
+      }
     }
   }
 }

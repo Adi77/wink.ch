@@ -100,6 +100,12 @@ $(document).ready(function ($) {
     $('.wink-project-fields-list-row').toggleClass('show');
   });
 
+  /* Blog post list - set filter 'Alle' to active state on page load */
+
+  $('.el-dbe-post-categories li:first-child a').addClass(
+    'el-dbe-active-category'
+  );
+
   /* nice select box */
   //customSelect();
   /* If the user clicks anywhere outside the select box,
