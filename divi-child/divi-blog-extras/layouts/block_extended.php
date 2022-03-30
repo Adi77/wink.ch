@@ -214,7 +214,7 @@ if ('on' === $show_content) {
         $output .= '<div class="post-data">' . wpautop(el_blog_strip_shortcodes(get_the_excerpt($post_id))) . '</div>';
     } else {
         if (0 !== intval($excerpt_length)) {
-            $output .= '<div class="post-data">' . wpautop(strip_shortcodes(el_blog_truncate_post($excerpt_length, false, $post_object, true))) . '</div>';
+            //$output .= '<div class="post-data">' . wpautop(strip_shortcodes(el_blog_truncate_post($excerpt_length, false, $post_object, true))) . '</div>';
         }
     }
 }

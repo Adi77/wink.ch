@@ -9,28 +9,28 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
 ?>
 
 <div id="main-content">
-	<?php
+    <?php
         if (et_builder_is_product_tour_enabled()):
             // load fullwidth page in Product Tour mode
             while (have_posts()): the_post(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class('et_pb_post'); ?>>
-		<div class="entry-content">
-			<?php
+    <article id="post-<?php the_ID(); ?>" <?php post_class('et_pb_post'); ?>>
+        <div class="entry-content">
+            <?php
                         the_content();
                     ?>
-		</div>
+        </div>
 
-	</article>
+    </article>
 
-	<?php endwhile;
+    <?php endwhile;
         else:
     ?>
 
-	<div id="content-area" class="clearfix">
+    <div id="content-area" class="clearfix">
 
-		<?php while (have_posts()) : the_post(); ?>
-		<?php
+        <?php while (have_posts()) : the_post(); ?>
+        <?php
                 /**
                  * Fires before the title and post meta on single posts.
                  *
@@ -38,22 +38,27 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
                  */
                 do_action('et_before_post');
                 ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class('et_pb_post'); ?>>
-			<?php if (('off' !== $show_default_title && $is_page_builder_used) || ! $is_page_builder_used) { ?>
-			<div class="et_post_meta_wrapper">
-				<h1 class="entry-title"><?php the_title(); ?>
-				</h1>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('et_pb_post'); ?>>
+            <?php if (('off' !== $show_default_title && $is_page_builder_used) || ! $is_page_builder_used) { ?>
+            <div class="et_post_meta_wrapper">
 
-				<?php
+
+                <?php
                             if (! post_password_required()) :
+?>
+                <div class="title-and-tags">
+                    <?php et_divi_post_meta(); ?>
+                    <h1 class="entry-title"><?php the_title(); ?>
+                    </h1>
 
-                                et_divi_post_meta();
+                </div> <?php
+                                
 
                                 $thumb = '';
 
-                                $width = (int) apply_filters('et_pb_index_blog_image_width', 1080);
+                                $width = (int) apply_filters('et_pb_index_blog_image_width', 1254);
 
-                                $height = (int) apply_filters('et_pb_index_blog_image_height', 675);
+                                $height = (int) apply_filters('et_pb_index_blog_image_height', 700);
                                 $classtext = 'et_featured_image';
                                 $titletext = get_the_title();
                                 $alttext = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
@@ -76,7 +81,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
                                 }
                             ?>
 
-				<?php
+                <?php
                                 $text_color_class = et_divi_get_post_text_color();
 
                                 $inline_style = et_divi_get_post_bg_inline_style();
@@ -124,30 +129,31 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
 
                             endif;
                         ?>
-			</div>
-			<?php  } ?>
 
-			<div class="entry-content">
-				<?php
+            </div>
+            <?php  } ?>
+
+            <div class="entry-content">
+                <?php
                         do_action('et_before_content');
 
                         the_content();
 
                         wp_link_pages(array( 'before' => '<div class="page-links">' . esc_html__('Pages:', 'Divi'), 'after' => '</div>' ));
                     ?>
-			</div>
-			<div class="et_post_meta_wrapper">
-				<?php
+            </div>
+            <div class="et_post_meta_wrapper">
+                <?php
                     if (et_get_option('divi_468_enable') === 'on') {
                         echo '<div class="et-single-post-ad">';
                         if (et_get_option('divi_468_adsense') !== '') {
                             echo et_core_intentionally_unescaped(et_core_fix_unclosed_html_tags(et_get_option('divi_468_adsense')), 'html');
                         } else { ?>
-				<a
-					href="<?php echo esc_url(strval(et_get_option('divi_468_url'))); ?>"><img
-						src="<?php echo esc_attr(et_get_option('divi_468_image')); ?>"
-						alt="468" class="foursixeight" /></a>
-				<?php 	}
+                <a
+                    href="<?php echo esc_url(strval(et_get_option('divi_468_url'))); ?>"><img
+                        src="<?php echo esc_attr(et_get_option('divi_468_image')); ?>"
+                        alt="468" class="foursixeight" /></a>
+                <?php 	}
                         echo '</div>';
                     }
 
@@ -162,14 +168,24 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
                             comments_template('', true);
                         }
                     ?>
-			</div>
-		</article>
+            </div>
+        </article>
 
-		<?php endwhile; ?>
-	</div>
+        <?php endwhile; ?>
+    </div>
 
 
-	<?php endif; ?>
+    <?php endif; ?>
+    <span class="dark-mode-switch">
+        <a href="#" alt="dark mode switch">
+            <svg id="dark-mode-toggle" data-name="Dark mode toggle" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 29.95 29.95">
+                <path
+                    d="M300.58,436.87a15,15,0,1,1,14.9-15A15,15,0,0,1,300.58,436.87Zm0-2.13V409a12.85,12.85,0,1,0,0,25.7Z"
+                    transform="translate(-285.52 -406.91)" />
+            </svg>
+        </a>
+    </span>
 </div>
 
 <?php

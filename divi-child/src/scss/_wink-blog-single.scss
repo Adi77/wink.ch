@@ -1,0 +1,115 @@
+.single-post {
+  .et_pb_post {
+    background-color: $wink-beige;
+    margin-bottom: 0;
+    .et_post_meta_wrapper {
+      padding-bottom: 80px;
+      .title-and-tags {
+        position: absolute;
+        top: 20vh;
+        left: 40vw;
+        @include diviBreakpoint(1580) {
+          left: 53vw;
+        }
+        margin-right: 10%;
+      }
+
+      .post-meta {
+        @include winkTag();
+        a {
+          margin-left: 0;
+          margin-right: 30px;
+        }
+      }
+      .entry-title {
+        padding-top: 60px;
+      }
+      img {
+        width: 700px;
+      }
+    }
+    .entry-content {
+      h2,
+      h3 {
+        padding-bottom: 30px;
+      }
+      .blog_single-lead-text-row {
+        margin-bottom: 230px;
+      }
+      .blog_single-description-text-row {
+        p {
+          font-size: 20px;
+        }
+      }
+      .blog-single-image-rightborder-row {
+        margin: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        .et_pb_image {
+          text-align: right;
+          margin-top: 60px;
+          img {
+            width: 68.5vw;
+          }
+        }
+        margin-bottom: 30px;
+      }
+      .blog-single-image-fullwidth-row {
+        width: 100% !important;
+        max-width: 100% !important;
+        img {
+          width: 100vw;
+          margin-top: 40px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .wink-blog-list {
+      &.further-reading {
+        margin-top: 100px;
+        .el-dbe-blog-extra {
+          display: flex;
+          .et_pb_post {
+            width: 31%;
+            margin-right: 3.5%;
+
+            display: flex;
+            flex-direction: column;
+            float: none;
+            padding-bottom: 0;
+
+            .post-media {
+              a {
+                border: 0;
+              }
+            }
+            .post-content {
+              .abs-url {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                text-indent: -9999px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  &.single-post {
+    .et_pb_post {
+      background-color: $wink-black;
+      .post-meta {
+        a {
+          border: 3px solid $wink-beige;
+        }
+      }
+    }
+  }
+}
