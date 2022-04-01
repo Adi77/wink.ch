@@ -41,7 +41,8 @@ function divi_child_theme_scripts()
           break;
       }
 }
-add_action('wp_enqueue_scripts', 'divi_child_theme_scripts');
+add_action('wp_enqueue_scripts', 'divi_child_theme_scripts', 9999);
+
 
 // Remove unwanted SVG filter injection WP
 remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
@@ -54,7 +55,6 @@ function crunchify_disable_unused_loading_css_js()
 {
   
     // Check if it's any of WooCommerce page
-       
     if (get_the_slug() != 'blog') {
       
       ## Dequeue divi blog extras styles
