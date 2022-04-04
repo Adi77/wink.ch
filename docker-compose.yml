@@ -3,6 +3,7 @@ version: '3'
 services:
   wp:
     image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    user: 1000:1000
     ports:
       - 127.0.0.1:80:80 # change ip if required
     volumes:
@@ -17,18 +18,18 @@ services:
       WORDPRESS_DB_PASSWORD: "wordpress"
     depends_on:
       - db
-
+  
   wpcli:
     image: wordpress:cli
-    user: xfs
-    volumes:
-      - ./wp-app:/var/www/html
-    depends_on:
-      - db
+    volumes_from:
       - wp
+    links:
+      - db
+    entrypoint: wp  
+    command: "--info"
 
   db:
-    image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    image: mariadb:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
     ports:
       - 127.0.0.1:3306:3306 # change ip if required
     command: [
