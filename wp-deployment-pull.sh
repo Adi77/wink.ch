@@ -1,10 +1,13 @@
 #!/bin/bash
 
+source .env
+set +o allexport
+
 serverRootRemote=/home/monikazi
 webRootRelativeRemote=www/www.wink.ch/staging2
-wpContentFolderLocationLocal=wp-app/wp-content
+wpContentFolderLocationLocal=www/$VIRTUAL_HOST/wp-content
 
-migrationDbDumpFolderLocationLocal=migration
+migrationDbDumpFolderLocationLocal=www
 domainNameProduction=https://www.wink.ch/staging2
 migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
 prodServerSsh=monikazi@wink.ch
@@ -79,31 +82,32 @@ wp-files_sync() {
 }
 
 wp-database_sync() {
-    echo "******* Do you wish to export db-dump to ${migrationDbDumpFolderLocationRemote}/export.sql.gz File and download it?"
+    echo "******* Do you wish to export db-dump to ${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz File and download it?"
     SCRIPT="cd ${migrationDbDumpFolderLocationRemote}
-            php ${serverRootRemote}/wp-cli.phar db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationRemote}/export.sql.gz"
+            php ${serverRootRemote}/wp-cli.phar db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz"
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
             ssh ${prodServerSsh} "${SCRIPT}"
-            scp ${prodServerSsh}:${migrationDbDumpFolderLocationRemote}/export.sql.gz ${migrationDbDumpFolderLocationLocal}
+            scp ${prodServerSsh}:${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz ${migrationDbDumpFolderLocationLocal}
 
             break
             ;;
         No) break ;;
         esac
     done
-    if test -f "${migrationDbDumpFolderLocationLocal}/export.sql.gz"; then
-        echo "******* db dump file export.sql.gz exists. ********"
+    if test -f "${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz"; then
+        echo "******* db dump file $DB_NAME.sql.gz exists. ********"
 
-        echo "******* Do you wish to extract db-dump export.sql.gz and import it to database (incl. search replace domain)?"
+        echo "******* Do you wish to extract db-dump $DB_NAME.sql.gz and import it to database (incl. search replace domain)?"
         select yn in "Yes" "No"; do
             case $yn in
             Yes)
-                gunzip -k ${migrationDbDumpFolderLocationLocal}/export.sql.gz
-                docker-compose run --rm wpcli db query <${migrationDbDumpFolderLocationLocal}/export.sql
-                docker-compose run --rm wpcli search-replace ${domainNameProduction} 'http://localhost' --all-tables --skip-plugins --skip-packages --verbose --skip-columns=guid --skip-tables=wp_users
-                rm ${migrationDbDumpFolderLocationLocal}/export.sql
+                gunzip -k ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz
+                cd ${migrationDbDumpFolderLocationLocal}
+                docker-compose run --rm wpcli db import <$dbName.sql
+                docker-compose run --rm wpcli search-replace ${domainNameProduction} 'http://'$VIRTUAL_HOST --skip-columns=guid --skip-tables=wp_users
+                rm $DB_NAME.sql
                 break
                 ;;
             No) exit ;;

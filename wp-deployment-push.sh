@@ -1,10 +1,13 @@
 #!/bin/bash
 
+source .env
+set +o allexport
+
 serverRootRemote=/home/monikazi
 webRootRelativeRemote=www/www.wink.ch/staging2
-wpContentFolderLocationLocal=wp-app/wp-content
+wpContentFolderLocationLocal=www/$VIRTUAL_HOST/wp-content
 
-migrationDbDumpFolderLocationLocal=migration
+migrationDbDumpFolderLocationLocal=www
 domainNameProduction=https://www.wink.ch/staging2
 migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
 prodServerSsh=monikazi@wink.ch
@@ -102,38 +105,38 @@ wp-files_sync() {
 }
 
 wp-database_sync() {
-    echo "******* Do you wish to export db-dump to ${migrationDbDumpFolderLocationLocal}/export.sql.gz File?"
+    echo "******* Do you wish to export db-dump to ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz File?"
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
-            docker-compose run --rm wpcli db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationLocal}/export.sql.gz
+            docker-compose run --rm wpcli db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz
             break
             ;;
         No) break ;;
         esac
     done
-    if test -f "${migrationDbDumpFolderLocationLocal}/export.sql.gz"; then
-        echo "******* db dump file export.sql.gz exists. ********"
+    if test -f "${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz"; then
+        echo "******* db dump file $DB_NAME.sql.gz exists. ********"
 
     else
-        echo "******* Could not create db dump file export.sql.gz. ********"
+        echo "******* Could not create db dump file $DB_NAME.sql.gz. ********"
     fi
-    echo "******* Do you wish to upload db-dump export.sql.gz to Production Server?"
+    echo "******* Do you wish to upload db-dump $DB_NAME.sql.gz to Production Server?"
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
-            scp ${migrationDbDumpFolderLocationLocal}/export.sql.gz ${prodServerSsh}:${migrationDbDumpFolderLocationRemote}
+            scp ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz ${prodServerSsh}:${migrationDbDumpFolderLocationRemote}
             break
             ;;
         No) break ;;
         esac
     done
     echo "******* Do you wish to import db-dump to DB on Production Server?"
-    SCRIPT="gunzip -k ${migrationDbDumpFolderLocationRemote}/export.sql.gz;
+    SCRIPT="gunzip -k ${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz;
     cd ${migrationDbDumpFolderLocationRemote}
-    php ${serverRootRemote}/wp-cli.phar db import export.sql
+    php ${serverRootRemote}/wp-cli.phar db import $DB_NAME.sql
     php ${serverRootRemote}/wp-cli.phar search-replace 'http://localhost' '${domainNameProduction}' --skip-columns=guid --skip-tables=wp_users
-    rm export.sql
+    rm $DB_NAME.sql
     "
     select yn in "Yes" "No"; do
         case $yn in
