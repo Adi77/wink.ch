@@ -3,14 +3,18 @@
 source .env
 set +o allexport
 
-serverRootRemote=/home/monikazi
-webRootRelativeRemote=www/www.wink.ch/staging2
+# local
+migrationDbDumpFolderLocationLocal=www
 wpContentFolderLocationLocal=www/$VIRTUAL_HOST/wp-content
 
-migrationDbDumpFolderLocationLocal=www
-domainNameProduction=https://www.wink.ch/staging2
-migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
+# remote
 prodServerSsh=monikazi@wink.ch
+serverRootRemote=/home/monikazi
+webRootRelativeRemote=www/www.wink.ch/staging2
+migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
+domainNameProduction=https://www.wink.ch/staging2
+repoLocationRemote=wink-git-repo/wink.ch
+repoThemeLocationRemote=${repoLocationRemote}/$WP_THEME
 
 wp-files_sync_plugins() {
 
@@ -150,6 +154,18 @@ wp-database_sync() {
 
 }
 
+wp-git_deploy() {
+    SCRIPT="cd ${webRootRelativeRemote}/${repoLocationRemote}; 
+            git pull;
+            cp -r $WP_THEME ../../wp-content/themes/"
+    ssh ${prodServerSsh} "${SCRIPT}"
+    if [ $? -eq 0 ]; then
+        echo "******* Repo deployment done ******************"
+    else
+        echo "******* Repo deployment failed ****************"
+    fi
+}
+
 echo "******* Do you wish to sync Database?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -166,6 +182,17 @@ select yn in "Yes" "No"; do
     case $yn in
     Yes)
         wp-files_sync
+        break
+        ;;
+    No) break ;;
+    esac
+done
+
+echo "******* Do you wish to deploy git commit?"
+select yn in "Yes" "No"; do
+    case $yn in
+    Yes)
+        wp-git_deploy
         break
         ;;
     No) exit ;;

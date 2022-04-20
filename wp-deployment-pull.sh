@@ -3,14 +3,16 @@
 source .env
 set +o allexport
 
-serverRootRemote=/home/monikazi
-webRootRelativeRemote=www/www.wink.ch/staging2
+# local
 wpContentFolderLocationLocal=www/$VIRTUAL_HOST/wp-content
-
 migrationDbDumpFolderLocationLocal=www
-domainNameProduction=https://www.wink.ch/staging2
-migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
+
+# remote
 prodServerSsh=monikazi@wink.ch
+serverRootRemote=/home/monikazi
+domainNameProduction=https://www.wink.ch/staging2
+webRootRelativeRemote=www/www.wink.ch/staging2
+migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
 
 wp-files_sync_plugins() {
 
