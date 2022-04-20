@@ -42,6 +42,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
+    host: '0.0.0.0', // this lets the server listen for requests from the lan network, not just localhost.
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
