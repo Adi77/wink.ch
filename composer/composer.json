@@ -6,7 +6,8 @@
         }
     ],
     "require": {
-        "wpackagist-plugin/wordpress-seo":"*",
-        "wpackagist-plugin/wp-super-cache":"*"
+        "wpackagist-plugin/svg-support":"*",
+        "wpackagist-plugin/duplicate-page":"*",
+        "wpackagist-plugin/simple-history":"*"
     }
 }
