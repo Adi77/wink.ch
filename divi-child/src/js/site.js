@@ -106,6 +106,25 @@ $(document).ready(function ($) {
     'el-dbe-active-category'
   );
 
+  /* Close Divi Accordion first element per Default on pageload */
+  $('.et_pb_accordion .et_pb_toggle_open')
+    .addClass('et_pb_toggle_close')
+    .removeClass('et_pb_toggle_open');
+
+  $('.et_pb_accordion .et_pb_toggle').click(function () {
+    let $this = $(this);
+    setTimeout(function () {
+      $this.closest('.et_pb_accordion').removeClass('et_pb_accordion_toggling');
+    }, 700);
+  });
+
+  /* remove controls and hide next video suggestions for youtube team video */
+  // add '&rel=0' to end of all YouTube video URL's
+  // to prevent displaying related videos
+  $('.wink-video-header iframe').attr('src', function (i, val) {
+    return val + '&rel=0&controls=0';
+  });
+
   /* nice select box */
   //customSelect();
   /* If the user clicks anywhere outside the select box,
