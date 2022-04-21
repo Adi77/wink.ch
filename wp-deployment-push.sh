@@ -22,8 +22,8 @@ wp-files_sync_plugins() {
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
-            cd ${wpContentFolderLocationLocal}/plugins
-            zip -r ../plugins.zip plugins
+            cd ${wpContentFolderLocationLocal}
+            zip -r plugins.zip plugins
             cd ../../../
             break
             ;;
