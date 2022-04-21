@@ -29,7 +29,7 @@ header {
 
       top: -100%;
       left: 0;
-      right: 0;
+      right: -100%;
       bottom: 0;
 
       transition: all 0.3s ease-in-out;
@@ -38,6 +38,7 @@ header {
       &.active {
         padding: 10vh 10% 0;
         top: 0;
+        right: 0;
 
         display: block;
         transform: scale(1);
@@ -65,9 +66,21 @@ header {
           margin-left: 5vw;
           a {
             font-family: $wink-CabinetGroteskLight;
-            border: 0;
+            border: 3px solid transparent;
+            padding: 6px 18px;
+            border-radius: 100px;
             &:hover {
-              color: $wink-yellow;
+              background-color: transparent;
+              border: 3px solid $wink-black;
+              color: $wink-black;
+            }
+            &.active {
+              color: inherit;
+              background-color: inherit;
+              border: 3px solid $wink-black;
+              &:hover {
+                background-color: transparent;
+              }
             }
           }
           &:first-child {
@@ -84,7 +97,7 @@ header {
               font-family: $wink-SwitzerRegular;
               font-size: 18px;
               text-transform: uppercase;
-              margin-right: 40px;
+              margin-right: 0;
               @include diviBreakpoint(1580) {
                 margin-right: 10px;
               }

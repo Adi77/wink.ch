@@ -1,21 +1,13 @@
 .wink-team-section {
-  .et_pb_text {
-    p {
-      padding: 10px 0;
-      font-size: 16px;
-      strong {
-        font-family: $wink-SwitzerBold;
-        font-size: 20px;
-      }
-    }
-  }
-  .et_pb_icon {
-    text-align: left;
-    a {
-      border: 0;
-      .et-pb-icon {
-        color: $wink-black;
-        font-size: 28px;
+  .et_pb_column {
+    .et_pb_text {
+      p {
+        padding: 10px 0;
+        font-size: 16px;
+        strong {
+          font-family: $wink-SwitzerBold;
+          font-size: 20px;
+        }
       }
     }
   }
@@ -23,10 +15,14 @@
 
 .dark-mode {
   .wink-team-section {
-    .et_pb_icon {
-      a {
-        .et-pb-icon {
-          color: $wink-beige;
+    .et_pb_column {
+      .et_pb_module {
+        &:last-child {
+          svg {
+            path {
+              fill: $wink-beige;
+            }
+          }
         }
       }
     }

@@ -205,6 +205,26 @@ html .et_pb_social_icon {
   }
 }
 
+/* back to top link */
+
+.et_pb_scroll_top {
+  &.et-pb-icon {
+    background: transparent;
+    bottom: 15px;
+    right: 8px;
+  }
+  &:before {
+    content: '\21';
+    color: $wink-black;
+  }
+}
+
+.dark-mode .et_pb_scroll_top {
+  &:before {
+    color: $wink-beige;
+  }
+}
+
 /* dark mode switch */
 
 .dark-mode-switch {
