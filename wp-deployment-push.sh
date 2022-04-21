@@ -5,7 +5,7 @@ set +o allexport
 
 # local
 migrationDbDumpFolderLocationLocal=www
-wpContentFolderLocationLocal=www/$VIRTUAL_HOST/wp-content
+wpContentFolderLocationLocal=www/wp-content
 
 # remote
 prodServerSsh=monikazi@wink.ch
