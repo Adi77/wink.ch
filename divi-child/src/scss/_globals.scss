@@ -191,6 +191,16 @@ table {
   }
 }
 
+.dark-mode {
+  .wink-divider-row {
+    .et_pb_divider {
+      &::before {
+        border-top-color: $wink-beige;
+      }
+    }
+  }
+}
+
 /* social icons */
 
 html .et_pb_social_icon {
