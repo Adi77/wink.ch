@@ -139,7 +139,7 @@ wp-database_sync() {
     SCRIPT="gunzip -k ${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz;
     cd ${migrationDbDumpFolderLocationRemote}
     php ${serverRootRemote}/wp-cli.phar db import $DB_NAME.sql
-    php ${serverRootRemote}/wp-cli.phar search-replace 'http://localhost' '${domainNameProduction}' --skip-columns=guid --skip-tables=wp_users
+    php ${serverRootRemote}/wp-cli.phar search-replace 'http://'$VIRTUAL_HOST '${domainNameProduction}' --skip-columns=guid --skip-tables=wp_users
     rm $DB_NAME.sql
     "
     select yn in "Yes" "No"; do
