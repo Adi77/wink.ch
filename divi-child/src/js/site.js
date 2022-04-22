@@ -127,41 +127,11 @@ $(document).ready(function ($) {
 
   /* aura shine for mouse pointer */
 
-  let originalBG = $('body #page-container').css('background-color'),
-    lightColor = '',
-    gradientSize = '';
-  $('body #page-container')
-    .mousemove(function (e) {
-      let x = e.pageX - this.offsetLeft,
-        y = e.pageY - this.offsetTop,
-        xy = x + ' ' + y,
-        bgWebKit =
-          '-webkit-gradient(radial, ' +
-          xy +
-          ', 0, ' +
-          xy +
-          ', 200, from(rgba(254,196,77,0.5)), to(rgba(255,255,255,0.0))), ' +
-          originalBG,
-        bgMoz =
-          '-moz-radial-gradient(' +
-          x +
-          'px ' +
-          y +
-          'px 45deg, circle, ' +
-          lightColor +
-          ' 0%, ' +
-          originalBG +
-          ' ' +
-          gradientSize +
-          'px)';
-
-      $(this).css({ background: bgWebKit }).css({ background: bgMoz });
-    })
-    .mouseleave(function () {
-      $(this).css({
-        background: originalBG,
-      });
-    });
+  let cursor = document.getElementById('cursor-shadow');
+  document.body.addEventListener('mousemove', function (e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
 
   /* nice select box */
   //customSelect();

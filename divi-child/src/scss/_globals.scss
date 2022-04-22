@@ -9,7 +9,6 @@ body {
 }
 #et-main-area {
   #main-content {
-    //argin: 0 10%;
     .et_pb_section {
       .et_pb_row {
         width: 80%;
@@ -232,6 +231,28 @@ html .et_pb_social_icon {
 .dark-mode .et_pb_scroll_top {
   &:before {
     color: $wink-beige;
+  }
+}
+
+/* cursor shadow */
+
+.cursor-shadow {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  //mix-blend-mode: difference;
+  background-color: $wink-yellow;
+  z-index: 9999;
+  height: 120px;
+  width: 120px;
+  //transition: all 200ms ease-out;
+  box-shadow: 0 0 34px 35px $wink-yellow;
+  opacity: 0.4;
+  @include diviBreakpoint(980) {
+    display: none;
   }
 }
 
