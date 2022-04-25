@@ -101,6 +101,19 @@ p {
   }
 }
 
+/* Table font-sizes */
+
+table {
+  tr {
+    th {
+      font-size: 45px;
+      @include diviBreakpoint(1405) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
 /* lists style */
 
 .et_pb_text_inner {
@@ -123,19 +136,6 @@ p {
         content: '-';
         position: absolute;
         margin-left: -11px;
-      }
-    }
-  }
-}
-
-/* Table font-sizes */
-
-table {
-  tr {
-    th {
-      font-size: 45px;
-      @include diviBreakpoint(1405) {
-        font-size: 30px;
       }
     }
   }
@@ -297,5 +297,13 @@ html .et_pb_social_icon {
         color: $wink-beige !important;
       }
     }
+  }
+}
+
+/* fix divi backend dialog windows styles */
+
+.et-core-modal-content {
+  p {
+    font-size: inherit;
   }
 }
