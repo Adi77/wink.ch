@@ -54,3 +54,42 @@
     }
   }
 }
+.dark-mode {
+  #et-main-area {
+    #main-content {
+      .et_pb_section {
+        &.wink-accordion-fullwidth {
+          .et_pb_row {
+            border-bottom: 3px solid $wink-beige;
+
+            .et_pb_column {
+              .et_pb_module {
+                .et_pb_toggle {
+                  border-top: 3px solid $wink-beige;
+                  .et_pb_toggle_content {
+                    p {
+                      &:last-child {
+                        a {
+                          border: 3px solid $wink-beige;
+                          color: $wink-beige;
+                          &:hover {
+                            color: $wink-black;
+                            border: 3px solid $wink-yellow;
+                            background-color: $wink-yellow;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  &::before {
+                    color: $wink-beige;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
