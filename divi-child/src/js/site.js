@@ -58,9 +58,9 @@ $(document).ready(function ($) {
 
   /* Override the addClass to prevent fixed header class from being added */
 
-  var addclass = $.fn.addClass;
+  let addclass = $.fn.addClass;
   $.fn.addClass = function () {
-    var result = addclass.apply(this, arguments);
+    let result = addclass.apply(this, arguments);
     $('#main-header').removeClass('et-fixed-header');
     return result;
   };
@@ -69,26 +69,7 @@ $(document).ready(function ($) {
 
   /* cssonly carousel for portfolio items */
 
-  portfolioCarousel();
-
-  function portfolioCarousel() {
-    $('.wink-horizontal-projects-slider').each(function () {
-      let portfolioItems = $(this).find('.et_pb_portfolio_item');
-      let portfolioItemsId = [];
-      let i = 0;
-      portfolioItems.each(function () {
-        i++;
-
-        portfolioItemsId[i] =
-          '<a class="dotNav" href=#' +
-          $(this).attr('id') +
-          '>dot' +
-          i +
-          '</a> ';
-      });
-      $(this).find('.et_pb_portfolio').append(portfolioItemsId);
-    });
-  }
+  $.fn.portfolioCarousel();
 
   /* portfolio detail page project field details more toggle */
 
@@ -118,14 +99,20 @@ $(document).ready(function ($) {
     }, 700);
   });
 
-  /* remove controls and hide next video suggestions for youtube team video */
+  /* wink accordion sticky headers */
+  $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
+    .addClass('et_pb_toggle_open')
+    .removeClass('et_pb_toggle_close');
+  //$.fn.accordionStickyItems();
+
+  /* Youtube: remove controls and hide next video suggestions for youtube team video */
   // add '&rel=0' to end of all YouTube video URL's
   // to prevent displaying related videos
   $('.wink-video-header iframe').attr('src', function (i, val) {
     return val + '&rel=0&controls=0';
   });
 
-  /* aura shine for mouse pointer */
+  /* Cursor shadow: aura shine for mouse pointer */
 
   let cursor = document.getElementById('cursor-shadow');
   document.body.addEventListener('mousemove', function (e) {
@@ -134,6 +121,7 @@ $(document).ready(function ($) {
   });
 
   /* nice select box */
+
   //customSelect();
   /* If the user clicks anywhere outside the select box,
   then close all select boxes: */
@@ -225,3 +213,44 @@ $(document).ready(function ($) {
     }
   }
 });
+
+$.fn.portfolioCarousel = function () {
+  $('.wink-horizontal-projects-slider').each(function () {
+    let portfolioItems = $(this).find('.et_pb_portfolio_item');
+    let portfolioItemsId = [];
+    let i = 0;
+    portfolioItems.each(function () {
+      i++;
+
+      portfolioItemsId[i] =
+        '<a class="dotNav" href=#' + $(this).attr('id') + '>dot' + i + '</a> ';
+    });
+    $(this).find('.et_pb_portfolio').append(portfolioItemsId);
+  });
+};
+
+$.fn.accordionStickyItems = function () {
+  let stickyTop = [];
+
+  $('.wink-accordion-fullwidth .et_pb_toggle').each(function (index) {
+    stickyTop[index] = $(this).offset().top;
+  });
+
+  $(window).scroll(function () {
+    let windowTop = $(window).scrollTop();
+
+    $.each(stickyTop, function (index, value) {
+      console.log(value);
+      if (value < windowTop) {
+        $('.wink-accordion-fullwidth .et_pb_accordion_item_' + index)
+          .addClass('sticky')
+          .next()
+          .css('margin-top', '100vh');
+      } else {
+        $(
+          '.wink-accordion-fullwidth .et_pb_accordion_item_' + index
+        ).removeClass('sticky');
+      }
+    });
+  });
+};
