@@ -17,3 +17,25 @@
     }
   }
 }
+
+.dark-mode {
+  .wink-locations-section {
+    .et_pb_row {
+      .et_pb_column {
+        .et_pb_module {
+          .et_pb_text_inner {
+            p {
+              a {
+                color: $wink-beige;
+                border-bottom: 1px solid $wink-beige;
+                &:hover {
+                  border-bottom: 1px solid transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

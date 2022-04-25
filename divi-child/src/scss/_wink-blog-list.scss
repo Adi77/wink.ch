@@ -10,17 +10,17 @@
           font-family: $wink-SwitzerRegular;
           font-size: 80px;
           border-radius: 100px;
-          border: 3px solid transparent;
+          border: $wink-tag-border-size transparent;
           padding: 6px 18px;
           &:hover {
             background-color: transparent;
-            border: 3px solid $wink-black;
+            border: $wink-tag-border-size $wink-black;
             color: $wink-black;
           }
           &.el-dbe-active-category {
             color: inherit;
             background-color: inherit;
-            border: 3px solid $wink-black;
+            border: $wink-tag-border-size $wink-black;
             &:hover {
               background-color: transparent;
             }
@@ -77,10 +77,11 @@
       .el-dbe-post-categories {
         li {
           a {
+            color: $wink-beige;
             &.el-dbe-active-category,
             &:hover {
               color: $wink-beige !important;
-              border: 3px solid $wink-beige;
+              border: $wink-tag-border-size $wink-beige;
             }
           }
         }
@@ -91,9 +92,10 @@
       &.el_dbe_block_extended {
         .post-categories {
           a {
-            border: 3px solid $wink-beige;
+            color: $wink-beige;
+            border: $wink-tag-border-size $wink-beige;
             &:hover {
-              border: 3px solid transparent;
+              border: $wink-tag-border-size transparent;
               color: $wink-black !important;
             }
           }

@@ -1,7 +1,7 @@
 .wink-accordion-2-col {
   .et_pb_accordion {
     .et_pb_toggle {
-      border-bottom: 3px solid $wink-black;
+      border-bottom: $wink-horizontal-border-size $wink-black;
       margin-bottom: 12px;
       padding-left: 0;
       padding-right: 0;
@@ -23,7 +23,7 @@
   .wink-accordion-2-col {
     .et_pb_accordion {
       .et_pb_toggle {
-        border-bottom: 3px solid $wink-beige;
+        border-bottom: $wink-horizontal-border-size $wink-beige;
 
         .et_pb_toggle_title {
           &:before {

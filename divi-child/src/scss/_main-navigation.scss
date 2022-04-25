@@ -47,7 +47,7 @@ header {
         margin-right: 2.4vw;
         text-align: right;
         .et_pb_toggle {
-          border-bottom: 3px solid $wink-black;
+          border-bottom: $wink-horizontal-border-size $wink-black;
           margin-bottom: 0;
           padding-bottom: 25px;
           .et_pb_toggle_title {
@@ -66,18 +66,18 @@ header {
           margin-left: 5vw;
           a {
             font-family: $wink-CabinetGroteskLight;
-            border: 3px solid transparent;
+            border: $wink-tag-border-size transparent;
             padding: 6px 18px;
             border-radius: 100px;
             &:hover {
               background-color: transparent;
-              border: 3px solid $wink-black;
+              border: $wink-tag-border-size $wink-black;
               color: $wink-black;
             }
             &.active {
               color: inherit;
               background-color: inherit;
-              border: 3px solid $wink-black;
+              border: $wink-tag-border-size $wink-black;
               &:hover {
                 background-color: transparent;
               }
@@ -143,6 +143,7 @@ header {
     #wink-mainnav {
       .menu-row {
         background-color: $wink-black !important;
+
         .et_pb_toggle {
           border-bottom-color: $wink-beige;
           &.et_pb_toggle_close {
@@ -154,11 +155,21 @@ header {
           }
           .et_pb_toggle_content {
             a {
+              color: $wink-beige;
               border-color: $wink-beige !important;
               &:hover {
                 border-color: transparent !important;
                 color: $wink-black !important;
               }
+            }
+          }
+        }
+        .et_pb_text_inner {
+          a {
+            color: $wink-beige;
+            &:hover {
+              color: $wink-beige;
+              border: $wink-tag-border-size $wink-beige;
             }
           }
         }

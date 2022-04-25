@@ -107,7 +107,8 @@
       background-color: $wink-black;
       .post-meta {
         a {
-          border: 3px solid $wink-beige;
+          color: $wink-beige;
+          border: $wink-tag-border-size $wink-beige;
         }
       }
     }

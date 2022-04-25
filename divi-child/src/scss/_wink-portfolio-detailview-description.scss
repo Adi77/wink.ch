@@ -32,7 +32,7 @@
 
         li {
           font-size: 18px;
-          border-bottom: 2px solid $wink-black;
+          border-bottom: $wink-horizontal-border-size $wink-black;
           padding-bottom: 5px;
           margin-bottom: 5px;
           &:before {
@@ -56,6 +56,12 @@
   .wink-portfolio-detailview-description {
     background-color: $wink-black;
     .et_pb_row {
+      .et_pb_button_module_wrapper {
+        .et_pb_button {
+          color: $wink-beige;
+        }
+      }
+
       .et_pb_text_inner {
         ul {
           li {

@@ -104,11 +104,21 @@ footer {
   footer {
     .et_builder_inner_content {
       .et_pb_section {
+        .et_pb_row {
+          .et_pb_column {
+            .et_pb_module {
+              .et_pb_button {
+                color: $wink-beige;
+              }
+            }
+          }
+        }
         /* wink categories tags */
         .et_pb_row_2_tb_footer {
           .et_pb_column {
             .et_pb_module {
               a {
+                color: $wink-beige;
                 border-color: $wink-beige !important;
                 &:hover {
                   border-color: transparent !important;
@@ -127,6 +137,16 @@ footer {
                     color: $wink-beige !important;
                   }
                 }
+              }
+            }
+          }
+        }
+
+        .et_pb_row_3_tb_footer {
+          .et_pb_column {
+            .et_pb_module {
+              a {
+                color: $wink-beige;
               }
             }
           }

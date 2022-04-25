@@ -44,17 +44,17 @@
         font-size: 80px;
         background-color: inherit;
         color: inherit;
-        border: 3px solid transparent;
+        border: $wink-tag-border-size transparent;
         padding: 6px 18px;
         &:hover {
           background-color: transparent;
-          border: 3px solid $wink-black;
+          border: $wink-tag-border-size $wink-black;
           color: $wink-black;
         }
         &.active {
           color: inherit;
           background-color: inherit;
-          border: 3px solid $wink-black;
+          border: $wink-tag-border-size $wink-black;
           &:hover {
             background-color: transparent;
           }
@@ -75,12 +75,13 @@
     .et_pb_portfolio_filters {
       .et_pb_portfolio_filter {
         a {
+          color: $wink-beige;
           &:hover {
-            border: 3px solid $wink-beige;
+            border: $wink-tag-border-size $wink-beige;
             color: $wink-beige !important;
           }
           &.active {
-            border: 3px solid $wink-beige;
+            border: $wink-tag-border-size $wink-beige;
           }
         }
       }
