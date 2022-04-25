@@ -1,0 +1,82 @@
+#et-main-area {
+  #main-content {
+    .et_pb_section {
+      &.wink-image-w-text-fullwidth-grid {
+        padding: 0;
+        .et_pb_row {
+          width: 100%;
+          max-width: 100%;
+          padding: 0;
+          border-top: $wink-horizontal-border-size $wink-black;
+          border-bottom: $wink-horizontal-border-size $wink-black;
+          .et_pb_column {
+            .et_pb_text {
+              margin: auto 0;
+              height: 100%;
+              .et_pb_text_inner {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 69%;
+                h2 {
+                  padding-bottom: 30px;
+                }
+                p {
+                  font-size: 25px;
+                  font-family: $wink-SwitzerMedium;
+                }
+              }
+            }
+            .et_pb_image {
+              .et_pb_image_wrap {
+                @media screen and (min-width: 1815px) {
+                  width: 100%;
+                }
+                img {
+                  @media screen and (min-width: 1815px) {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+          + .et_pb_row {
+            border-top: 0;
+          }
+          &:nth-child(even) {
+            .et_pb_column {
+              .et_pb_text {
+                padding: 10% 20% 10% 10%;
+              }
+            }
+          }
+          &:nth-child(odd) {
+            .et_pb_column {
+              .et_pb_text {
+                padding: 10% 10% 10% 20%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  #et-main-area {
+    #main-content {
+      .et_pb_section {
+        &.wink-image-w-text-fullwidth-grid {
+          .et_pb_row {
+            border-top: $wink-horizontal-border-size $wink-beige;
+            border-bottom: $wink-horizontal-border-size $wink-beige;
+            + .et_pb_row {
+              border-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
