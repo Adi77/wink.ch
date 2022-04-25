@@ -1,0 +1,17 @@
+#et-main-area {
+  #main-content {
+    .et_pb_section {
+      &.wink-image-header {
+        padding: 0;
+        .et_pb_row {
+          width: 100%;
+          max-width: 100%;
+          padding: 0;
+          .et_pb_image {
+            height: 100vh;
+          }
+        }
+      }
+    }
+  }
+}
