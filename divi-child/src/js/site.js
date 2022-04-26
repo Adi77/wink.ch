@@ -103,7 +103,7 @@ $(document).ready(function ($) {
   $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
     .addClass('et_pb_toggle_open')
     .removeClass('et_pb_toggle_close');
-  //$.fn.accordionStickyItems();
+  $.fn.accordionStickyItems();
 
   /* Youtube: remove controls and hide next video suggestions for youtube team video */
   // add '&rel=0' to end of all YouTube video URL's
@@ -231,25 +231,16 @@ $.fn.portfolioCarousel = function () {
 
 $.fn.accordionStickyItems = function () {
   let stickyTop = [];
-
   $('.wink-accordion-fullwidth .et_pb_toggle').each(function (index) {
     stickyTop[index] = $(this).offset().top;
   });
-
   $(window).scroll(function () {
     let windowTop = $(window).scrollTop();
-
     $.each(stickyTop, function (index, value) {
-      console.log(value);
       if (value < windowTop) {
-        $('.wink-accordion-fullwidth .et_pb_accordion_item_' + index)
-          .addClass('sticky')
-          .next()
-          .css('margin-top', '100vh');
-      } else {
-        $(
-          '.wink-accordion-fullwidth .et_pb_accordion_item_' + index
-        ).removeClass('sticky');
+        $('.wink-accordion-fullwidth .et_pb_accordion_item_' + index).addClass(
+          'sticky'
+        );
       }
     });
   });

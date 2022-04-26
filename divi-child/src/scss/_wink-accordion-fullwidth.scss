@@ -16,10 +16,16 @@
                 border-top: $wink-horizontal-border-size $wink-black;
                 background-size: 50% auto;
                 background-position: 100% 50%;
+                background-color: $wink-beige;
                 padding-left: 10vw;
                 padding-right: 55vw;
                 padding-top: 35px;
                 padding-bottom: 85px;
+
+                &.sticky {
+                  position: sticky;
+                  top: 0;
+                }
                 h2,
                 h5 {
                   &::after {
@@ -65,6 +71,7 @@
             .et_pb_column {
               .et_pb_module {
                 .et_pb_toggle {
+                  background-color: $wink-black;
                   border-top: $wink-horizontal-border-size $wink-beige;
                   .et_pb_toggle_content {
                     p {
