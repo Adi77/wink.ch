@@ -234,7 +234,6 @@ html .et_pb_social_icon {
 /* cursor shadow */
 
 .cursor-shadow {
-  display: none;
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -244,11 +243,11 @@ html .et_pb_social_icon {
   //mix-blend-mode: difference;
   background-color: $wink-yellow;
   z-index: 9999;
-  height: 120px;
-  width: 120px;
+  height: 160px;
+  width: 160px;
   //transition: all 200ms ease-out;
   box-shadow: 0 0 34px 35px $wink-yellow;
-  opacity: 0.4;
+  opacity: 0.2;
   @include diviBreakpoint(980) {
     display: none;
   }
