@@ -21,13 +21,20 @@
                 padding-right: 55vw;
                 padding-top: 35px;
                 padding-bottom: 85px;
+                @include diviBreakpoint(480) {
+                  padding: 30px;
+                  background-size: 100%;
+                  background-position: 0 100%;
+                }
 
                 &.sticky {
                   position: sticky;
                   top: 0;
                 }
-                h2,
-                h5 {
+                .et_pb_toggle_title {
+                  @include diviBreakpoint(480) {
+                    font-size: 40px;
+                  }
                   &::after {
                     content: '';
                   }
@@ -42,6 +49,9 @@
                         margin-right: 30px;
                       }
                     }
+                  }
+                  @include diviBreakpoint(480) {
+                    padding-bottom: 300px;
                   }
                 }
                 &::before {

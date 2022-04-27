@@ -100,11 +100,15 @@ $(document).ready(function ($) {
   });
 
   /* wink accordion sticky headers */
-  $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
-    .addClass('et_pb_toggle_open')
-    .removeClass('et_pb_toggle_close');
-  $.fn.accordionStickyItems();
 
+  $(window).resize(function () {
+    if ($(this).width() > 420) {
+      $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
+        .addClass('et_pb_toggle_open')
+        .removeClass('et_pb_toggle_close');
+      $.fn.accordionStickyItems();
+    }
+  });
   /* Youtube: remove controls and hide next video suggestions for youtube team video */
   // add '&rel=0' to end of all YouTube video URL's
   // to prevent displaying related videos
