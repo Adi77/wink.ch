@@ -207,6 +207,20 @@ table {
   }
 }
 
+.dark-mode {
+  .et_pb_toggle {
+    .et_pb_toggle_title {
+      color: $wink-beige;
+      &::before {
+        background-color: $wink-beige;
+      }
+      &::after {
+        background-color: $wink-beige;
+      }
+    }
+  }
+}
+
 /* wink divider row */
 
 .wink-divider-row {
