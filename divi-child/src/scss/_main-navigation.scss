@@ -248,15 +248,14 @@ header {
                 }
               }
             }
-          }
-        }
-
-        .et_pb_text_inner {
-          a {
-            color: $wink-beige;
-            &:hover {
-              color: $wink-beige;
-              border: $wink-tag-border-size $wink-beige;
+            .et_pb_text_inner {
+              a {
+                color: $wink-beige;
+                &:hover {
+                  color: $wink-beige;
+                  border: $wink-tag-border-size $wink-beige;
+                }
+              }
             }
           }
         }

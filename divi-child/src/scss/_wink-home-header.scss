@@ -4,11 +4,26 @@
     .et_pb_row {
       width: 100%;
       max-width: 100%;
+      @include diviBreakpoint(980) {
+        margin: 0 0 0 30px;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0;
+      }
       .et_pb_module {
         .et_pb_text_inner {
           a {
             font-family: $wink-CabinetGroteskLight;
             font-size: 140px;
+            @include diviBreakpoint(980) {
+              font-size: 62px;
+              vertical-align: top;
+              margin-bottom: 0;
+              padding: 0;
+              strong {
+                font-size: 74px;
+              }
+            }
             border-bottom: 0;
             padding: 0 30px 0;
             margin-bottom: 60px;
@@ -26,6 +41,11 @@
               }
             }
             &[href*='branding'] {
+              @include diviBreakpoint(980) {
+                position: relative;
+                top: -10px;
+                height: 90px;
+              }
               &:hover {
                 background-color: $wink-yellow;
                 border: $wink-tag-border-size $wink-yellow;
@@ -38,9 +58,24 @@
               }
             }
             &[href*='marketing'] {
+              @include diviBreakpoint(980) {
+                position: relative;
+                top: -10px;
+                height: 90px;
+              }
               &:hover {
                 background-color: $wink-orange;
                 border: $wink-tag-border-size $wink-orange;
+              }
+            }
+            &[href*='team'] {
+              @include diviBreakpoint(980) {
+                padding-left: 15px;
+              }
+            }
+            &[href*='digital'] {
+              @include diviBreakpoint(980) {
+                padding-right: 15px;
               }
             }
           }
@@ -50,7 +85,11 @@
           img {
             width: auto;
             height: 131px;
-
+            @include diviBreakpoint(980) {
+              height: 100px;
+              margin: 0;
+              padding: 0 0 15px 0;
+            }
             margin: 0 100px -28px;
           }
         }
