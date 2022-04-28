@@ -147,27 +147,61 @@ table {
   border: 0;
   padding-bottom: 35px;
   padding-right: 0;
+  background-color: transparent;
+  .et_pb_toggle_title {
+    color: $wink-black;
+    &::before {
+      content: '' !important;
+      position: absolute;
+      display: none;
+      right: 0;
+      top: 53px;
+      width: 20px;
+      height: 3px;
+      background-color: $wink-black;
+    }
+    &::after {
+      content: '' !important;
+      position: absolute;
+      display: none;
+      top: 37px;
+      right: 9px;
+      width: 20px;
+      height: 3px;
+      background-color: $wink-black;
+    }
+  }
   &.et_pb_toggle_open {
-    background-color: transparent;
     .et_pb_toggle_title {
       color: $wink-black;
       &:after {
-        font-family: ETmodules;
-        font-weight: 400;
-        content: '\4b';
-        font-size: 40px;
-        right: 0;
-        position: absolute;
+        width: 3px;
+        height: 20px;
       }
     }
   }
   &.et_pb_toggle_close {
-    background-color: transparent;
     .et_pb_toggle_title {
       color: $wink-black;
-      &:before {
-        color: $wink-black;
-        font-size: 40px;
+      &:after {
+        width: 3px;
+        height: 20px;
+      }
+    }
+  }
+  &.et_pb_toggle_close-icon {
+    .et_pb_toggle_title {
+      &:after {
+        transform: scale(1);
+        transition: all 0.3s linear;
+      }
+    }
+  }
+  &.et_pb_toggle_open-icon {
+    .et_pb_toggle_title {
+      &:after {
+        transform: scale(0);
+        transition: all 0.3s linear;
       }
     }
   }
@@ -234,7 +268,7 @@ html .et_pb_social_icon {
 /* cursor shadow */
 
 .cursor-shadow {
-  // display: none;
+  display: none;
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);

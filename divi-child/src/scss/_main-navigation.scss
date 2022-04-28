@@ -53,6 +53,12 @@ header {
           .et_pb_toggle_title {
             font-family: $wink-CabinetGroteskExtrabold;
             font-size: 5vw;
+            &::before {
+              display: block !important;
+            }
+            &::after {
+              display: block !important;
+            }
           }
           .et_pb_toggle_content {
             @include winkTag();
@@ -64,6 +70,9 @@ header {
         .et_pb_module {
           text-align: left;
           margin-left: 5vw;
+          @include diviBreakpoint(980) {
+            margin-left: 0;
+          }
           a {
             font-family: $wink-CabinetGroteskLight;
             border: $wink-tag-border-size transparent;
@@ -118,6 +127,12 @@ header {
       min-width: 100%;
       padding: 17px 0 0;
       .wink-mainmenu-toggle-container {
+        @include diviBreakpoint(980) {
+          width: initial;
+          right: 0;
+          position: absolute;
+        }
+
         .et_pb_text_inner {
           text-align: right;
         }
