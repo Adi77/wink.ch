@@ -71,7 +71,7 @@ $(document).ready(function ($) {
 
   $.fn.portfolioCarousel();
 
-  /* portfolio detail page project field details more toggle */
+  /* portfolio detail page project field more details toggle */
 
   $('.wink-portfolio-detailview-description .et_pb_button').click(function (
     event
@@ -122,6 +122,29 @@ $(document).ready(function ($) {
   document.body.addEventListener('mousemove', function (e) {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
+  });
+
+  /* divi global header: active menu item on corresponding active page */
+
+  let currentPage = window.location.pathname.split('/')[1];
+  if (currentPage == 'project') {
+    currentPage = 'projekte';
+  }
+  $(
+    '#wink-mainnav .et_pb_row_1_tb_header .et_pb_column_3_tb_header .et_pb_text_inner a[href="' +
+      currentPage +
+      '/"]'
+  ).addClass('active');
+
+  /* add divi accordion toggle icon animation */
+
+  $('.et_pb_accordion_item').click(function () {
+    $('.et_pb_accordion_item')
+      .removeClass('et_pb_toggle_open-icon')
+      .addClass('et_pb_toggle_close-icon');
+    $(this)
+      .removeClass('et_pb_toggle_close-icon')
+      .addClass('et_pb_toggle_open-icon');
   });
 
   /* nice select box */
