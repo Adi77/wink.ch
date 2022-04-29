@@ -7,18 +7,43 @@
     .et_pb_row {
       padding-top: 0;
       padding-bottom: 0;
-      h2 {
-        color: $wink-beige;
+      &.et_pb_row_4col {
+        @include diviBreakpoint(980) {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
       }
-      a {
-        border: 0;
-        padding: 0 20px;
-      }
-      .et_pb_code {
-        svg {
-          path,
-          polygon {
-            fill: $wink-beige !important;
+      .et_pb_column {
+        &.et_pb_column_1_4 {
+          @include diviBreakpoint(980) {
+            width: 45.25% !important;
+            margin-bottom: 0;
+          }
+        }
+
+        h2 {
+          color: $wink-beige;
+          @include diviBreakpoint(980) {
+            padding-bottom: 30px;
+          }
+        }
+        a {
+          border: 0;
+          padding: 0 20px;
+        }
+        .et_pb_code {
+          svg {
+            path,
+            polygon {
+              fill: $wink-beige !important;
+            }
+          }
+          @include diviBreakpoint(980) {
+            svg {
+              padding-right: 10px;
+              padding-left: 10px;
+            }
           }
         }
       }

@@ -13,6 +13,9 @@ body {
       .et_pb_row {
         width: 80%;
         max-width: 80%;
+        @include diviBreakpoint(980) {
+          margin: 0 30px;
+        }
       }
     }
   }
@@ -76,9 +79,15 @@ h4 {
 
 h1 {
   font-size: 100px;
+  @include diviBreakpoint(980) {
+    font-size: 40px;
+  }
 }
 h2 {
   font-size: 65px;
+  @include diviBreakpoint(980) {
+    font-size: 35px;
+  }
 }
 h3 {
   font-size: 40px;

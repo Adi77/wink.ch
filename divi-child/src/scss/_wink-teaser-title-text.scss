@@ -1,5 +1,8 @@
 .wink-teaser-title-text {
   .et_pb_row_1 {
+    @include diviBreakpoint(980) {
+      padding-bottom: 0;
+    }
     .et_pb_column_1 {
       .et_pb_image {
         .et_pb_image_wrap {
@@ -11,12 +14,20 @@
     }
   }
   .et_pb_row_2 {
+    @include diviBreakpoint(980) {
+      padding-bottom: 0;
+    }
     .et_pb_column_2 {
       .et_pb_image {
         .et_pb_image_wrap {
           left: -80px;
         }
       }
+    }
+  }
+  .et_pb_row_3 {
+    @include diviBreakpoint(980) {
+      padding-top: 0;
     }
   }
 

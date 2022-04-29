@@ -8,6 +8,9 @@
     }
     .et_pb_portfolio {
       margin-left: 5%;
+      @include diviBreakpoint(980) {
+        margin-left: 0;
+      }
       text-align: center;
       overflow: hidden;
       .et_pb_ajax_pagination_container {
@@ -38,6 +41,9 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          @include diviBreakpoint(980) {
+            margin-bottom: 0;
+          }
           h3 {
             font-family: $wink-CabinetGroteskExtrabold;
             display: none;
