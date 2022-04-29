@@ -57,6 +57,9 @@
       margin-top: 0;
       padding-top: 120px;
       padding-bottom: 120px;
+      @include diviBreakpoint(980) {
+        padding-bottom: 0;
+      }
     }
   }
 }
