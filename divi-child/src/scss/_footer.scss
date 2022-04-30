@@ -1,7 +1,7 @@
 footer {
   padding-top: 120px;
   @include diviBreakpoint(980) {
-    padding-left: 30px;
+    padding-left: 15px;
   }
   .et_builder_inner_content {
     .et_pb_section {
@@ -10,6 +10,8 @@ footer {
         width: 90%;
         max-width: 90%;
         @include diviBreakpoint(980) {
+          width: 100%;
+          max-width: 100%;
           padding-bottom: 0;
           padding-top: 0;
         }
