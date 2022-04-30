@@ -8,11 +8,6 @@
       padding-top: 0;
       padding-bottom: 0;
       &.et_pb_row_4col {
-        @include diviBreakpoint(980) {
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 !important;
-        }
       }
       .et_pb_column {
         &.et_pb_column_1_4 {
@@ -31,6 +26,9 @@
         a {
           border: 0;
           padding: 0 20px;
+          @include diviBreakpoint(980) {
+            padding: 0;
+          }
         }
         .et_pb_code {
           svg {

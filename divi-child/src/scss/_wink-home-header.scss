@@ -5,9 +5,8 @@
       width: 100%;
       max-width: 100%;
       @include diviBreakpoint(980) {
-        margin: 0 0 0 30px;
-        width: 100% !important;
-        max-width: 100% !important;
+        width: 90% !important;
+        max-width: 90% !important;
         padding: 0;
       }
       .et_pb_module {
@@ -21,7 +20,7 @@
               margin-bottom: 0;
               padding: 0;
               strong {
-                font-size: 74px;
+                font-size: 100%;
               }
             }
             border-bottom: 0;
@@ -33,6 +32,10 @@
             &:hover {
               border: $wink-tag-border-size $wink-black;
               border-radius: 100px;
+              @include diviBreakpoint(980) {
+                background-color: transparent !important;
+                border: $wink-tag-border-size transparent !important;
+              }
             }
             &[href*='packaging'] {
               &:hover {
@@ -70,12 +73,12 @@
             }
             &[href*='team'] {
               @include diviBreakpoint(980) {
-                padding-left: 15px;
+                padding-left: 12px;
               }
             }
             &[href*='digital'] {
               @include diviBreakpoint(980) {
-                padding-right: 15px;
+                padding-right: 12px;
               }
             }
           }

@@ -14,7 +14,8 @@ body {
         width: 80%;
         max-width: 80%;
         @include diviBreakpoint(980) {
-          margin: 0 30px;
+          width: 90%;
+          max-width: 90%;
         }
       }
     }
