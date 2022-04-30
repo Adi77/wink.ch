@@ -4,7 +4,7 @@
     .et_pb_row {
       width: 100%;
       max-width: 100%;
-      @include diviBreakpoint(980) {
+      @include diviBreakpoint(1405) {
         width: 90% !important;
         max-width: 90% !important;
         padding: 0;
@@ -14,14 +14,43 @@
           a {
             font-family: $wink-CabinetGroteskLight;
             font-size: 140px;
+            @include diviBreakpoint(1580) {
+              font-size: 120px;
+            }
+            @include diviBreakpoint(1405) {
+              font-size: 80px;
+              margin-bottom: 0;
+              padding: 40px;
+
+              strong {
+              }
+              &:hover {
+                border-radius: 200px !important;
+              }
+            }
+
             @include diviBreakpoint(980) {
-              font-size: 62px;
+              font-size: 15vw;
+              position: relative;
+              top: -16px;
               vertical-align: top;
               margin-bottom: 0;
-              padding: 0;
+              line-height: 1;
+              padding: 0 0 40px;
               strong {
-                font-size: 100%;
+                position: relative;
+                top: 0;
+                font-size: 18vw;
               }
+            }
+            @include diviBreakpoint(768) {
+              top: 0;
+            }
+            @include diviBreakpoint(480) {
+              font-size: 3.9rem;
+              line-height: 1.4;
+
+              padding: 0;
             }
             border-bottom: 0;
             padding: 0 30px 0;
@@ -46,8 +75,10 @@
             &[href*='branding'] {
               @include diviBreakpoint(980) {
                 position: relative;
+              }
+
+              @include diviBreakpoint(480) {
                 top: -10px;
-                height: 90px;
               }
               &:hover {
                 background-color: $wink-yellow;
@@ -55,16 +86,31 @@
               }
             }
             &[href*='digital'] {
+              @include diviBreakpoint(980) {
+                padding-right: 20px;
+              }
+              @include diviBreakpoint(768) {
+                padding-left: 12px;
+              }
               &:hover {
                 background-color: $wink-violet;
                 border: $wink-tag-border-size $wink-violet;
+              }
+              @include diviBreakpoint(980) {
+                padding-left: 12px;
+              }
+              @include diviBreakpoint(768) {
+                padding-left: 0;
+                padding-right: 12px;
               }
             }
             &[href*='marketing'] {
               @include diviBreakpoint(980) {
                 position: relative;
+              }
+
+              @include diviBreakpoint(480) {
                 top: -10px;
-                height: 90px;
               }
               &:hover {
                 background-color: $wink-orange;
@@ -73,11 +119,18 @@
             }
             &[href*='team'] {
               @include diviBreakpoint(980) {
+                padding-left: 20px;
+              }
+              @include diviBreakpoint(768) {
                 padding-left: 12px;
               }
             }
-            &[href*='digital'] {
+
+            &[href*='kontakt'] {
               @include diviBreakpoint(980) {
+                padding-right: 30px;
+              }
+              @include diviBreakpoint(768) {
                 padding-right: 12px;
               }
             }
@@ -88,9 +141,22 @@
           img {
             width: auto;
             height: 131px;
+
+            @include diviBreakpoint(1405) {
+              height: 150px;
+              margin: 0;
+              top: 52px;
+              position: relative;
+            }
             @include diviBreakpoint(980) {
               height: 100px;
               margin: 0;
+              top: 0;
+            }
+            @include diviBreakpoint(768) {
+              padding: 0;
+            }
+            @include diviBreakpoint(480) {
               padding: 0 0 15px 0;
             }
             margin: 0 100px -28px;

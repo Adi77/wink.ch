@@ -20,6 +20,9 @@
 header {
   #wink-mainnav {
     padding: 20px 30px;
+    @include diviBreakpoint(980) {
+      padding: 20px;
+    }
 
     .menu-row {
       overflow: auto;

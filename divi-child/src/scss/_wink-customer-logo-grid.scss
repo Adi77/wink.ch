@@ -7,8 +7,6 @@
     .et_pb_row {
       padding-top: 0;
       padding-bottom: 0;
-      &.et_pb_row_4col {
-      }
       .et_pb_column {
         &.et_pb_column_1_4 {
           @include diviBreakpoint(980) {
