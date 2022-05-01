@@ -1,6 +1,6 @@
 footer {
   padding-top: 120px;
-  @include diviBreakpoint(980) {
+  @include diviBreakpoint(480) {
     padding-left: 15px;
   }
   .et_builder_inner_content {
@@ -9,7 +9,7 @@ footer {
       .et_pb_row_0_tb_footer {
         width: 90%;
         max-width: 90%;
-        @include diviBreakpoint(980) {
+        @include diviBreakpoint(480) {
           width: 100%;
           max-width: 100%;
           padding-bottom: 0;
@@ -27,14 +27,14 @@ footer {
             svg {
               height: 75px;
               width: 246px;
-              @include diviBreakpoint(980) {
+              @include diviBreakpoint(480) {
                 width: 120px;
                 height: 34px;
               }
             }
             .et_pb_image_wrap {
               padding-right: 20px;
-              @include diviBreakpoint(980) {
+              @include diviBreakpoint(480) {
                 padding-right: 88px;
                 width: 210px;
               }
@@ -43,7 +43,7 @@ footer {
               p {
                 font-family: $wink-SwitzerLight;
                 font-size: 4.2vw;
-                @include diviBreakpoint(980) {
+                @include diviBreakpoint(480) {
                   font-size: 45px;
                 }
                 line-height: 1;
@@ -65,6 +65,10 @@ footer {
         width: 80%;
         max-width: 80%;
         @include diviBreakpoint(980) {
+          width: 90%;
+          max-width: 90%;
+        }
+        @include diviBreakpoint(480) {
           width: 100%;
           max-width: 100%;
         }
@@ -74,13 +78,17 @@ footer {
         width: 80%;
         max-width: 80%;
         @include diviBreakpoint(980) {
+          width: 90%;
+          max-width: 90%;
+        }
+        @include diviBreakpoint(480) {
           width: 100%;
           max-width: 100%;
           padding-top: 10px;
           padding-bottom: 10px;
         }
         .et_pb_column_4_tb_footer {
-          @include diviBreakpoint(980) {
+          @include diviBreakpoint(480) {
             margin-bottom: 55px;
           }
 
@@ -88,6 +96,12 @@ footer {
             float: left;
             margin-right: 3vw;
             @include diviBreakpoint(980) {
+              margin-right: 14vw;
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+            @include diviBreakpoint(480) {
               margin-right: 0;
             }
             .et_pb_text_inner {
@@ -108,17 +122,23 @@ footer {
             }
 
             &.et_pb_text_2_tb_footer {
-              @include diviBreakpoint(980) {
+              @include diviBreakpoint(480) {
                 margin-left: 12px;
               }
             }
             /* phone and email */
             &.et_pb_text_3_tb_footer {
               margin-top: 24px;
+              @include diviBreakpoint(768) {
+                margin-bottom: 30px;
+              }
+              @include diviBreakpoint(480) {
+                margin-bottom: 0;
+              }
               p {
                 a {
                   &:first-child {
-                    @include diviBreakpoint(980) {
+                    @include diviBreakpoint(480) {
                       top: -14px;
                       position: relative;
                     }
@@ -131,7 +151,7 @@ footer {
         /* wink categories tags */
         .et_pb_column_5_tb_footer {
           .et_pb_module {
-            @include diviBreakpoint(980) {
+            @include diviBreakpoint(480) {
               width: 85%;
               max-width: 85%;
             }
@@ -152,9 +172,13 @@ footer {
       .et_pb_row_3_tb_footer {
         width: 80%;
         max-width: 80%;
+        @include diviBreakpoint(980) {
+          width: 90%;
+          max-width: 90%;
+        }
         padding-bottom: 0;
 
-        @include diviBreakpoint(980) {
+        @include diviBreakpoint(480) {
           width: 100%;
           max-width: 100%;
           display: flex;
@@ -178,6 +202,10 @@ footer {
       /* wink copyright linke */
       .et_pb_column_6_tb_footer {
         @include diviBreakpoint(980) {
+          width: initial;
+          padding-right: 20px;
+        }
+        @include diviBreakpoint(480) {
           margin-top: 30px;
           p,
           a {
@@ -189,6 +217,7 @@ footer {
       .et_pb_column_7_tb_footer {
         padding-left: 30px;
         @include diviBreakpoint(980) {
+          width: initial;
           padding-left: 0;
           ul {
             li {
@@ -216,7 +245,7 @@ footer {
         }
 
         &.et_pb_section_0_tb_footer {
-          @include diviBreakpoint(980) {
+          @include diviBreakpoint(480) {
             padding-top: 0;
           }
         }

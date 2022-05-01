@@ -85,6 +85,9 @@
     &:nth-child(2) {
       width: 100% !important;
       max-width: 100% !important;
+      @include diviBreakpoint(980) {
+        padding-left: 15px;
+      }
     }
     &:last-child {
       padding-top: 0;
