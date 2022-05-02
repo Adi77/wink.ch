@@ -225,6 +225,15 @@ footer {
             }
           }
         }
+        @include diviBreakpoint(480) {
+          ul {
+            li {
+              a {
+                margin-right: 8.4vw;
+              }
+            }
+          }
+        }
       }
     }
   }
