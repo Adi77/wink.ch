@@ -4,41 +4,53 @@
   padding-bottom: 0;
   .et_pb_row {
     padding-top: 10px;
-    .et_pb_button_module_wrapper {
-      margin-bottom: 60px;
-      @include winkButton();
-      .et_pb_button {
-        &::after {
-          content: '\4c';
-          top: 5px;
+    @include diviBreakpoint(980) {
+      padding-top: 20px;
+      padding-bottom: 0;
+    }
+    .et_pb_column {
+      @include diviBreakpoint(980) {
+        margin-bottom: 0;
+      }
+      .et_pb_button_module_wrapper {
+        margin-bottom: 60px;
+        @include diviBreakpoint(980) {
+          margin-bottom: 0;
         }
-        &.open {
+        @include winkButton();
+        .et_pb_button {
           &::after {
-            content: '\4b';
+            content: '\4c';
+            top: 5px;
+          }
+          &.open {
+            &::after {
+              content: '\4b';
+            }
           }
         }
       }
-    }
-    .et_pb_text_inner {
-      h4 {
-        padding-bottom: 20px;
-      }
-      p {
-        font-size: 20px;
-      }
-      ul {
-        padding-left: 0;
-        font-family: $wink-SwitzerRegular;
+      .et_pb_text_inner {
+        h4 {
+          padding-bottom: 20px;
+        }
+        p {
+          font-size: 20px;
+        }
+        ul {
+          padding-left: 0;
+          font-family: $wink-SwitzerRegular;
 
-        li {
-          font-size: 18px;
-          border-bottom: $wink-horizontal-border-size $wink-black;
-          padding-bottom: 5px;
-          margin-bottom: 5px;
-          &:before {
-            content: '';
-            position: inherit;
-            margin-left: inherit;
+          li {
+            font-size: 18px;
+            border-bottom: $wink-horizontal-border-size $wink-black;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            &:before {
+              content: '';
+              position: inherit;
+              margin-left: inherit;
+            }
           }
         }
       }
@@ -47,6 +59,11 @@
       display: none;
       &.show {
         display: block;
+      }
+      .et_pb_column {
+        &:not(:first-child) {
+          padding-top: 30px;
+        }
       }
     }
   }

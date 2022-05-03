@@ -8,6 +8,9 @@
         .et_pb_image_wrap {
           img {
             transform: rotate(8deg);
+            @include diviBreakpoint(980) {
+              width: 120px;
+            }
           }
         }
       }
@@ -21,6 +24,14 @@
       .et_pb_image {
         .et_pb_image_wrap {
           left: -80px;
+          @include diviBreakpoint(980) {
+            left: -10px;
+          }
+          img {
+            @include diviBreakpoint(980) {
+              width: 120px;
+            }
+          }
         }
       }
     }

@@ -4,12 +4,28 @@
     margin-bottom: 0;
     .et_post_meta_wrapper {
       padding-bottom: 80px;
+      @include diviBreakpoint(980) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 0;
+      }
       .title-and-tags {
         position: absolute;
         top: 20vh;
         left: 40vw;
         @include diviBreakpoint(1580) {
           left: 53vw;
+        }
+        @include diviBreakpoint(980) {
+          position: relative;
+          top: 30px;
+          left: initial;
+          margin: 0 20px;
+          order: 2;
+          h1 {
+            padding-top: 0;
+          }
         }
         margin-right: 10%;
       }
@@ -26,15 +42,23 @@
       }
       img {
         width: 700px;
+        order: 1;
       }
     }
     .entry-content {
       h2,
       h3 {
         padding-bottom: 30px;
+        @include diviBreakpoint(980) {
+          font-size: 35px;
+        }
       }
       .blog_single-lead-text-row {
         margin-bottom: 230px;
+        @include diviBreakpoint(980) {
+          padding-top: 0;
+          margin-bottom: 0;
+        }
       }
       .blog_single-description-text-row {
         p {
@@ -45,11 +69,21 @@
         margin: 0;
         width: 100% !important;
         max-width: 100% !important;
+        @include diviBreakpoint(980) {
+          padding-top: 0;
+        }
         .et_pb_image {
           text-align: right;
           margin-top: 60px;
+          @include diviBreakpoint(980) {
+            margin-top: 0;
+          }
           img {
             width: 68.5vw;
+            @include diviBreakpoint(980) {
+              width: 100%;
+              padding: 0 20px;
+            }
           }
         }
         margin-bottom: 30px;
@@ -61,22 +95,37 @@
           width: 100vw;
           margin-top: 40px;
           margin-bottom: 30px;
+          @include diviBreakpoint(980) {
+            width: 100%;
+            padding: 0 20px;
+          }
         }
       }
     }
     .wink-blog-list {
       &.further-reading {
         margin-top: 100px;
+        @include diviBreakpoint(980) {
+          margin-top: 0;
+          padding-top: 0;
+        }
         .el-dbe-blog-extra {
           display: flex;
+          @include diviBreakpoint(980) {
+            display: block;
+          }
           .et_pb_post {
             width: 31%;
             margin-right: 3.5%;
 
-            display: flex;
             flex-direction: column;
             float: none;
             padding-bottom: 0;
+
+            @include diviBreakpoint(980) {
+              width: 100%;
+              margin-bottom: 60px;
+            }
 
             .post-media {
               a {
@@ -92,6 +141,11 @@
                 height: 100%;
                 opacity: 0;
                 text-indent: -9999px;
+              }
+            }
+            &:last-child {
+              @include diviBreakpoint(980) {
+                margin-bottom: 0;
               }
             }
           }

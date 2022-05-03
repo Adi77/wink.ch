@@ -172,6 +172,9 @@ header {
                 @include diviBreakpoint(980) {
                   font-size: 3em;
                   padding-right: 0;
+                  &.active {
+                    padding-right: 18px;
+                  }
                 }
               }
             }
@@ -191,6 +194,9 @@ header {
                   }
                   &:first-child {
                     padding-left: 0;
+                  }
+                  &.active {
+                    padding-right: 18px;
                   }
                 }
               }

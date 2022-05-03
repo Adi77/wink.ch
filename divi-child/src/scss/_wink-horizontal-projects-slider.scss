@@ -5,6 +5,9 @@
     padding: 0;
     h2 {
       padding-bottom: 30px;
+      @include diviBreakpoint(980) {
+        font-size: 35px;
+      }
     }
     .et_pb_portfolio {
       margin-left: 5%;

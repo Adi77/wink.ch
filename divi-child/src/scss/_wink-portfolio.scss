@@ -1,9 +1,13 @@
-.wink-portfolio-filterable-section {
+.et_pb_section.wink-portfolio-filterable-section {
   margin-top: 100px;
   .et_pb_portfolio_items {
     .et_pb_portfolio_item {
       float: left;
       width: 50%;
+      @include diviBreakpoint(980) {
+        width: inherit;
+        margin-bottom: 0;
+      }
       background-color: $wink-black;
       &:hover {
         a {
@@ -28,6 +32,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 40px;
+        @include diviBreakpoint(980) {
+          font-size: 25px;
+        }
         color: $wink-beige;
         &:hover {
           display: block;
@@ -36,12 +43,21 @@
     }
   }
   .et_pb_portfolio_filters {
+    @include diviBreakpoint(980) {
+      margin-bottom: 10px;
+    }
     .et_pb_portfolio_filter {
       @include winkTag();
       line-height: 1.4;
+      @include diviBreakpoint(980) {
+        width: auto;
+      }
       a {
-        font-family: $wink-SwitzerRegular;
+        font-family: $wink-SwitzerMedium;
         font-size: 80px;
+        @include diviBreakpoint(980) {
+          font-size: 30px;
+        }
         background-color: inherit;
         color: inherit;
         border: $wink-tag-border-size transparent;
@@ -61,9 +77,12 @@
         }
       }
       &:first-child,
-      &:last-child {
+      &:last-child,
+      &:nth-child(2),
+      &:nth-child(odd),
+      &:nth-child(even) {
         a {
-          border-radius: 100px;
+          border-radius: 100px !important;
         }
       }
     }

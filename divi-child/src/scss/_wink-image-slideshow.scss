@@ -1,4 +1,7 @@
-.wink-image-slideshow-section {
+.et_pb_section.wink-image-slideshow-section {
+  @include diviBreakpoint(980) {
+    padding: 0;
+  }
   .et_pb_slider {
     .et_pb_slides {
       .et_pb_slide {

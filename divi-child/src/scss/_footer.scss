@@ -1,7 +1,10 @@
 footer {
   padding-top: 120px;
+  @include diviBreakpoint(768) {
+    padding-top: 40px;
+  }
   @include diviBreakpoint(480) {
-    padding-left: 15px;
+    padding-left: 20px;
   }
   .et_builder_inner_content {
     .et_pb_section {
@@ -229,7 +232,7 @@ footer {
           ul {
             li {
               a {
-                margin-right: 8.4vw;
+                margin-right: 7vw;
               }
             }
           }

@@ -1,12 +1,37 @@
 .wink-team-section {
-  .et_pb_column {
-    .et_pb_text {
-      p {
-        padding: 10px 0;
-        font-size: 16px;
-        strong {
-          font-family: $wink-SwitzerBold;
-          font-size: 20px;
+  .et_pb_row {
+    @include diviBreakpoint(980) {
+      padding: 0;
+    }
+    .et_pb_column {
+      @include diviBreakpoint(980) {
+        padding-bottom: 100px;
+      }
+      .et_pb_text {
+        p {
+          padding: 10px 0;
+          font-size: 16px;
+          strong {
+            font-family: $wink-SwitzerBold;
+            font-size: 20px;
+          }
+        }
+      }
+      .et_pb_image_wrap {
+        @include diviBreakpoint(980) {
+          width: 100%;
+        }
+        img {
+          @include diviBreakpoint(980) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    &:last-child {
+      .et-last-child {
+        @include diviBreakpoint(980) {
+          padding-bottom: 0;
         }
       }
     }

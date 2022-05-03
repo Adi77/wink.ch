@@ -1,4 +1,7 @@
-.wink-locations-section {
+.et_pb_section.wink-locations-section {
+  @include diviBreakpoint(980) {
+    padding-bottom: 0;
+  }
   .et_pb_row {
     .et_pb_column {
       .et_pb_module {
