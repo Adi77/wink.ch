@@ -21,6 +21,7 @@ services:
       - cp
     restart: always
     volumes:
+      - ./config/php.conf.local.ini:/usr/local/etc/php/conf.d/local.ini
       - ./${WP_THEME}:/var/www/html/wp-content/themes/${WP_THEME}
       - ./www:/var/www/html
     environment:
