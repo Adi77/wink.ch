@@ -199,7 +199,7 @@ table {
       }
     }
   }
-  &.et_pb_toggle_close-icon {
+  &.et_pb_toggle_plus {
     .et_pb_toggle_title {
       &:after {
         transform: scale(1);
@@ -207,7 +207,7 @@ table {
       }
     }
   }
-  &.et_pb_toggle_open-icon {
+  &.et_pb_toggle_minus {
     .et_pb_toggle_title {
       &:after {
         transform: scale(0);
@@ -236,11 +236,15 @@ table {
 .wink-divider-row {
   width: 100% !important;
   max-width: 100% !important;
+  @include diviBreakpoint(980) {
+    width: 90% !important;
+    max-width: 90% !important;
+  }
   .et_pb_divider {
     &::before {
       border-top-color: $wink-black;
-      height: 2px;
-      border-top-width: 2px;
+      height: 3px;
+      border-top-width: 3px;
     }
   }
 }
