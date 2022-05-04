@@ -79,8 +79,9 @@ $(document).ready(function ($) {
       if ($toggle.hasClass('et_pb_toggle_open')) {
         $(this)
           .parent()
-          .addClass(
-            'et_pb_toggle_plus'
+          .addClass('et_pb_toggle_plus')
+          .removeClass(
+            'et_pb_toggle_minus'
           ); /* add divi accordion toggle icon animation */
         $accordion.addClass('et_pb_accordion_toggling');
         $toggle.find('.et_pb_toggle_content').slideToggle(700, function () {
@@ -91,8 +92,9 @@ $(document).ready(function ($) {
       } else {
         $(this)
           .parent()
-          .addClass(
-            'et_pb_toggle_minus'
+          .addClass('et_pb_toggle_minus')
+          .removeClass(
+            'et_pb_toggle_plus'
           ); /* add divi accordion toggle icon animation */
       }
       setTimeout(function () {
@@ -133,16 +135,17 @@ $(document).ready(function ($) {
     }, 700);
   });
 
-  /* wink accordion sticky headers */
-
-  $(window).resize(function () {
-    if ($(this).width() > 420) {
-      $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
-        .addClass('et_pb_toggle_open')
-        .removeClass('et_pb_toggle_close');
-      $.fn.accordionStickyItems();
-    }
-  });
+  /* wink accordion fullwidth sticky headers */
+  if ($('.wink-accordion-fullwidth ').length > 0) {
+    $(window).resize(function () {
+      if ($(this).width() > 753) {
+        $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
+          .addClass('et_pb_toggle_open')
+          .removeClass('et_pb_toggle_close');
+        $.fn.accordionStickyItems();
+      }
+    });
+  }
 
   /* Youtube: remove controls and hide next video suggestions for youtube team video 
   - add '&rel=0' to end of all YouTube video URL's
@@ -190,9 +193,11 @@ $.fn.portfolioCarousel = function () {
 
 $.fn.accordionStickyItems = function () {
   let stickyTop = [];
+  let containerTop = 0;
   $('.wink-accordion-fullwidth .et_pb_toggle').each(function (index) {
     stickyTop[index] = $(this).offset().top;
   });
+  containerTop = $('.wink-accordion-fullwidth').offset().top;
   $(window).scroll(function () {
     let windowTop = $(window).scrollTop();
     $.each(stickyTop, function (index, value) {
@@ -200,6 +205,10 @@ $.fn.accordionStickyItems = function () {
         $('.wink-accordion-fullwidth .et_pb_accordion_item_' + index).addClass(
           'sticky'
         );
+      }
+      $('#wink-mainnav ').removeClass('stickyBg');
+      if (containerTop < windowTop) {
+        $('#wink-mainnav ').addClass('stickyBg');
       }
     });
   });
