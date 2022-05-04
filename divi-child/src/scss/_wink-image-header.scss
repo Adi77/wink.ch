@@ -9,6 +9,9 @@
           padding: 0;
           .et_pb_image {
             height: 100vh;
+            @include diviBreakpoint(980) {
+              background-size: cover;
+            }
           }
         }
       }

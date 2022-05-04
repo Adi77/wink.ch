@@ -1,26 +1,47 @@
-.wink-accordion-2-col {
-  .et_pb_accordion {
-    .et_pb_toggle {
-      border-bottom: $wink-horizontal-border-size $wink-black;
-      margin-bottom: 12px;
-      padding-left: 0;
-      padding-right: 0;
-      .et_pb_toggle_title {
-        &:before {
-          display: block;
-          content: '\4c';
-          top: 18px;
+.et_pb_section.wink-accordion-2-col {
+  @include diviBreakpoint(980) {
+    margin-top: 60px;
+  }
+  .et_pb_column {
+    @include diviBreakpoint(980) {
+      margin-bottom: 80px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .et_pb_accordion {
+      .et_pb_toggle {
+        border-bottom: $wink-horizontal-border-size $wink-black;
+        margin-bottom: 12px;
+        padding-left: 0;
+        padding-right: 0;
+        .et_pb_toggle_title {
+          &:before {
+            display: block;
+            content: '\4c';
+            top: 18px;
+          }
+          &::after {
+            top: 2px;
+            display: block;
+          }
         }
-        &::after {
-          top: 2px;
-          display: block;
+        .et_pb_toggle_content {
+          p {
+            font-size: 20px;
+          }
         }
       }
-      .et_pb_toggle_content {
-        p {
-          font-size: 20px;
-        }
-      }
+    }
+  }
+  @include diviBreakpoint(980) {
+    + .wink-accordion-2-col {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    + .wink-cta {
+      margin-top: 60px;
+      margin-bottom: 60px;
     }
   }
 }

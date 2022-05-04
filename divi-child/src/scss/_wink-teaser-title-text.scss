@@ -1,6 +1,10 @@
-.wink-teaser-title-text {
+.et_pb_section.wink-teaser-title-text {
+  @include diviBreakpoint(980) {
+    margin-bottom: 40px;
+  }
   .et_pb_row_1 {
     @include diviBreakpoint(980) {
+      padding-top: 0;
       padding-bottom: 0;
     }
     .et_pb_column_1 {

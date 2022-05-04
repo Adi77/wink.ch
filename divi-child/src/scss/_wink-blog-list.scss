@@ -86,6 +86,20 @@
     }
   }
 }
+/* Weitere Beiträge Section */
+.single-post {
+  .wink-blog-list {
+    .et_pb_post_extra {
+      &.el_dbe_block_extended {
+        .post-content {
+          @include diviBreakpoint(980) {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
 
 .dark-mode {
   .wink-blog-list {

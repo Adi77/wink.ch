@@ -58,10 +58,12 @@
             border: $wink-tag-border-size transparent;
             display: inline-block;
             line-height: 1.4;
-            &:hover {
+            &:hover,
+            &:active {
               border: $wink-tag-border-size $wink-black;
               border-radius: 100px;
               @include diviBreakpoint(980) {
+                border-radius: 0 !important;
                 background-color: transparent !important;
                 border: $wink-tag-border-size transparent !important;
               }

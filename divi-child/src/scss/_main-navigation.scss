@@ -19,9 +19,13 @@
 
 header {
   #wink-mainnav {
+    height: 99px;
     padding: 20px 30px;
     @include diviBreakpoint(980) {
       padding: 20px;
+      &.stickyBg {
+        background-color: $wink-beige !important;
+      }
     }
 
     .menu-row {
@@ -239,6 +243,22 @@ header {
 .mainnav-active {
   header {
     z-index: 999;
+  }
+}
+/* set blog menuitem to active state if on blog post detailpage */
+.single-post {
+  header #wink-mainnav .menu-row .et_pb_column.et-last-child .et_pb_module {
+    a {
+      &[href*='blog'] {
+        color: inherit;
+        background-color: inherit;
+        border: $wink-tag-border-size $wink-black;
+        padding-right: 18px;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
 

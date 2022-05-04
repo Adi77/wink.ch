@@ -1,17 +1,21 @@
-.wink-portfolio-detailview-images {
+.et_pb_section.wink-portfolio-detailview-images {
   background-color: $wink-beige;
-  .et_pb_row.fullwidth {
-    width: 100% !important;
-    max-width: 100% !important;
-    img {
-      width: 100vw !important;
-    }
-  }
   .et_pb_row {
-    width: 90% !important;
-    max-width: 90% !important;
+    width: 90%;
+    max-width: 90%;
     img {
-      width: 100vw !important;
+      width: 100vw;
+    }
+    &.fullwidth {
+      width: 100%;
+      max-width: 100%;
+      @include diviBreakpoint(980) {
+        width: 90%;
+        max-width: 90%;
+      }
+      img {
+        width: 100vw;
+      }
     }
   }
 }

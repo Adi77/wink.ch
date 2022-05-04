@@ -7,17 +7,14 @@ body {
 .et_pb_section {
   background-color: transparent;
 }
-#et-main-area {
-  #main-content {
-    .et_pb_section {
-      .et_pb_row {
-        width: 80%;
-        max-width: 80%;
-        @include diviBreakpoint(980) {
-          width: 90%;
-          max-width: 90%;
-        }
-      }
+
+.et_pb_section {
+  .et_pb_row {
+    width: 80%;
+    max-width: 80%;
+    @include diviBreakpoint(980) {
+      width: 90%;
+      max-width: 90%;
     }
   }
 }
