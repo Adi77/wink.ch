@@ -135,7 +135,7 @@ function my_lang_function()
 
 
 /* generate pdf on contact form 7 submit - test */
-/* add_filter('wpcf7_mail_components', 'custom_wpcf7_mail_components');
+ add_filter('wpcf7_mail_components', 'custom_wpcf7_mail_components');
     function custom_wpcf7_mail_components($components)
     {
         require_once('tcpdf/tcpdf_cf7.php');
@@ -178,4 +178,4 @@ function my_lang_function()
             }
         }
         return $components;
-    } */
+    }
