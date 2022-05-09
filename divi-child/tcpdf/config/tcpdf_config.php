@@ -154,7 +154,7 @@ define('PDF_MARGIN_RIGHT', 15);
 /**
  * Default main font name.
  */
-define('PDF_FONT_NAME_MAIN', 'Palanquin');
+define('PDF_FONT_NAME_MAIN', 'palanquin');
 
 /**
  * Default main font size.
@@ -164,7 +164,7 @@ define('PDF_FONT_SIZE_MAIN', 10);
 /**
  * Default data font name.
  */
-define('PDF_FONT_NAME_DATA', 'Palanquin');
+define('PDF_FONT_NAME_DATA', 'palanquin');
 
 /**
  * Default data font size.

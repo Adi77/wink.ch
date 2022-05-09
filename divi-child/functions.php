@@ -174,7 +174,7 @@ function my_lang_function()
 
 
                 $components['attachments'][] = $attachment_file_path;
-                $components['attachments'][] = 'uploads/2022/05/Gutschein_A4_ES.pdf';
+                $components['attachments'][] = $upload_dir['basedir']. '/2022/05/Gutschein_A4_ES.pdf';
             }
         }
         return $components;

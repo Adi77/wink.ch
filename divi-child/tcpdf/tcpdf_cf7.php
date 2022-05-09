@@ -59,11 +59,12 @@ class CREATE_FPDFCF7
 
         $pdf->SetLeftMargin(159);
         $pdf->SetTopMargin(129);
-        $pdf->SetFont('PalanquinBold', '', 25, '', false);
+        $pdf->SetFont('palanquin', '', 25, '', false);
+        $pdf->SetFont('palanquinBold', '', 25, '', false);
 
 
         //content to print
-        $html ='<div style="font-family:PalanquinBold;color:#510f0a;font-size:22px;font-weight:bold;text-align:center;">Gutschein<br>'.$lektion.'<br><span style="font-family:Palanquin;color:#510f0a;font-size:15px;font-weight:normal;text-align:center;"><br>für '.$name.'</span></div>';
+        $html ='<div style="font-family:palanquinBold;color:#510f0a;font-size:22px;font-weight:bold;text-align:center;">Gutschein<br>'.$lektion.'<br><span style="font-family:palanquin;color:#510f0a;font-size:15px;font-weight:normal;text-align:center;"><br>für '.$name.'</span></div>';
         //$html .='<div style="font-family:Palanquin;color:#510f0a;font-size:15px;font-weight:normal;text-align:center;">für '.$name.'</div>';
         // print text
         $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
