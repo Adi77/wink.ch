@@ -1,12 +1,11 @@
 #main-content {
   .wink-home-header {
     padding-top: 100px;
+
     .et_pb_row {
-      width: 100%;
-      max-width: 100%;
+      width: 90% !important;
+      max-width: 90% !important;
       @include diviBreakpoint(1405) {
-        width: 90% !important;
-        max-width: 90% !important;
         padding: 0;
       }
       .et_pb_module {
@@ -20,7 +19,7 @@
             @include diviBreakpoint(1405) {
               font-size: 80px;
               margin-bottom: 0;
-              padding: 40px;
+              padding: 20px;
 
               strong {
               }
