@@ -199,7 +199,7 @@ $.fn.accordionStickyItems = function () {
   });
   containerTop = $('.wink-accordion-fullwidth').offset().top;
   $(window).scroll(function () {
-    let windowTop = $(window).scrollTop();
+    let windowTop = $(window).scrollTop() + 100;
     $.each(stickyTop, function (index, value) {
       if (value < windowTop) {
         $('.wink-accordion-fullwidth .et_pb_accordion_item_' + index).addClass(
