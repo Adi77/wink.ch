@@ -4,7 +4,7 @@ source .env
 set +o allexport
 
 # local
-wpContentFolderLocationLocal=www/$VIRTUAL_HOST/wp-content
+wpContentFolderLocationLocal=www/wp-content
 migrationDbDumpFolderLocationLocal=www
 
 # remote
@@ -39,8 +39,20 @@ wp-files_sync_plugins() {
 
 wp-files_sync_uploads() {
 
-    echo "******* Do you wish to create Zip Archive from uploads Folder and download it?"
+    echo "******* Do you wish to create Zip Archive from uploads Folder on Server?"
     SCRIPT="cd ${webRootRelativeRemote}/wp-content; zip -r uploads.zip uploads"
+    select yn in "Yes" "No"; do
+        case $yn in
+        Yes)
+            ssh ${prodServerSsh} "${SCRIPT}"
+            break
+            ;;
+        No) break ;;
+        esac
+    done
+
+    echo "******* Do you wish to download the uploads.zip Archive?"
+    SCRIPT="cd ${webRootRelativeRemote}/wp-content"
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
@@ -51,11 +63,14 @@ wp-files_sync_uploads() {
         No) break ;;
         esac
     done
+
     if test -f "${wpContentFolderLocationLocal}/uploads.zip"; then
         echo "******* uploads.zip exists. ********"
         unzip ${wpContentFolderLocationLocal}/uploads.zip -d ./${wpContentFolderLocationLocal}
     else
-        echo "******* could not download uploads.zip. ********"
+        pwd
+        echo ${wpContentFolderLocationLocal}
+        echo "******* could not find uploads.zip File on Client. ********"
     fi
 
 }
@@ -106,10 +121,9 @@ wp-database_sync() {
             case $yn in
             Yes)
                 gunzip -k ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz
-                cd ${migrationDbDumpFolderLocationLocal}
-                docker-compose run --rm wpcli db import <$dbName.sql
+                docker-compose run --rm wpcli db import <${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql
                 docker-compose run --rm wpcli search-replace ${domainNameProduction} 'http://'$VIRTUAL_HOST --skip-columns=guid --skip-tables=wp_users
-                rm $DB_NAME.sql
+                rm ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql
                 break
                 ;;
             No) exit ;;
