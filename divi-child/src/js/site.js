@@ -26,6 +26,7 @@ $(document).ready(function ($) {
     //$('.menu-row').removeClass('active');
     //$('body').toggleClass('mainnav-active');
     $('#loader').show();
+    $('.menu-row > div').css('opacity', '0.4');
     $('header').css('mix-blend-mode', 'normal');
   });
 
