@@ -23,8 +23,9 @@ $(document).ready(function ($) {
   /* set blendmode effect to normal if menu item is clicked */
 
   $('.menu-row a').click(function () {
-    $('.menu-row').removeClass('active');
-    $('body').toggleClass('mainnav-active');
+    //$('.menu-row').removeClass('active');
+    //$('body').toggleClass('mainnav-active');
+    $('#loader').show();
     $('header').css('mix-blend-mode', 'normal');
   });
 
@@ -167,10 +168,11 @@ $(document).ready(function ($) {
 
   let currentPage = window.location.pathname.split('/')[1];
   if (currentPage == 'project') {
+    // exeption for projects single view page
     currentPage = 'projekte';
   }
   $(
-    '#wink-mainnav .et_pb_row_1_tb_header .et_pb_column_3_tb_header .et_pb_text_inner a[href="' +
+    '#wink-mainnav .menu-row .et_pb_column .et_pb_module a[href="' +
       currentPage +
       '/"]'
   ).addClass('active');

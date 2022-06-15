@@ -82,6 +82,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
 		</a>
 	</span>
 	<span id="cursor-shadow" class="cursor-shadow"></span>
+	<div id="loader"></div>
 </div> <!-- #main-content -->
 
 <?php
