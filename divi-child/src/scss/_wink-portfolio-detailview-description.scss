@@ -69,6 +69,11 @@
   }
 }
 
+// open project field texts in divi backend
+.et-fb-preview--desktop .wink-project-fields-list-row {
+  display: block !important;
+}
+
 .dark-mode {
   .wink-portfolio-detailview-description {
     background-color: $wink-black;
