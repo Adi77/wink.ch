@@ -82,7 +82,6 @@ function get_the_slug()
     return $slug;
 }
 
-//echo get_the_slug();
 
 
 // remove commas between category tags on single blog page
@@ -134,50 +133,3 @@ function my_lang_function()
 }
     add_action('after_setup_theme', 'my_lang_function');
  */
-
-
-/* generate pdf on contact form 7 submit - test */
- add_filter('wpcf7_mail_components', 'custom_wpcf7_mail_components');
-    function custom_wpcf7_mail_components($components)
-    {
-        require_once('tcpdf/tcpdf_cf7.php');
-        //Get current form
-        $wpcf7 = WPCF7_ContactForm::get_current();
-        $attachment_file_path = '';
-        //check the relevant form id
-        if ($wpcf7->id == '247784') {
-            // get current SUBMISSION instance
-            $submission = WPCF7_Submission::get_instance();
-            if ($submission) {
-                // get submission data
-                $data = $submission->get_posted_data();
-                $name = $data['gutschein-text'];
-
-
-                $lektion = $data['lektion'][0];
-
-
-
-
-                // create new PDF document
-                $createpdf = new CREATE_FPDFCF7();
-                // setup upload directory
-                $upload_dir = wp_upload_dir();
-                define('PDF_FILE_PATH', $upload_dir['basedir'].'/cf7_pdf/');
-                $fname = $createpdf->CREATE_FPDFCF7Fn($name, $lektion, PDF_FILE_PATH);
-                //set filenames
-                $pdf_filename= PDF_FILE_PATH.$fname;
-
-
-
-                //set attachment full path
-                $attachment_file_path = $pdf_filename;
-                //append new file to mail attachments
-
-
-                $components['attachments'][] = $attachment_file_path;
-                $components['attachments'][] = $upload_dir['basedir']. '/2022/05/Gutschein_A4_ES.pdf';
-            }
-        }
-        return $components;
-    }
