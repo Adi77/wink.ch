@@ -65,6 +65,17 @@ $(document).ready(function ($) {
 
   $('#main-header').removeClass('et-fixed-header');
 
+  /* divi accordion */
+
+  /* remove open icon if accordion has no content */
+
+  $('.et_pb_toggle_content').each(function (i, obj) {
+    //test
+    if ($(this).is(':empty')) {
+      $(this).prev('.et_pb_toggle_title').addClass('no-content');
+    }
+  });
+
   /* make divi accordion closeable */
 
   $('.et_pb_toggle_title').click(function () {

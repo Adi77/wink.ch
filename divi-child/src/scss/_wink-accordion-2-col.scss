@@ -16,6 +16,13 @@
         padding-left: 0;
         padding-right: 0;
         .et_pb_toggle_title {
+          &.no-content {
+            cursor: default;
+            &:before,
+            &::after {
+              background-color: transparent;
+            }
+          }
           &:before {
             display: block;
             content: '\4c';
