@@ -5,18 +5,13 @@
 /* light color header for team page */
 .single-project {
   header {
-    mix-blend-mode: difference;
+    //mix-blend-mode: difference;
     #wink-mainnav {
       .et_pb_row {
         .wink-mainmenu-toggle-container {
           #wink-mainmenu-toggle {
             color: $wink-beige;
           }
-        }
-      }
-      svg {
-        path {
-          fill: $wink-beige;
         }
       }
     }

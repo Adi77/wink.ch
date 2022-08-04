@@ -6,7 +6,7 @@
 #et-top-navigation {
   .mobile_menu_bar {
     display: inline-block;
-    transform: rotate(9deg);
+    //transform: rotate(9deg);
     &.et_pb_header_toggle {
       width: 50px;
     }
@@ -21,6 +21,8 @@ header {
   #wink-mainnav {
     height: 100px;
     padding: 20px 30px;
+    transition: 0.5s;
+    background-color: $wink-beige;
     @include diviBreakpoint(980) {
       padding: 20px;
       &.stickyBg {
@@ -98,10 +100,11 @@ header {
               }
             }
             .et_pb_toggle_content {
+              transition: display 1.35s !important;
               @include winkTag();
               a {
                 @include diviBreakpoint(480) {
-                  margin-left: 0;
+                  margin: 0 0 15px 8px;
                 }
               }
             }
@@ -185,6 +188,7 @@ header {
             &.et_pb_text_3_tb_header {
               @include diviBreakpoint(980) {
                 padding-top: 10px;
+                padding-bottom: 40px;
                 text-align: right;
               }
               a {
@@ -230,9 +234,10 @@ header {
           text-align: right;
         }
         #wink-mainmenu-toggle {
-          font-size: 55px;
+          padding-top: 0;
+          padding-right: 5px;
           color: $wink-black;
-          transform: rotate(9deg);
+          //transform: rotate(9deg);
           display: inline-block;
           cursor: pointer;
         }

@@ -7,6 +7,8 @@ $(document).ready(function ($) {
 
   $('#wink-mainmenu-toggle').click(function () {
     $('.menu-row').toggleClass('active');
+
+    $(this).toggleClass('is-active');
     $('body').toggleClass('mainnav-active');
     /* prevent menu-row from loosing z-index:999 too early on menu close */
     if ($('.mainnav-active ').length) {
@@ -65,7 +67,9 @@ $(document).ready(function ($) {
 
   $('#main-header').removeClass('et-fixed-header');
 
-  /* divi accordion */
+  /*
+   * divi accordion
+   */
 
   /* remove open icon if accordion has no content */
 
@@ -80,13 +84,13 @@ $(document).ready(function ($) {
 
   $('.et_pb_toggle_title').click(function () {
     let $toggle = $(this).closest('.et_pb_toggle');
+    let $resetToggles = $('.et_pb_toggle');
     $(this)
       .parent()
       .siblings()
       .removeClass('et_pb_toggle_minus')
-      .addClass(
-        'et_pb_toggle_plus'
-      ); /* add divi accordion toggle icon animation */
+      .addClass('et_pb_toggle_plus');
+    /* add divi accordion toggle icon animation */
     if (!$toggle.hasClass('et_pb_accordion_toggling')) {
       let $accordion = $toggle.closest('.et_pb_accordion');
       if ($toggle.hasClass('et_pb_toggle_open')) {
@@ -97,18 +101,28 @@ $(document).ready(function ($) {
             'et_pb_toggle_minus'
           ); /* add divi accordion toggle icon animation */
         $accordion.addClass('et_pb_accordion_toggling');
-        $toggle.find('.et_pb_toggle_content').slideToggle(700, function () {
+        $toggle.find('.et_pb_toggle_content').slideToggle(300, function () {
           $toggle
             .removeClass('et_pb_toggle_open')
             .addClass('et_pb_toggle_close');
         });
       } else {
+        $('.et_pb_toggle')
+          .removeClass('et_pb_toggle_open')
+          .addClass('et_pb_toggle_close');
+        $('.et_pb_toggle_content').slideUp(300);
         $(this)
           .parent()
           .addClass('et_pb_toggle_minus')
           .removeClass(
             'et_pb_toggle_plus'
           ); /* add divi accordion toggle icon animation */
+
+        $toggle.find('.et_pb_toggle_content').slideToggle(300, function () {
+          $toggle
+            .removeClass('et_pb_toggle_close')
+            .addClass('et_pb_toggle_open');
+        });
       }
       setTimeout(function () {
         $accordion.removeClass('et_pb_accordion_toggling');
@@ -116,9 +130,16 @@ $(document).ready(function ($) {
     }
   });
 
-  /* cssonly carousel for portfolio items */
+  /*
+   * cssonly carousel for portfolio items
+   */
 
   $.fn.portfolioCarousel();
+
+  /*
+   * Show Navigation on Scroll up
+   */
+  $.fn.showNavOnScrollUp();
 
   /* portfolio detail page project field more details toggle */
 
@@ -165,7 +186,7 @@ $(document).ready(function ($) {
   - to prevent displaying related videos */
 
   $('.wink-video-header iframe').attr('src', function (i, val) {
-    return val + '&rel=0&controls=0';
+    return val + '&rel=0&controls=0&autoplay=1&mute=1';
   });
 
   /* Cursor shadow: aura shine for mouse pointer */
@@ -225,5 +246,35 @@ $.fn.accordionStickyItems = function () {
         $('#wink-mainnav ').addClass('stickyBg');
       }
     });
+  });
+};
+
+$.fn.showNavOnScrollUp = function () {
+  var lastScrollTop; // This Varibale will store the top position
+  var navbar;
+  var darkmodeToggle;
+  darkmodeToggle = document.getElementsByClassName('dark-mode-switch');
+  navbar = document.getElementById('wink-mainnav'); // Get The NavBar
+
+  window.addEventListener('scroll', function () {
+    //on every scroll this funtion will be called
+
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    //This line will get the location on scroll
+
+    if (scrollTop > lastScrollTop) {
+      //if it will be greater than the previous
+      navbar.style.top = '-100px';
+
+      darkmodeToggle[0].style.left = '-30px';
+
+      //set the value to the negetive of height of navbar
+    } else {
+      navbar.style.top = '0';
+      darkmodeToggle[0].style.left = '20px';
+    }
+
+    lastScrollTop = scrollTop; //New Position Stored
   });
 };

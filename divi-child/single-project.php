@@ -113,6 +113,8 @@ $show_navigation = get_post_meta(get_the_ID(), '_et_pb_project_nav', true);
 			</svg>
 		</a>
 	</span>
+	<span id="cursor-shadow" class="cursor-shadow"></span>
+	<div id="loader"></div>
 </div>
 
 <?php

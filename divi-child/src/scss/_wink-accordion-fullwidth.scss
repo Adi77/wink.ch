@@ -17,22 +17,21 @@
                 background-size: 50% auto;
                 background-position: 100% 50%;
                 background-color: $wink-beige;
+                padding-left: 10vw;
+                padding-right: 55vw;
+                padding-top: 35px;
 
                 @include diviBreakpoint(1405) {
-                  background-size: contain;
+                  background-size: cover;
                   background-position: 50vw 0;
                 }
                 @include diviBreakpoint(980) {
                   background-size: cover;
                 }
 
-                padding-left: 10vw;
-                padding-right: 55vw;
-                padding-top: 35px;
-                padding-bottom: 85px;
                 @include diviBreakpoint(768) {
                   padding: 30px;
-                  background-size: 100%;
+                  background-size: contain;
                   background-position: 0 100%;
                 }
                 .et_pb_toggle_title {
@@ -58,8 +57,12 @@
                       }
                     }
                   }
+
                   @include diviBreakpoint(768) {
-                    padding-bottom: 300px;
+                    padding-bottom: 58vw;
+                  }
+                  @include diviBreakpoint(980, 1) {
+                    padding-bottom: 62vw;
                   }
                 }
                 &.sticky {

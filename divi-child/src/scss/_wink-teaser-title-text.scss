@@ -1,4 +1,9 @@
 .et_pb_section.wink-teaser-title-text {
+  padding-top: 160px;
+  @include diviBreakpoint(768) {
+    padding-top: 80px;
+  }
+  padding-right: inherit;
   @include diviBreakpoint(980) {
     margin-bottom: 40px;
   }
@@ -55,7 +60,11 @@
 }
 
 .dark-mode {
-  .et_pb_button {
-    color: $wink-beige;
+  .et_pb_section {
+    &.wink-teaser-title-text {
+      .et_pb_button {
+        color: $wink-beige;
+      }
+    }
   }
 }

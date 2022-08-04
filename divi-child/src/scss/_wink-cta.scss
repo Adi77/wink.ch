@@ -49,21 +49,23 @@
 }
 
 .dark-mode {
-  .wink-cta {
-    background-color: $wink-beige;
+  .et_pb_section {
+    &.wink-cta {
+      background-color: $wink-beige;
 
-    .et_pb_row {
-      .et_pb_column {
-        .et_pb_text_inner {
-          h2,
-          p {
-            color: $wink-black !important;
+      .et_pb_row {
+        .et_pb_column {
+          .et_pb_text_inner {
+            h2,
+            p {
+              color: $wink-black !important;
+            }
           }
         }
-      }
-      .et_pb_button_module_wrapper {
-        a {
-          color: $wink-black !important;
+        .et_pb_button_module_wrapper {
+          a {
+            color: $wink-black !important;
+          }
         }
       }
     }

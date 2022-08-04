@@ -1,7 +1,8 @@
 .wink-blog-list {
+  padding-top: 74px;
   .el-dbe-filterable-categories {
     @include diviBreakpoint(980) {
-      margin-top: 100px;
+      margin-top: 30px;
     }
     .el-dbe-post-categories {
       text-align: left;

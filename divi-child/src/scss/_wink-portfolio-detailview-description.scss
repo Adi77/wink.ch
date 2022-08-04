@@ -62,7 +62,12 @@
       }
       .et_pb_column {
         &:not(:first-child) {
-          padding-top: 30px;
+          @include diviBreakpoint(980) {
+            padding-top: 30px;
+          }
+        }
+        a {
+          border: 0;
         }
       }
     }
@@ -88,7 +93,7 @@
         ul {
           li {
             color: $wink-beige;
-            border-color: $wink-beige;
+            border-color: $wink-beige !important;
           }
         }
       }

@@ -46,12 +46,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
                 <?php
                             if (! post_password_required()) :
 ?>
-                <div class="title-and-tags">
-                    <?php et_divi_post_meta(); ?>
-                    <h1 class="entry-title"><?php the_title(); ?>
-                    </h1>
 
-                </div> <?php
+                <?php
                                 
 
                                 $thumb = '';
@@ -66,6 +62,22 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
                                 $thumb = $thumbnail["thumb"];
 
                                 $post_format = et_pb_post_format();
+
+   
+                            ?>
+
+                <div class="header-image-mobile"
+                    style="background-image:url('<?php echo $thumb; ?>')">
+                </div>
+                <div class="title-and-tags">
+                    <?php et_divi_post_meta(); ?>
+                    <h1 class="entry-title"><?php the_title(); ?>
+                    </h1>
+
+                </div> <?php
+                                
+
+
 
                                 if ('video' === $post_format && false !== ($first_video = et_get_first_video())) {
                                     printf(
@@ -186,6 +198,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used(get_the_ID());
             </svg>
         </a>
     </span>
+    <span id="cursor-shadow" class="cursor-shadow"></span>
+    <div id="loader"></div>
 </div>
 
 <?php

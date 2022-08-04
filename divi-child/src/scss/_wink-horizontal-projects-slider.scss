@@ -56,7 +56,7 @@
           }
           a {
             border: 0;
-
+            font-family: $wink-CabinetGroteskExtrabold;
             &:hover {
               &:before {
                 display: block;
@@ -69,7 +69,10 @@
                 z-index: 2;
                 left: 0;
                 color: white;
-                padding-top: 35%;
+                padding-top: 20vh;
+                @include diviBreakpoint(480) {
+                  padding-top: 24vh;
+                }
                 font-size: 30px;
                 text-transform: uppercase;
               }
@@ -78,6 +81,9 @@
           img {
             width: auto;
             height: 421px;
+            @include diviBreakpoint(480) {
+              height: 195px;
+            }
           }
         }
       }

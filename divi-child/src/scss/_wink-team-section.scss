@@ -1,4 +1,8 @@
 .wink-team-section {
+  padding-top: 160px;
+  @include diviBreakpoint(768) {
+    padding-top: 80px;
+  }
   .et_pb_row {
     @include diviBreakpoint(980) {
       padding: 0;

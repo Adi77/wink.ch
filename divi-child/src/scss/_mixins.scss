@@ -1,5 +1,5 @@
 // divi grid mediaQuery breakpoint mixin
-@mixin diviBreakpoint($breakpoint) {
+@mixin diviBreakpoint($breakpoint, $only: 0) {
   @if $breakpoint==480 {
     @media only screen and (max-width: 479px) {
       @content;
@@ -11,8 +11,14 @@
     }
   }
   @if $breakpoint==980 {
-    @media only screen and (max-width: 980px) {
-      @content;
+    @if $only==1 {
+      @media only screen and (min-width: 769px) and (max-width: 980px) {
+        @content;
+      }
+    } @else {
+      @media only screen and (max-width: 980px) {
+        @content;
+      }
     }
   }
   @if $breakpoint==1100 {
@@ -35,6 +41,7 @@
 @mixin winkButton() {
   .et_pb_button,
   .button {
+    font-family: $wink-SwitzerRegular;
     font-size: 18px;
     text-transform: uppercase;
     background-color: transparent;
@@ -71,9 +78,14 @@
     border: $wink-tag-border-size $wink-black;
     border-radius: 100px;
     padding: 6px 10px;
-    margin: 0 0 20px 30px;
+    margin: 0 0 15px 10px;
+
     @include diviBreakpoint(1580) {
       margin-left: 5px;
+    }
+    @include diviBreakpoint(768) {
+      padding: 3px 5px;
+      margin: 0 8px 15px 0;
     }
     display: inline-block;
     &:hover {
