@@ -15,17 +15,13 @@
               .et_pb_toggle {
                 border-top: $wink-horizontal-border-size $wink-black;
                 background-size: 50% auto;
-                background-position: 100% 50%;
+                background-position: 50vw 0;
                 background-color: $wink-beige;
                 padding-left: 10vw;
                 padding-right: 55vw;
                 padding-top: 35px;
 
                 @include diviBreakpoint(1405) {
-                  background-size: cover;
-                  background-position: 50vw 0;
-                }
-                @include diviBreakpoint(980) {
                   background-size: cover;
                 }
 

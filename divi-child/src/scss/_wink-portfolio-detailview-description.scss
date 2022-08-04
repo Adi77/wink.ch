@@ -37,22 +37,6 @@
         p {
           font-size: 20px;
         }
-        ul {
-          padding-left: 0;
-          font-family: $wink-SwitzerRegular;
-
-          li {
-            font-size: 18px;
-            border-bottom: $wink-horizontal-border-size $wink-black;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            &:before {
-              content: '';
-              position: inherit;
-              margin-left: inherit;
-            }
-          }
-        }
       }
     }
     &.wink-project-fields-list-row {
