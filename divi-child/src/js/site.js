@@ -80,11 +80,10 @@ $(document).ready(function ($) {
     }
   });
 
-  /* make divi accordion closeable */
+  /* make divi accordion closeable & change animation speed */
 
   $('.et_pb_toggle_title').click(function () {
     let $toggle = $(this).closest('.et_pb_toggle');
-    let $resetToggles = $('.et_pb_toggle');
     $(this)
       .parent()
       .siblings()
@@ -148,7 +147,11 @@ $(document).ready(function ($) {
   ) {
     event.preventDefault();
     $(this).toggleClass('open');
-    $('.wink-project-fields-list-row').toggleClass('show');
+    //$('.wink-project-fields-list-row').toggleClass('show');
+
+    $('.wink-project-fields-list-row').slideToggle(300, function () {
+      $(this).toggleClass('show');
+    });
   });
 
   /* Blog post list - set filter 'Alle' to active state on page load */
