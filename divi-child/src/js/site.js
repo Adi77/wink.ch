@@ -266,7 +266,7 @@ $.fn.showNavOnScrollUp = function () {
 
     //This line will get the location on scroll
 
-    if (scrollTop > lastScrollTop) {
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
       //if it will be greater than the previous
       navbar.style.top = '-100px';
 
