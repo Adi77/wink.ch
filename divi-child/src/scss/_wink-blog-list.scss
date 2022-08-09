@@ -1,5 +1,8 @@
 .et_pb_section.wink-blog-list {
-  padding-top: 74px;
+  margin-top: 100px;
+  @include diviBreakpoint(980) {
+    margin-top: 30px;
+  }
   .el-dbe-filterable-categories {
     @include diviBreakpoint(980) {
       margin-top: 30px;
@@ -11,11 +14,11 @@
           width: auto;
           margin-right: 0;
         }
-        margin-bottom: 0;
+        margin-bottom: 5px;
         a {
           background: transparent;
-
-          font-family: $wink-SwitzerMedium;
+          text-transform: lowercase;
+          font-family: $wink-SwitzerRegular;
           font-size: 80px;
           @include diviBreakpoint(980) {
             font-size: 30px;

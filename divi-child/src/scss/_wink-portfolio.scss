@@ -34,6 +34,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-family: $wink-SwitzerRegular;
+        text-transform: lowercase;
         font-size: 40px;
         @include diviBreakpoint(980) {
           font-size: 25px;
@@ -52,11 +54,13 @@
     .et_pb_portfolio_filter {
       @include winkTag();
       line-height: 1.4;
+      margin-right: 15px;
       @include diviBreakpoint(980) {
         width: auto;
       }
       a {
-        font-family: $wink-SwitzerMedium;
+        text-transform: lowercase;
+        font-family: $wink-SwitzerRegular;
         font-size: 80px;
         @include diviBreakpoint(980) {
           font-size: 30px;
@@ -65,6 +69,7 @@
         color: inherit;
         border: $wink-tag-border-size transparent;
         padding: 6px 18px;
+        margin: 0;
         &:hover {
           background-color: transparent;
           border: $wink-tag-border-size $wink-black;

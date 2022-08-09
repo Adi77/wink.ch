@@ -24,7 +24,7 @@ function divi_child_theme_scripts()
                 wp_enqueue_script('divi_child_theme-scripts-dev', 'http://'. getenv('VIRTUAL_HOST'). ':8080/site.js', array(), null, true);
                 //wp_enqueue_script('divi_child_theme-admin-scripts-dev', 'http://localhost:8080/admin.js');
             }
-            
+
           break;
         case 'staging':
             // load assets (staging)
@@ -52,16 +52,16 @@ remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
 
 add_action('wp_enqueue_scripts', 'crunchify_disable_unused_loading_css_js', 9999);
- 
+
 function crunchify_disable_unused_loading_css_js()
 {
-  
+
     // Check if it's any of WooCommerce page
     if (get_the_slug() != 'blog') {
-      
+
       ## Dequeue divi blog extras styles
         wp_dequeue_style('divi-blog-extras-styles');
- 
+
         ## Dequeue divi blog extras scripts
         wp_dequeue_script('divi-blog-extras-frontend-bundle');
     }

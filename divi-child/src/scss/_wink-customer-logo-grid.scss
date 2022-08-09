@@ -20,9 +20,8 @@
 
         h2 {
           color: $wink-beige;
-          @include diviBreakpoint(980) {
-            padding-bottom: 30px;
-          }
+
+          padding-bottom: 80px;
         }
         a {
           border: 0;
@@ -31,22 +30,10 @@
             padding: 0;
           }
         }
-        .et_pb_code {
-          svg {
-            path,
-            polygon {
-              fill: $wink-beige !important;
-            }
-          }
-        }
-        &:nth-child(even) {
-          .et_pb_code {
-            svg {
-              @include diviBreakpoint(980) {
-                padding-left: 20px;
-              }
-            }
-          }
+      }
+      &:not(:first-child) {
+        &:not(:last-child) {
+          margin-bottom: 40px;
         }
       }
     }

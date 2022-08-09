@@ -69,7 +69,7 @@
     .et_pb_row {
       .et_pb_button_module_wrapper {
         .et_pb_button {
-          color: $wink-beige;
+          color: $wink-beige !important;
         }
       }
 
@@ -78,6 +78,9 @@
           li {
             color: $wink-beige;
             border-color: $wink-beige !important;
+            a {
+              color: $wink-beige;
+            }
           }
         }
       }
