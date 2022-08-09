@@ -21,6 +21,9 @@ header {
   #wink-mainnav {
     height: 82px;
     padding: 10px 30px;
+    @include diviBreakpoint(980) {
+      padding: 10px 20px;
+    }
     transition: 0.5s;
     background-color: $wink-beige;
     @include diviBreakpoint(980) {
