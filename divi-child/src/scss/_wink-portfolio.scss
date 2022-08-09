@@ -49,7 +49,7 @@
   }
   .et_pb_portfolio_filters {
     @include diviBreakpoint(980) {
-      margin-bottom: 10px;
+      margin: 30px 0 50px;
     }
     .et_pb_portfolio_filter {
       @include winkTag();
@@ -57,6 +57,7 @@
       margin-right: 15px;
       @include diviBreakpoint(980) {
         width: auto;
+        margin: 0;
       }
       a {
         text-transform: lowercase;
