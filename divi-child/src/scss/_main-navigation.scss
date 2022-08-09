@@ -24,9 +24,13 @@ header {
     transition: 0.5s;
     background-color: $wink-beige;
     @include diviBreakpoint(980) {
-      padding: 20px;
       &.stickyBg {
         background-color: $wink-beige !important;
+      }
+    }
+    .et_pb_row {
+      &.et_pb_row_0_tb_header {
+        padding: 18px 0 0;
       }
     }
 
@@ -37,24 +41,27 @@ header {
       width: 100%;
       height: 100%;
 
-      top: -100%;
+      top: -200%;
       left: 0;
-      right: -100%;
+      // right: -100%;
       bottom: 0;
 
       transition: all 0.3s ease-in-out;
-      transform: scale(0);
-
+      //transform: scale(0);
+      padding: 10vh 10% 0;
+      @include diviBreakpoint(980) {
+        padding: 13vh 30px 0;
+      }
       &.active {
         padding: 10vh 10% 0;
         @include diviBreakpoint(980) {
           padding: 13vh 30px 0;
         }
         top: 0;
-        right: 0;
+        //right: 0;
 
         display: block;
-        transform: scale(1);
+        // transform: scale(1);
       }
       .et_pb_column {
         @include diviBreakpoint(980) {
@@ -216,7 +223,6 @@ header {
     .et_pb_row {
       width: 100%;
       min-width: 100%;
-      padding: 17px 0 0;
       .et_pb_column_0_tb_header,
       .et_pb_column_1_tb_header {
         @include diviBreakpoint(980) {
