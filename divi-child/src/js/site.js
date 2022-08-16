@@ -82,19 +82,26 @@ $(document).ready(function ($) {
 
   /* make divi accordion closeable & change animation speed */
 
-  $('.et_pb_toggle_title').click(function () {
-    let $toggle = $(this).closest('.et_pb_toggle');
-    $(this)
-      .parent()
+  $('.et_pb_toggle').click(function () {
+    let $toggle = $(this);
+
+    setTimeout(function () {
+      $('body')
+        .find($('.et_pb_toggle_close.et_pb_toggle_minus'))
+        .removeClass('et_pb_toggle_minus')
+        .addClass('et_pb_toggle_plus');
+    }, 400);
+
+    $toggle
       .siblings()
       .removeClass('et_pb_toggle_minus')
       .addClass('et_pb_toggle_plus');
+
     /* add divi accordion toggle icon animation */
     if (!$toggle.hasClass('et_pb_accordion_toggling')) {
       let $accordion = $toggle.closest('.et_pb_accordion');
       if ($toggle.hasClass('et_pb_toggle_open')) {
-        $(this)
-          .parent()
+        $toggle
           .addClass('et_pb_toggle_plus')
           .removeClass(
             'et_pb_toggle_minus'
@@ -110,8 +117,7 @@ $(document).ready(function ($) {
           .removeClass('et_pb_toggle_open')
           .addClass('et_pb_toggle_close');
         $('.et_pb_toggle_content').slideUp(300);
-        $(this)
-          .parent()
+        $toggle
           .addClass('et_pb_toggle_minus')
           .removeClass(
             'et_pb_toggle_plus'
