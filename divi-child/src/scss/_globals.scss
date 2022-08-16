@@ -29,6 +29,39 @@ a {
   }
 }
 
+/* tag color by business unit */
+
+.et_pb_module {
+  .et_pb_text_inner {
+    a {
+      &[href*='packaging'] {
+        &:hover {
+          background-color: $wink-moss-green !important;
+          border: $wink-tag-border-size $wink-moss-green !important;
+        }
+      }
+      &[href*='branding'] {
+        &:hover {
+          background-color: $wink-yellow !important;
+          border: $wink-tag-border-size $wink-yellow !important;
+        }
+      }
+      &[href*='digital'] {
+        &:hover {
+          background-color: $wink-violet !important;
+          border: $wink-tag-border-size $wink-violet !important;
+        }
+      }
+      &[href*='marketing'] {
+        &:hover {
+          background-color: $wink-orange !important;
+          border: $wink-tag-border-size $wink-orange !important;
+        }
+      }
+    }
+  }
+}
+
 /* form input */
 input[type='radio'],
 input[type='checkbox'] {
@@ -368,6 +401,22 @@ html .et_pb_social_icon {
     a.icon {
       &:before {
         color: $wink-beige !important;
+      }
+    }
+  }
+  /* a-tag href content */
+
+  a {
+    color: $wink-beige;
+  }
+
+  /* lists style */
+
+  .et_pb_text_inner,
+  .et_pb_toggle_content {
+    ul {
+      li {
+        border-bottom: $wink-horizontal-border-size $wink-beige;
       }
     }
   }

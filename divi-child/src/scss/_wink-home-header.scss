@@ -69,12 +69,7 @@
                 border: $wink-tag-border-size transparent !important;
               }
             }
-            &[href*='packaging'] {
-              &:hover {
-                background-color: $wink-moss-green;
-                border: $wink-tag-border-size $wink-moss-green;
-              }
-            }
+
             &[href*='branding'] {
               @include diviBreakpoint(980) {
                 position: relative;
@@ -82,10 +77,6 @@
 
               @include diviBreakpoint(480) {
                 top: -10px;
-              }
-              &:hover {
-                background-color: $wink-yellow;
-                border: $wink-tag-border-size $wink-yellow;
               }
             }
             &[href*='digital'] {
@@ -95,10 +86,7 @@
               @include diviBreakpoint(768) {
                 padding-left: 12px;
               }
-              &:hover {
-                background-color: $wink-violet;
-                border: $wink-tag-border-size $wink-violet;
-              }
+
               @include diviBreakpoint(980) {
                 padding-left: 12px;
               }
@@ -113,10 +101,6 @@
 
               @include diviBreakpoint(480) {
                 top: -10px;
-              }
-              &:hover {
-                background-color: $wink-orange;
-                border: $wink-tag-border-size $wink-orange;
               }
             }
             &[href*='agentur'] {
