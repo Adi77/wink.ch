@@ -43,13 +43,23 @@ $(document).ready(function ($) {
 
   /* Dark mode state to localStorage on click */
 
+  if (
+    localStorage.getItem('dark-mode') === null ||
+    localStorage.getItem('dark-mode') === ''
+  ) {
+    localStorage.setItem('dark-mode', 'dark-mode');
+  }
+  if (localStorage.getItem('dark-mode') === 'beige') {
+    $('body').removeClass('dark-mode');
+  }
+
   $('.dark-mode-switch a').click(function (e) {
     let element = document.body;
     element.classList.toggle('dark-mode');
 
     let theme = localStorage.getItem('dark-mode');
     if (theme && theme === 'dark-mode') {
-      localStorage.setItem('dark-mode', '');
+      localStorage.setItem('dark-mode', 'beige');
     } else {
       localStorage.setItem('dark-mode', 'dark-mode');
     }
