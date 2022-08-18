@@ -34,24 +34,24 @@ $(document).ready(function ($) {
 
   /* Dark mode is set in local storage on page load */
 
-  let onpageLoad = localStorage.getItem('dark-mode') || '';
+  /*   let onpageLoad = localStorage.getItem('dark-mode') || '';
   let element = document.body;
 
   if (onpageLoad) {
     element.classList.add(onpageLoad);
-  }
+  } */
 
   /* Dark mode state to localStorage on click */
 
-  if (
+  /*   if (
     localStorage.getItem('dark-mode') === null ||
     localStorage.getItem('dark-mode') === ''
   ) {
     localStorage.setItem('dark-mode', 'dark-mode');
   }
-  if (localStorage.getItem('dark-mode') === 'beige') {
+  if (localStorage.getItem('dark-mode') === 'light-mode') {
     $('body').removeClass('dark-mode');
-  }
+  } */
 
   $('.dark-mode-switch a').click(function (e) {
     let element = document.body;
@@ -59,7 +59,7 @@ $(document).ready(function ($) {
 
     let theme = localStorage.getItem('dark-mode');
     if (theme && theme === 'dark-mode') {
-      localStorage.setItem('dark-mode', 'beige');
+      localStorage.setItem('dark-mode', '');
     } else {
       localStorage.setItem('dark-mode', 'dark-mode');
     }

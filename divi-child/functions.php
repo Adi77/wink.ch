@@ -9,6 +9,26 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 
+function dark_mode_switch()
+{
+    ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let onpageLoad = localStorage.getItem('dark-mode') || '';
+        //let element = document.getElementById('page-container');
+        let element = document.body;
+
+        if (onpageLoad) {
+            element.classList.remove(onpageLoad);
+        }
+    });
+</script>
+
+<?php
+}
+add_action('wp_head', 'dark_mode_switch', 1);
+
 /**
  * Enqueue scripts and styles.
  */
