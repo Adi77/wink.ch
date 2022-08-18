@@ -31,8 +31,11 @@ a {
 
 /* tag color by business unit */
 
-.et_pb_module {
-  .et_pb_text_inner {
+.et_pb_module,
+.title-and-tags {
+  .et_pb_text_inner,
+  .post-categories,
+  .post-meta {
     a {
       &[href*='packaging'] {
         &:hover {
@@ -57,6 +60,40 @@ a {
           background-color: $wink-orange !important;
           border: $wink-tag-border-size $wink-orange !important;
         }
+      }
+    }
+  }
+}
+
+.et_pb_portfolio_filters,
+.el-dbe-filterable-categories {
+  a {
+    &[data-category-slug*='packaging'],
+    &[data-term-id*='17'] {
+      &:hover {
+        background-color: $wink-moss-green !important;
+        border: $wink-tag-border-size $wink-moss-green !important;
+      }
+    }
+    &[data-category-slug*='branding'],
+    &[data-term-id*='14'] {
+      &:hover {
+        background-color: $wink-yellow !important;
+        border: $wink-tag-border-size $wink-yellow !important;
+      }
+    }
+    &[data-category-slug*='digital'],
+    &[data-term-id*='19'] {
+      &:hover {
+        background-color: $wink-violet !important;
+        border: $wink-tag-border-size $wink-violet !important;
+      }
+    }
+    &[data-category-slug*='marketing'],
+    &[data-term-id*='18'] {
+      &:hover {
+        background-color: $wink-orange !important;
+        border: $wink-tag-border-size $wink-orange !important;
       }
     }
   }
