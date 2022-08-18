@@ -155,11 +155,10 @@ function my_lang_function()
  */
 
 
-/* add_filter('body_class', 'my_body_classes');
+add_filter('body_class', 'my_body_classes');
 function my_body_classes($classes)
 {
     $classes[] = 'dark-mode';
 
     return $classes;
 }
- */
