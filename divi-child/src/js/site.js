@@ -34,7 +34,7 @@ $(document).ready(function ($) {
 
   /* Dark mode is set in local storage on page load */
 
-  let onpageLoad = localStorage.getItem('dark-mode') || '';
+  let onpageLoad = localStorage.getItem('dark-mode') || 'dark-mode';
   let element = document.body;
 
   if (onpageLoad) {
@@ -42,16 +42,6 @@ $(document).ready(function ($) {
   }
 
   /* Dark mode state to localStorage on click */
-
-  if (
-    localStorage.getItem('dark-mode') === null ||
-    localStorage.getItem('dark-mode') === ''
-  ) {
-    localStorage.setItem('dark-mode', 'dark-mode');
-  }
-  if (localStorage.getItem('dark-mode') === 'beige') {
-    $('body').removeClass('dark-mode');
-  }
 
   $('.dark-mode-switch a').click(function (e) {
     let element = document.body;
