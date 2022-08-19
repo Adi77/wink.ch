@@ -2,6 +2,8 @@ import './../scss/style.scss';
 
 import $ from 'jquery';
 
+import cookie from 'jquery.cookie';
+
 $(document).ready(function ($) {
   /* wink hamburger menu toggle */
 
@@ -34,34 +36,16 @@ $(document).ready(function ($) {
 
   /* Dark mode is set in local storage on page load */
 
-  /*   let onpageLoad = localStorage.getItem('dark-mode') || '';
-  let element = document.body;
-
-  if (onpageLoad) {
-    element.classList.add(onpageLoad);
-  } */
-
-  /* Dark mode state to localStorage on click */
-
-  /*   if (
-    localStorage.getItem('dark-mode') === null ||
-    localStorage.getItem('dark-mode') === ''
-  ) {
-    localStorage.setItem('dark-mode', 'dark-mode');
-  }
-  if (localStorage.getItem('dark-mode') === 'light-mode') {
-    $('body').removeClass('dark-mode');
-  } */
-
   $('.dark-mode-switch a').click(function (e) {
     let element = document.body;
     element.classList.toggle('dark-mode');
 
-    let theme = localStorage.getItem('dark-mode');
-    if (theme && theme === 'dark-mode') {
-      localStorage.setItem('dark-mode', '');
-    } else {
-      localStorage.setItem('dark-mode', 'dark-mode');
+    if ($.cookie('theme')) {
+      if ($.cookie('theme') === 'light') {
+        $.cookie('theme', 'dark', { path: '/' });
+      } else {
+        $.cookie('theme', 'light', { path: '/' });
+      }
     }
     e.preventDefault();
   });

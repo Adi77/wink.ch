@@ -9,7 +9,7 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 
-function dark_mode_switch()
+/* function dark_mode_switch()
 {
     ?>
 
@@ -27,7 +27,7 @@ function dark_mode_switch()
 
 <?php
 }
-add_action('wp_head', 'dark_mode_switch', 1);
+add_action('wp_head', 'dark_mode_switch', 1); */
 
 /**
  * Enqueue scripts and styles.
@@ -41,7 +41,8 @@ function divi_child_theme_scripts()
             // load assets (dev)
             // Prevent loading css for global templates editing in backend
             if (strpos($current_url, '/et_header_layout/') === false) {
-                wp_enqueue_script('divi_child_theme-scripts-dev', 'http://'. getenv('VIRTUAL_HOST'). ':8080/site.js', array(), null, true);
+                wp_enqueue_style('divi_child_theme-style', get_stylesheet_directory_uri() . '/dist/site.css');
+                wp_enqueue_script('divi_child_theme-scripts', get_stylesheet_directory_uri() . '/dist/site.js', array(), null, true);
                 //wp_enqueue_script('divi_child_theme-admin-scripts-dev', 'http://localhost:8080/admin.js');
             }
 
@@ -144,21 +145,22 @@ if (! function_exists('et_pb_postinfo_meta')) :
 endif;
 
 
+/* read theme cookie and set theme */
 
-/* custom .mo files in divi_child
-function my_lang_function()
+add_action('init', 'read_theme_cookie');
+
+function read_theme_cookie()
 {
-    load_child_theme_textdomain('Divi', get_stylesheet_directory() . '/lang');
-    load_child_theme_textdomain('et_builder', get_stylesheet_directory() . '/includes/builder/languages');
-}
-    add_action('after_setup_theme', 'my_lang_function');
- */
-
-
-add_filter('body_class', 'my_body_classes');
-function my_body_classes($classes)
-{
-    $classes[] = 'dark-mode';
-
-    return $classes;
+    if (!@$_COOKIE['theme']) {
+        setcookie('theme', 'dark');
+        add_filter('body_class', function ($classes) {
+            return array_merge($classes, array( 'dark-mode' ));
+        });
+    } else {
+        if (@$_COOKIE['theme'] == 'dark') {
+            add_filter('body_class', function ($classes) {
+                return array_merge($classes, array( 'dark-mode' ));
+            });
+        }
+    }
 }
