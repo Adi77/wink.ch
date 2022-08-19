@@ -153,6 +153,7 @@ function read_theme_cookie()
 {
     if (!@$_COOKIE['theme']) {
         setcookie('theme', 'dark');
+        $_COOKIE['theme'] = 'dark'; // for ios does read the cookies
         add_filter('body_class', function ($classes) {
             return array_merge($classes, array( 'dark-mode' ));
         });
