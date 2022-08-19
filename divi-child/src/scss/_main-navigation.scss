@@ -92,6 +92,7 @@ header {
             }
             .et_pb_toggle_title {
               font-family: $wink-CabinetGroteskExtrabold;
+              text-transform: lowercase;
               font-size: 5vw;
               @include diviBreakpoint(980) {
                 font-size: 50px;
@@ -299,7 +300,7 @@ header {
                   border-color: $wink-beige !important;
                   &:hover {
                     border-color: transparent !important;
-                    color: $wink-beige !important;
+                    color: $wink-black !important;
                   }
                 }
               }
