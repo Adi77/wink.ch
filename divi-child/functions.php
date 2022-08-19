@@ -41,8 +41,7 @@ function divi_child_theme_scripts()
             // load assets (dev)
             // Prevent loading css for global templates editing in backend
             if (strpos($current_url, '/et_header_layout/') === false) {
-                wp_enqueue_style('divi_child_theme-style', get_stylesheet_directory_uri() . '/dist/site.css');
-                wp_enqueue_script('divi_child_theme-scripts', get_stylesheet_directory_uri() . '/dist/site.js', array(), null, true);
+                wp_enqueue_script('divi_child_theme-scripts-dev', 'http://'. getenv('VIRTUAL_HOST'). ':8080/site.js', array(), null, true);
                 //wp_enqueue_script('divi_child_theme-admin-scripts-dev', 'http://localhost:8080/admin.js');
             }
 

@@ -32,10 +32,12 @@ a {
 /* tag color by business unit */
 
 .et_pb_module,
-.title-and-tags {
+.title-and-tags,
+#wink-mainnav {
   .et_pb_text_inner,
   .post-categories,
-  .post-meta {
+  .post-meta,
+  .et_pb_toggle {
     a {
       &[href*='packaging'] {
         &:hover {
@@ -61,37 +63,49 @@ a {
           border: $wink-tag-border-size $wink-orange !important;
         }
       }
+      &[href*='design-agentur'] {
+        &:hover {
+          background-color: $wink-yellow !important;
+          border: $wink-tag-border-size $wink-yellow !important;
+        }
+      }
     }
   }
 }
 
+.et_pb_module,
 .et_pb_portfolio_filters,
-.el-dbe-filterable-categories {
+.el-dbe-filterable-categories,
+.post-categories {
   a {
     &[data-category-slug*='packaging'],
     &[data-term-id*='17'] {
-      &:hover {
+      &:hover,
+      &.el-dbe-active-category {
         background-color: $wink-moss-green !important;
         border: $wink-tag-border-size $wink-moss-green !important;
       }
     }
     &[data-category-slug*='branding'],
     &[data-term-id*='14'] {
-      &:hover {
+      &:hover,
+      &.el-dbe-active-category {
         background-color: $wink-yellow !important;
         border: $wink-tag-border-size $wink-yellow !important;
       }
     }
     &[data-category-slug*='digital'],
     &[data-term-id*='19'] {
-      &:hover {
+      &:hover,
+      &.el-dbe-active-category {
         background-color: $wink-violet !important;
         border: $wink-tag-border-size $wink-violet !important;
       }
     }
     &[data-category-slug*='marketing'],
     &[data-term-id*='18'] {
-      &:hover {
+      &:hover,
+      &.el-dbe-active-category {
         background-color: $wink-orange !important;
         border: $wink-tag-border-size $wink-orange !important;
       }

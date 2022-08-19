@@ -65,12 +65,14 @@ if ('on' === $show_categories) {
                     } else {
                         foreach ($post_terms as $post_term) {
                             $post_term_list .= sprintf(
-                                '<a href="%1s" target="%5$s" rel="category term tag" class="el_%3$s_term el_term_%4$s">%2s</a>',
-                                esc_url(get_term_link(intval($post_term->term_id), esc_html($object_taxonomy_key))),
+                                '<a href="%1s" target="%5$s" data-term-id="%6$s" rel="category term tag" class="el_%3$s_term el_term_%4$s">%2s</a>',
+                                //esc_url(get_term_link(intval($post_term->term_id), esc_html($object_taxonomy_key))),
+                                '#',
                                 esc_html($post_term->name),
                                 esc_attr($object_taxonomy_key),
                                 esc_html($post_term->slug),
-                                esc_attr($target)
+                                esc_attr($target),
+                                esc_attr($post_term->term_id),
                             );
                         }
                     }
