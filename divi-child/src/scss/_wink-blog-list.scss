@@ -125,12 +125,19 @@
     .et_pb_post_extra {
       &.el_dbe_block_extended {
         .post-categories {
-          a {
+          a,
+          .nolink {
             color: $wink-beige;
             border: $wink-tag-border-size $wink-beige;
             &:hover {
               border: $wink-tag-border-size transparent;
               color: $wink-black !important;
+            }
+          }
+          .nolink {
+            &:hover {
+              border: $wink-tag-border-size $wink-beige;
+              color: $wink-beige !important;
             }
           }
         }
