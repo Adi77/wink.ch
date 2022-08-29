@@ -26,11 +26,7 @@ header {
     }
     transition: 0.5s;
     background-color: $wink-beige;
-    @include diviBreakpoint(980) {
-      &.stickyBg {
-        background-color: $wink-beige !important;
-      }
-    }
+
     .et_pb_row {
       &.et_pb_row_0_tb_header {
         padding: 18px 0 0;

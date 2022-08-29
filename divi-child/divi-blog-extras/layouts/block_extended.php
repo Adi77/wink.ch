@@ -49,8 +49,9 @@ if ('on' === $show_categories) {
                             $bgcolor_style   = '' !== $bgcolor ? 'background-color: ' . $bgcolor . ' !important; border-color: ' . $bgcolor . ' !important' : '';
                             $style           = $color_style . $bgcolor_style;
                             $post_term_list .= sprintf(
-                                '<a href="%1s" target="%10$s" class="el_%8$s_term el_term_%9$s" rel="category term tag" data-color="%2s" data-color-hover="%3s" data-bgcolor="%4s" data-bgcolor-hover="%5s" style="%6s">%7s</a>',
-                                esc_url(get_term_link(intval($post_term->term_id), esc_html($object_taxonomy_key))),
+                                '<a href="%9$s" target="%10$s" class="el_%8$s_term el_term_%9$s" rel="category term tag" data-color="%2s" data-color-hover="%3s" data-bgcolor="%4s" data-bgcolor-hover="%5s" style="%6s">%7s</a>',
+                                //esc_url(get_term_link(intval($post_term->term_id), esc_html($object_taxonomy_key))),
+                                esc_url(get_the_permalink($post_id)),
                                 '' !== $color ? esc_attr($color) : '',
                                 '' !== $color_hover ? esc_attr($color_hover) : '',
                                 '' !== $bgcolor ? esc_attr($bgcolor) : '',
@@ -65,8 +66,9 @@ if ('on' === $show_categories) {
                     } else {
                         foreach ($post_terms as $post_term) {
                             $post_term_list .= sprintf(
-                                '<a href="%1s" target="%5$s" data-term-id="%6$s" rel="category term tag" class="el_%3$s_term el_term_%4$s">%2s</a>',
+                                //'<div class="el-dbe-post-categories"><a href="%1s" target="%5$s" data-term-id="%6$s" rel="category term tag" class="el_%3$s_term el_term_%4$s">%2s</a></div>',
                                 //esc_url(get_term_link(intval($post_term->term_id), esc_html($object_taxonomy_key))),
+                                '<span class="nolink">%2$s</span>',
                                 '#',
                                 esc_html($post_term->name),
                                 esc_attr($object_taxonomy_key),

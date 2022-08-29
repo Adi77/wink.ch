@@ -122,6 +122,30 @@ if (! function_exists('et_pb_postinfo_meta')) :
 endif;
 
 
+
+if (! function_exists('et_divi_post_meta')) :
+    function et_divi_post_meta()
+    {
+        $postinfo = is_single() ? et_get_option('divi_postinfo2') : et_get_option('divi_postinfo1');
+        if ($postinfo) :
+            echo '<p class="sfs post-meta">';
+
+        global $post;
+
+        $term_obj_list = get_the_terms($post->ID, 'category');
+        // $terms_string = join(', ', wp_list_pluck($term_obj_list, 'name'));
+
+        foreach (wp_list_pluck($term_obj_list, 'name') as $term) {
+            echo '<span class="nolink">'. $term . '</span>';
+        }
+
+        //echo et_pb_postinfo_meta($postinfo, et_get_option('divi_date_format', 'M j, Y'), esc_html__('0 comments', 'Divi'), esc_html__('1 comment', 'Divi'), '% ' . esc_html__('comments', 'Divi'));
+        echo '</p>';
+        endif;
+    }
+    endif;
+
+
 /* read theme cookie and set theme */
 
 add_action('init', 'read_theme_cookie');

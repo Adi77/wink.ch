@@ -70,7 +70,8 @@
   }
 }
 @mixin winkTag() {
-  a {
+  a,
+  .nolink {
     font-family: $wink-CabinetGroteskExtrabold;
     font-size: 18px;
     letter-spacing: 1.2px;
@@ -95,6 +96,13 @@
     }
     &:last-child {
       margin-right: 0;
+    }
+  }
+  .nolink {
+    margin: 0 10px 15px 0;
+    &:hover {
+      background-color: transparent;
+      border-color: $wink-black;
     }
   }
 }

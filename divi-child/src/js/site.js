@@ -34,7 +34,7 @@ $(document).ready(function ($) {
     $('header').css('mix-blend-mode', 'normal');
   });
 
-  /* Dark mode is set in local storage on page load */
+  /* Dark mode is set cookie on click */
 
   $('.dark-mode-switch a').click(function (e) {
     let element = document.body;

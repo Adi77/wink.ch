@@ -195,9 +195,15 @@
     .et_pb_post {
       background-color: $wink-black;
       .post-meta {
-        a {
+        a,
+        .nolink {
           color: $wink-beige;
           border: $wink-tag-border-size $wink-beige;
+
+          &:hover {
+            background-color: transparent;
+            border-color: $wink-beige;
+          }
         }
       }
     }
