@@ -26,7 +26,8 @@
       .et_pb_module {
         .et_pb_image_wrap {
           img {
-            &[src$='.png'] {
+            &[src$='.png'],
+            &[src$='.svg'] {
               width: 120px;
             }
           }
