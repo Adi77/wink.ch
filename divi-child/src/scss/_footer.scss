@@ -21,6 +21,9 @@ footer {
         .et_pb_column {
           &.et_pb_column_1_tb_footer {
             width: 20%;
+            img {
+              width: 34vw;
+            }
           }
           &.et_pb_column_2_tb_footer {
             width: 46%;
@@ -42,6 +45,10 @@ footer {
               }
               @include diviBreakpoint(768) {
                 padding-right: 20px;
+              }
+              @include diviBreakpoint(480) {
+                padding-right: 64px;
+                bottom: -20px;
               }
             }
             .et_pb_text_inner {

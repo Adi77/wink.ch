@@ -93,6 +93,9 @@
               @include diviBreakpoint(768) {
                 padding-left: 0;
               }
+              @include diviBreakpoint(480) {
+                top: -12px;
+              }
             }
             &[href*='marketing'] {
               @include diviBreakpoint(980) {
