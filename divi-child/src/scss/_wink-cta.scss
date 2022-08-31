@@ -28,7 +28,10 @@
           img {
             &[src$='.png'],
             &[src$='.svg'] {
-              width: 120px;
+              @include diviBreakpoint(980) {
+                width: 120px;
+              }
+              width: 100%;
             }
           }
         }
