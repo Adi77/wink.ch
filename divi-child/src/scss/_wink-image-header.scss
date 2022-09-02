@@ -21,6 +21,10 @@
         }
         + .wink-teaser-title-text {
           margin-top: 60px;
+          @include diviBreakpoint(480) {
+            margin-top: 0;
+            padding-top: 40px;
+          }
         }
       }
     }
