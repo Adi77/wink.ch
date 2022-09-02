@@ -2,6 +2,8 @@ import './../scss/style.scss';
 
 import $ from 'jquery';
 
+import cookie from 'jquery.cookie';
+
 /* prevent showing loading spinner when page back button is clicked */
 
 $(window).bind('pageshow', function (event) {
