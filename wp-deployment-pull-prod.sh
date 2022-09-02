@@ -10,8 +10,8 @@ migrationDbDumpFolderLocationLocal=www
 # remote
 prodServerSsh=monikazi@wink.ch
 serverRootRemote=/home/monikazi
-domainNameProduction=https://www.wink.ch/staging2
-webRootRelativeRemote=www/www.wink.ch/staging2
+domainNameProduction=https://www.wink.ch
+webRootRelativeRemote=www/www.wink.ch
 migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
 
 wp-files_sync_plugins() {
@@ -102,12 +102,14 @@ wp-database_sync() {
     echo "******* Do you wish to export db-dump to ${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz File and download it?"
     SCRIPT="cd ${migrationDbDumpFolderLocationRemote}
             php ${serverRootRemote}/wp-cli.phar db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz"
+    SCRIPT2="cd ${migrationDbDumpFolderLocationRemote}
+            rm $DB_NAME.sql.gz"
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
             ssh ${prodServerSsh} "${SCRIPT}"
             scp ${prodServerSsh}:${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz ${migrationDbDumpFolderLocationLocal}
-
+            ssh ${prodServerSsh} "${SCRIPT2}"
             break
             ;;
         No) break ;;
