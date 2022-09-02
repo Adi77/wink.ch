@@ -12,6 +12,11 @@
             @include diviBreakpoint(980) {
               background-size: cover;
             }
+            @include diviBreakpoint(480) {
+              background-size: contain;
+              background-position: 0px 82px;
+              height: 36vh;
+            }
           }
         }
         + .wink-teaser-title-text {
