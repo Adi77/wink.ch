@@ -1,0 +1,44 @@
+.et_pb_code_inner {
+  #mc_embed_signup {
+    form {
+      padding: 0;
+      .mc-field-group {
+        padding-bottom: 30px;
+        label {
+          display: none;
+        }
+        input,
+        textarea {
+          padding: 0;
+          background-color: $wink-beige;
+          border: 0;
+          border-radius: 0;
+          height: 50px;
+        }
+      }
+      .clear.arrow {
+        cursor: pointer;
+        &::after {
+          font-family: ETmodules;
+          font-size: 30px;
+          color: $wink-beige;
+          content: '\24';
+          position: relative;
+          top: 7px;
+          margin-left: 10px;
+          opacity: 1;
+        }
+        #mc-embedded-subscribe {
+          cursor: pointer;
+          margin: 0;
+          background-color: transparent;
+          border: 0;
+          color: $wink-beige;
+          font-size: 18px;
+          text-transform: uppercase;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
