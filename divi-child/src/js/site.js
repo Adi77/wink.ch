@@ -3,8 +3,16 @@ import './../scss/style.scss';
 import $ from 'jquery';
 
 /* prevent showing loading spinner when page back button is clicked */
-$(window).on('popstate', function () {
-  $('#loader').css('display', 'none');
+
+$(window).bind('pageshow', function (event) {
+  if (event.originalEvent.persisted) {
+    window.location.reload();
+    $('#loader').css('display', 'none');
+    $('.menu-row > div, #et-main-area article').css('opacity', '1');
+    $('.hamburger').removeClass('is-active');
+    $('.menu-row').css('display', 'none');
+    $('.menu-row').removeClass('active');
+  }
 });
 
 $(document).ready(function ($) {
@@ -28,12 +36,9 @@ $(document).ready(function ($) {
   });
 
   /* set blendmode effect to normal if menu item is clicked */
-
-  $('.menu-row a').click(function () {
-    //$('.menu-row').removeClass('active');
-    //$('body').toggleClass('mainnav-active');
+  $('.menu-row a, .wink-home-header a').on('click', function () {
     $('#loader').show();
-    $('.menu-row > div').css('opacity', '0.4');
+    $('.menu-row > div, #et-main-area article').css('opacity', '0.4');
     $('header').css('mix-blend-mode', 'normal');
   });
 
