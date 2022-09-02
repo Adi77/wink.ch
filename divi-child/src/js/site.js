@@ -2,7 +2,10 @@ import './../scss/style.scss';
 
 import $ from 'jquery';
 
-import cookie from 'jquery.cookie';
+/* prevent showing loading spinner when page back button is clicked */
+$(window).on('popstate', function () {
+  $('#loader').css('display', 'none');
+});
 
 $(document).ready(function ($) {
   /* wink hamburger menu toggle */
