@@ -10,10 +10,13 @@
         input,
         textarea {
           padding: 0;
-          background-color: $wink-beige;
+          background-color: $wink-black;
           border: 0;
           border-radius: 0;
           height: 50px;
+          &::placeholder {
+            color: $wink-beige;
+          }
         }
       }
       .clear.arrow {
@@ -21,7 +24,7 @@
         &::after {
           font-family: ETmodules;
           font-size: 30px;
-          color: $wink-beige;
+          color: $wink-black;
           content: '\24';
           position: relative;
           top: 7px;
@@ -33,10 +36,37 @@
           margin: 0;
           background-color: transparent;
           border: 0;
-          color: $wink-beige;
+          color: $wink-black;
           font-size: 18px;
           text-transform: uppercase;
           display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .et_pb_code_inner {
+    #mc_embed_signup {
+      form {
+        .mc-field-group {
+          input,
+          textarea {
+            background-color: $wink-beige;
+            &::placeholder {
+              color: $wink-black;
+            }
+          }
+        }
+        .clear.arrow {
+          cursor: pointer;
+          &::after {
+            color: $wink-beige;
+          }
+          #mc-embedded-subscribe {
+            color: $wink-beige;
+          }
         }
       }
     }
