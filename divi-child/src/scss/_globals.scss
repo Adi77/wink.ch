@@ -425,7 +425,7 @@ html .et_pb_social_icon {
 }
 
 /* dark-mode */
-.dark-mode {
+.dark-mode:not(.et-fb-global-preloader) {
   background-color: $wink-black !important;
   p,
   h1,
@@ -433,7 +433,7 @@ html .et_pb_social_icon {
   h3,
   h4,
   li {
-    color: $wink-beige !important;
+    color: $wink-beige;
   }
   #wink-mainmenu-toggle {
     color: $wink-beige !important;
@@ -444,7 +444,7 @@ html .et_pb_social_icon {
 
   svg {
     path {
-      fill: $wink-beige !important;
+      fill: $wink-beige;
     }
   }
 

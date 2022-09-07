@@ -48,6 +48,11 @@
             padding-bottom: 50px;
           }
         }
+        @include diviBreakpoint(480) {
+          h1 {
+            font-size: 40px;
+          }
+        }
         margin-right: 10%;
         + img {
           @include diviBreakpoint(1405) {
