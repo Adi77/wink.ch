@@ -475,6 +475,11 @@ html .et_pb_social_icon {
       }
     }
   }
+  .dark-mode-switch {
+    a {
+      border-bottom: 0;
+    }
+  }
 }
 
 /* fix divi backend dialog windows styles */
