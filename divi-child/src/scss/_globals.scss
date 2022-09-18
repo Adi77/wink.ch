@@ -23,7 +23,7 @@ body {
 
 a {
   color: $wink-black;
-  border-bottom: 1px solid $wink-darkgreen;
+  border-bottom: 2px solid $wink-black;
   &:hover {
     border-bottom: 0;
   }
@@ -459,6 +459,10 @@ html .et_pb_social_icon {
 
   a {
     color: $wink-beige;
+    border-bottom: 2px solid $wink-beige;
+    &:hover {
+      border-bottom: 0;
+    }
   }
 
   /* lists style */

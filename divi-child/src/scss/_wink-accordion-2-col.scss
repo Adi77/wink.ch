@@ -41,6 +41,12 @@
         }
       }
     }
+    .et_pb_button_module_wrapper {
+      @include winkButton();
+      a {
+        color: $wink-black !important;
+      }
+    }
   }
   @include diviBreakpoint(980) {
     + .wink-accordion-2-col {
@@ -87,6 +93,11 @@
               }
             }
           }
+        }
+      }
+      .et_pb_button_module_wrapper {
+        a {
+          color: $wink-beige !important;
         }
       }
     }

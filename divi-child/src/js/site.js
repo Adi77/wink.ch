@@ -6,7 +6,7 @@ import cookie from 'jquery.cookie';
 
 /* prevent showing loading spinner when page back button is clicked */
 
-$(window).bind('pageshow', function (event) {
+/* $(window).bind('pageshow', function (event) {
   if (event.originalEvent.persisted) {
     window.location.reload();
     $('#loader').css('display', 'none');
@@ -15,7 +15,7 @@ $(window).bind('pageshow', function (event) {
     $('.menu-row').css('display', 'none');
     $('.menu-row').removeClass('active');
   }
-});
+}); */
 
 $(document).ready(function ($) {
   /* wink hamburger menu toggle */
@@ -204,11 +204,11 @@ $(document).ready(function ($) {
 
   /* Cursor shadow: aura shine for mouse pointer */
 
-  let cursor = document.getElementById('cursor-shadow');
+  /*   let cursor = document.getElementById('cursor-shadow');
   document.body.addEventListener('mousemove', function (e) {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
-  });
+  }); */
 
   /* divi global header: active menu item on corresponding active page */
 
