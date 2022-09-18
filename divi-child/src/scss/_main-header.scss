@@ -34,6 +34,11 @@ header {
 .dark-mode {
   header {
     // background-color: $wink-black;
+    .logo-link {
+      a {
+        border: 0;
+      }
+    }
     #wink-mainnav {
       background-color: $wink-black !important;
     }
