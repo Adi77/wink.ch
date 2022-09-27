@@ -33,9 +33,11 @@ footer {
             svg {
               height: 75px;
               width: 246px;
+              margin-left: -22px;
               @include diviBreakpoint(480) {
                 width: 120px;
                 height: 34px;
+                margin-left: -25px;
               }
             }
             .et_pb_image_wrap {
@@ -92,6 +94,9 @@ footer {
         @include diviBreakpoint(480) {
           width: 100%;
           max-width: 100%;
+        }
+        svg {
+          width: 100px;
         }
       }
       /* addresses */
