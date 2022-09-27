@@ -49,13 +49,13 @@ remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
 
-add_action('wp_enqueue_scripts', 'crunchify_disable_unused_loading_css_js', 9999);
+/* add_action('wp_enqueue_scripts', 'crunchify_disable_unused_loading_css_js', 9999);
 
-function crunchify_disable_unused_loading_css_js()
+ function crunchify_disable_unused_loading_css_js()
 {
 
     // Check if it's any of WooCommerce page
-    if (get_the_slug() != 'blog') {
+    if (get_the_slug() != 'blog' || get_the_slug() != 'news') {
 
       ## Dequeue divi blog extras styles
         wp_dequeue_style('divi-blog-extras-styles');
@@ -63,7 +63,7 @@ function crunchify_disable_unused_loading_css_js()
         ## Dequeue divi blog extras scripts
         wp_dequeue_script('divi-blog-extras-frontend-bundle');
     }
-}
+} */
 
 
 function get_the_slug()
