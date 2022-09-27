@@ -9,6 +9,17 @@ footer {
   .et_builder_inner_content {
     .et_pb_section {
       padding-bottom: 20px;
+      .et_pb_row {
+        .et_pb_column {
+          svg {
+            polygon,
+            path,
+            rect {
+              fill: $wink-black;
+            }
+          }
+        }
+      }
       .et_pb_row_0_tb_footer {
         width: 90%;
         max-width: 90%;
@@ -267,6 +278,13 @@ footer {
       .et_pb_section {
         .et_pb_row {
           .et_pb_column {
+            svg {
+              polygon,
+              path,
+              rect {
+                fill: $wink-beige;
+              }
+            }
             .et_pb_module {
               .et_pb_button {
                 color: $wink-beige;
