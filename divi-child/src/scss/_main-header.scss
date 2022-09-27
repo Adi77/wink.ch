@@ -3,6 +3,11 @@
     border: 0;
     svg {
       width: 80px;
+      polygon,
+      path,
+      rect {
+        fill: $wink-black;
+      }
     }
   }
 }
@@ -40,6 +45,13 @@ header {
     .logo-link {
       a {
         border: 0;
+        svg {
+          polygon,
+          path,
+          rect {
+            fill: $wink-beige;
+          }
+        }
       }
     }
     #wink-mainnav {
