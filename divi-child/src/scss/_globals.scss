@@ -503,3 +503,10 @@ html .et_pb_social_icon {
     font-size: inherit;
   }
 }
+
+.error-page-404 {
+  background-color: $wink-beige;
+  h1 {
+    color: $wink-black !important;
+  }
+}
