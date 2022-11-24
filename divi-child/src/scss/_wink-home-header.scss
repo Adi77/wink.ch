@@ -52,6 +52,10 @@
               line-height: 1.4;
 
               padding: 0;
+              padding-left: 0 !important;
+              &[href*='kontakt'] {
+                padding-left: 20px !important;
+              }
             }
             border-bottom: 0;
             padding: 0 30px 0;
@@ -148,6 +152,12 @@
             }
             @include diviBreakpoint(480) {
               padding: 0 0 15px 0;
+              width: 100%;
+              height: auto;
+              &[src*='svg'] {
+                width: inherit;
+                height: 100px;
+              }
             }
             margin: 0 70px -28px;
           }

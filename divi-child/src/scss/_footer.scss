@@ -9,6 +9,17 @@ footer {
   .et_builder_inner_content {
     .et_pb_section {
       padding-bottom: 20px;
+      .et_pb_row {
+        .et_pb_column {
+          svg {
+            polygon,
+            path,
+            rect {
+              fill: $wink-black;
+            }
+          }
+        }
+      }
       .et_pb_row_0_tb_footer {
         width: 90%;
         max-width: 90%;
@@ -33,9 +44,11 @@ footer {
             svg {
               height: 75px;
               width: 246px;
+              margin-left: -22px;
               @include diviBreakpoint(480) {
                 width: 120px;
                 height: 34px;
+                margin-left: -15px;
               }
             }
             .et_pb_image_wrap {
@@ -93,6 +106,9 @@ footer {
           width: 100%;
           max-width: 100%;
         }
+        svg {
+          width: 100px;
+        }
       }
       /* addresses */
       .et_pb_row_2_tb_footer {
@@ -140,6 +156,10 @@ footer {
             &.et_pb_text_2_tb_footer {
               @include diviBreakpoint(480) {
                 margin-left: 12px;
+              }
+              @include diviBreakpoint(350) {
+                margin-left: 0;
+                width: 100%;
               }
             }
             /* phone and email */
@@ -262,6 +282,13 @@ footer {
       .et_pb_section {
         .et_pb_row {
           .et_pb_column {
+            svg {
+              polygon,
+              path,
+              rect {
+                fill: $wink-beige;
+              }
+            }
             .et_pb_module {
               .et_pb_button {
                 color: $wink-beige;

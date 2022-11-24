@@ -63,6 +63,12 @@ a {
           border: $wink-tag-border-size $wink-orange !important;
         }
       }
+      &[href*='marketing-im-abo'] {
+        &:hover {
+          background-color: transparent !important;
+          border: 0 !important;
+        }
+      }
       &[href*='design-agentur'] {
         &:hover {
           background-color: $wink-yellow !important;
@@ -462,6 +468,14 @@ html .et_pb_social_icon {
     border-bottom: 2px solid $wink-beige;
     &:hover {
       border-bottom: 0;
+    }
+  }
+
+  .et-pb-controllers,
+  .post-media,
+  .et_pb_image {
+    a {
+      border: 0 !important;
     }
   }
 
