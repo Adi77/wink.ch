@@ -471,6 +471,14 @@ html .et_pb_social_icon {
     }
   }
 
+  .et-pb-controllers,
+  .post-media,
+  .et_pb_image {
+    a {
+      border: 0;
+    }
+  }
+
   /* lists style */
 
   .et_pb_text_inner,

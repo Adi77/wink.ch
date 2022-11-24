@@ -157,6 +157,10 @@ footer {
               @include diviBreakpoint(480) {
                 margin-left: 12px;
               }
+              @include diviBreakpoint(350) {
+                margin-left: 0;
+                width: 100%;
+              }
             }
             /* phone and email */
             &.et_pb_text_3_tb_footer {

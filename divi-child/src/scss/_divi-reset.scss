@@ -28,8 +28,15 @@
 }
 
 .et-pb-slider-arrows {
-  a:before {
-    font-weight: $wink-light;
+  a {
+    border: 0 !important;
+    font-size: 100px;
+
+    opacity: 1;
+
+    &:before {
+      font-weight: $wink-light;
+    }
   }
 }
 

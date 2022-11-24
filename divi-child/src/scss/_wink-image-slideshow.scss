@@ -6,6 +6,20 @@
     .et_pb_slides {
       .et_pb_slide {
         height: 1000px;
+
+        @include diviBreakpoint(980) {
+          background-size: cover;
+          height: 600px;
+        }
+      }
+    }
+    .et-pb-slider-arrows {
+      .et-pb-arrow-prev,
+      .et-pb-arrow-next {
+        @include diviBreakpoint(980) {
+          display: none;
+        }
+        top: 43%;
       }
     }
   }

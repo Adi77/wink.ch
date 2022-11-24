@@ -47,8 +47,10 @@
 
   @include winkButton();
   .small-txt {
+    text-align: left;
+    margin-top: 40px;
     p {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }

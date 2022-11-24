@@ -12,10 +12,11 @@
       }
       .header-image-mobile {
         display: none;
-        height: 60vh;
+        height: 80vh;
+        margin-top: 82px;
         background-size: cover;
         width: 100%;
-        background-position: center;
+        background-position: top;
         @include diviBreakpoint(1405) {
           display: block;
         }

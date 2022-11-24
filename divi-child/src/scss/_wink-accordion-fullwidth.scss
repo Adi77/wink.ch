@@ -30,8 +30,9 @@
                 }
                 .et_pb_toggle_title {
                   @include diviBreakpoint(768) {
-                    font-size: 40px;
+                    font-size: 35px;
                     padding-left: 16vw;
+                    padding-right: 0;
                   }
                   &::after {
                     content: '';
