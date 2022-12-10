@@ -57,6 +57,9 @@
           .post-media {
             background-position: 0 35%;
             text-align: center;
+            @include diviBreakpoint(980) {
+              height: 195px;
+            }
             a {
               border: 0;
               font-family: $wink-SwitzerRegular;
