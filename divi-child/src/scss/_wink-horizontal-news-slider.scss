@@ -1,0 +1,148 @@
+.wink-horizontal-news-slider {
+  background-color: $wink-beige;
+  margin-top: 120px;
+  @include winkButton();
+  .et_pb_row {
+    padding: 0;
+    h2 {
+      padding-bottom: 30px;
+      @include diviBreakpoint(980) {
+        font-size: 35px;
+      }
+    }
+    .et_pb_blog_extras {
+      margin-left: 5%;
+      @include diviBreakpoint(980) {
+        margin-left: 0;
+      }
+      text-align: center;
+      overflow: hidden;
+      .el-dbe-blog-extra {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        cursor: pointer;
+        &::-webkit-scrollbar {
+          width: 20px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 0;
+          background-color: $wink-black;
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .et_pb_post_extra {
+          width: 748px;
+          height: auto;
+          margin-bottom: 0;
+
+          scroll-snap-align: start;
+          flex-shrink: 0;
+          transform-origin: center center;
+          transform: scale(1);
+          transition: transform 0.5s;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: inherit;
+          background-color: transparent;
+          border-bottom: 0;
+          @include diviBreakpoint(980) {
+            margin-bottom: 0;
+          }
+          .post-media {
+            background-position: 0 35%;
+            text-align: center;
+            a {
+              border: 0;
+              font-family: $wink-SwitzerRegular;
+            }
+
+            .post-content {
+              background-color: transparent;
+              width: 100%;
+              height: 360px;
+              padding: 0;
+
+              .entry-title {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                display: none;
+
+                font-family: $wink-SwitzerRegular;
+
+                color: white;
+                letter-spacing: 3px;
+                opacity: 1;
+              }
+
+              .post-data {
+                display: none;
+              }
+            }
+
+            &:hover {
+              &:before {
+                content: attr(data-title);
+                background-color: rgba(38, 38, 37, 0.7);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 80%;
+                height: 100%;
+                z-index: 2;
+                left: 0;
+                padding: 0 10%;
+                color: $wink-beige;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 30px;
+                text-transform: lowercase;
+              }
+            }
+          }
+        }
+      }
+      .dotNav {
+        display: none;
+      }
+    }
+    &:nth-child(2) {
+      width: 100% !important;
+      max-width: 100% !important;
+      @include diviBreakpoint(980) {
+        padding-left: 20px;
+      }
+    }
+    &:last-child {
+      padding-top: 0;
+    }
+  }
+}
+
+.dark-mode {
+  .wink-horizontal-news-slider {
+    background-color: $wink-black;
+    .el-dbe-blog-extra {
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0;
+        background-color: $wink-beige !important;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    }
+    .et_pb_button {
+      color: $wink-beige;
+    }
+  }
+}

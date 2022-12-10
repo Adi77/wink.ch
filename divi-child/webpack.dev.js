@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   output: {
-    publicPath: 'http://dieprojektfabrik.ch.local:8080/',
+    publicPath: 'http://wink.ch.local:8080/',
   },
   module: {
     rules: [

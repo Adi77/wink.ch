@@ -7,19 +7,56 @@
       .et_pb_slide {
         height: 1000px;
 
-        @include diviBreakpoint(980) {
+        @include diviBreakpoint(480) {
           background-size: cover;
-          height: 600px;
+          height: 57vw !important;
+          background-position: 0 0;
         }
       }
     }
     .et-pb-slider-arrows {
+      .et-pb-arrow-prev {
+        left: 22px !important;
+      }
+      .et-pb-arrow-next {
+        right: 22px !important;
+      }
       .et-pb-arrow-prev,
       .et-pb-arrow-next {
-        @include diviBreakpoint(980) {
+        @include diviBreakpoint(480) {
           display: none;
         }
         top: 43%;
+      }
+    }
+    .et-pb-controllers {
+      @include diviBreakpoint(480) {
+        top: 15px;
+        height: 35px;
+        a {
+          width: 14px;
+          height: 14px;
+          &.et-pb-active-control {
+            border: 1px solid $wink-black !important;
+          }
+        }
+      }
+    }
+  }
+}
+.dark-mode {
+  .et_pb_section.wink-image-slideshow-section {
+    .et_pb_slider {
+      .et-pb-controllers {
+        @include diviBreakpoint(480) {
+          a {
+            background-color: $wink-beige;
+            &.et-pb-active-control {
+              background-color: transparent;
+              border: 1px solid $wink-beige !important;
+            }
+          }
+        }
       }
     }
   }

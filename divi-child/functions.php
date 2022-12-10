@@ -166,3 +166,19 @@ function read_theme_cookie()
         }
     }
 }
+
+
+
+function custom_portfolio_setup() {
+	get_template_part( 'includes/custom-Portfolio' );
+	$custom_portfolio = new custom_ET_Builder_Module_Portfolio();
+	remove_shortcode( 'et_pb_portfolio' );
+	add_shortcode( 'et_pb_portfolio', array( $custom_portfolio, '_render' ) );
+}
+add_action( 'et_builder_ready', 'custom_portfolio_setup' );
+
+function divi_custom_portfolio_class( $classlist ) {
+    $classlist['et_pb_portfolio']['classname'] = 'custom_ET_Builder_Module_Portfolio';
+    return $classlist;
+}
+add_filter( 'et_module_classes', 'divi_custom_portfolio_class' );

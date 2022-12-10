@@ -21,11 +21,14 @@
           font-family: $wink-SwitzerRegular;
           font-size: 80px;
           @include diviBreakpoint(980) {
-            font-size: 30px;
+            font-size: 25px;
           }
           border-radius: 100px;
           border: $wink-tag-border-size transparent;
           padding: 6px 18px;
+          @include diviBreakpoint(980) {
+            padding: 4px 14px;
+          }
           &:hover {
             background-color: transparent;
             border: $wink-tag-border-size $wink-black;
@@ -60,6 +63,9 @@
         height: inherit;
         .post-media {
           height: inherit;
+          > a {
+            border: 0;
+          }
         }
       }
       .post-content {
