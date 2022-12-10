@@ -51,7 +51,7 @@
           align-items: inherit;
           background-color: transparent;
           border-bottom: 0;
-          @include diviBreakpoint(980) {
+          @include diviBreakpoint(480) {
             margin-bottom: 0;
             height: 195px;
             width: 347px;
@@ -59,8 +59,9 @@
 
           .post-media {
             background-position: 0 35%;
-            @include diviBreakpoint(980) {
-              background-position: 0 100%;
+            @include diviBreakpoint(480) {
+              background-position: 0 35%;
+              height: 195px;
             }
             text-align: center;
 
