@@ -222,6 +222,13 @@ $(document).ready(function ($) {
       currentPage +
       '/"]'
   ).addClass('active');
+
+  $('.el-dbe-blog-extra .et_pb_post_extra .post-media').click(function () {
+    let url = $(this).find('a').attr('href');
+
+    window.open(url, '_self');
+    return false;
+  });
 });
 
 $.fn.portfolioCarousel = function () {
