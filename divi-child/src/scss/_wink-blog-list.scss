@@ -1,5 +1,9 @@
 .et_pb_section.wink-blog-list {
   margin-top: 100px;
+  @include winkButton();
+  .et_pb_button {
+    padding-top: 0 !important;
+  }
   @include diviBreakpoint(980) {
     margin-top: 30px;
   }
@@ -74,6 +78,10 @@
         .entry-title {
           line-height: 1.1;
           margin-top: 0;
+          @include diviBreakpoint(980) {
+            margin-bottom: 0;
+          }
+          margin-bottom: 40px;
           a {
             border: 0;
           }
@@ -82,6 +90,9 @@
       .post-categories {
         position: relative;
         padding: 0;
+        @include diviBreakpoint(980) {
+          padding: 20px 0 0 0;
+        }
         @include winkTag();
 
         a {
@@ -148,6 +159,9 @@
           }
         }
       }
+    }
+    .et_pb_button {
+      color: $wink-beige;
     }
   }
 }

@@ -8,7 +8,7 @@
           max-width: 100%;
           padding: 0;
           .et_pb_image {
-            height: 90vh;
+            height: 100vh;
             @include diviBreakpoint(980) {
               background-size: cover;
             }

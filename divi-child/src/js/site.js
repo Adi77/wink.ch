@@ -229,6 +229,10 @@ $(document).ready(function ($) {
     window.open(url, '_self');
     return false;
   });
+
+  $('img').hover(function () {
+    $(this).removeAttr('title');
+  });
 });
 
 $.fn.portfolioCarousel = function () {

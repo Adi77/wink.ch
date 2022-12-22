@@ -7,6 +7,7 @@
     .et_pb_portfolio_item {
       float: left;
       width: 50%;
+      text-align: center;
       @include diviBreakpoint(980) {
         width: inherit;
         margin-bottom: 0;
