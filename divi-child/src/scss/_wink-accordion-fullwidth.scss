@@ -14,24 +14,24 @@
 
               .et_pb_toggle {
                 border-top: $wink-horizontal-border-size $wink-black;
-                background-size: auto 485px;
+                background-size: auto 600px;
                 background-position: 50vw 0;
                 background-color: $wink-beige;
                 padding-left: 10vw;
                 padding-right: 55vw;
                 padding-top: 35px;
-                min-height: 485px;
+                min-height: 600px;
 
-                @include diviBreakpoint(768) {
+                @include diviBreakpoint(1100) {
                   padding: 30px;
                   background-size: contain;
                   background-position: 0 100%;
                   height: inherit;
                 }
                 .et_pb_toggle_title {
-                  @include diviBreakpoint(768) {
+                  @include diviBreakpoint(1100) {
                     font-size: 35px;
-                    padding-left: 16vw;
+                    padding-left: 50px;
                     padding-right: 0;
                   }
                   &::after {
@@ -51,7 +51,7 @@
                     }
                   }
 
-                  @include diviBreakpoint(768) {
+                  @include diviBreakpoint(1100) {
                     padding-bottom: 58vw;
                   }
                   @include diviBreakpoint(980, 1) {
@@ -82,7 +82,7 @@
                   @include diviBreakpoint(980) {
                     top: 45px;
                   }
-                  @include diviBreakpoint(768) {
+                  @include diviBreakpoint(1100) {
                     top: 40px;
                   }
                 }
