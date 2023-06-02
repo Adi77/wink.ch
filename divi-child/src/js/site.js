@@ -138,6 +138,7 @@ $(document).ready(function ($) {
       }, 750);
     }
   });
+  $('.wink-accordion-fullwidth .et_pb_toggle').off();
 
   /*
    * cssonly carousel for portfolio items

@@ -29,6 +29,7 @@
                   height: inherit;
                 }
                 .et_pb_toggle_title {
+                  cursor: default;
                   @include diviBreakpoint(1100) {
                     font-size: 35px;
                     padding-left: 50px;
