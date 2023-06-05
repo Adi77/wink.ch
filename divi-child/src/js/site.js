@@ -87,6 +87,8 @@ $(document).ready(function ($) {
   /* make divi accordion closeable & change animation speed */
 
   $('.et_pb_toggle').click(function () {
+    console.log('h8');
+
     let $toggle = $(this);
 
     setTimeout(function () {
@@ -102,6 +104,7 @@ $(document).ready(function ($) {
       .addClass('et_pb_toggle_plus');
 
     /* add divi accordion toggle icon animation */
+
     if (!$toggle.hasClass('et_pb_accordion_toggling')) {
       let $accordion = $toggle.closest('.et_pb_accordion');
       if ($toggle.hasClass('et_pb_toggle_open')) {
@@ -138,7 +141,6 @@ $(document).ready(function ($) {
       }, 750);
     }
   });
-  $('.wink-accordion-fullwidth .et_pb_toggle').off();
 
   /*
    * cssonly carousel for portfolio items
@@ -190,6 +192,7 @@ $(document).ready(function ($) {
         $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
           .addClass('et_pb_toggle_open')
           .removeClass('et_pb_toggle_close');
+        $('.wink-accordion-fullwidth .et_pb_toggle').off();
         $.fn.accordionStickyItems();
       }
     });
