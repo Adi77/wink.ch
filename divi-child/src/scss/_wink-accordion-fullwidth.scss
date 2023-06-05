@@ -20,7 +20,7 @@
                 padding-left: 10vw;
                 padding-right: 55vw;
                 padding-top: 35px;
-                min-height: 600px;
+                height: 600px;
 
                 @include diviBreakpoint(1100) {
                   padding: 30px;

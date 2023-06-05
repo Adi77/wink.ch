@@ -186,7 +186,7 @@ $(document).ready(function ($) {
   /* wink accordion fullwidth sticky headers */
   if ($('.wink-accordion-fullwidth ').length > 0) {
     $(window).resize(function () {
-      if ($(this).width() > 753) {
+      if ($(this).width() > 1100) {
         $('.wink-accordion-fullwidth .et_pb_accordion .et_pb_toggle')
           .addClass('et_pb_toggle_open')
           .removeClass('et_pb_toggle_close');
